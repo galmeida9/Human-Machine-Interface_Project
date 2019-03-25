@@ -12,6 +12,7 @@
     border: 2px solid #000;
     margin: 0 auto;
     background-color:#0099ff;
+    border-radius: 25px;
 }
 
 </style>
@@ -23,18 +24,18 @@
     <h1><center>iGo prototipo</center></h1>
     <section class="container">
         <div class="watch" align: "center">
-            <canvas id="watchface" width="113" height="113">
+            <canvas id="watchface" width="90" height="90" style="margin-left: 12.5px">
             </canvas>
-            <p><center>
+            <b><p style="margin-top: -10px"><center>
                 <span id="day"></span>
                 /
                 <span id="month"></span>
                 /
                 <span id="year"></span>
-            </center></p>
+            </center></p></b>
         </div>
         <div class="buttondiv">
-
+            
         </div>
     </section>
 
@@ -42,7 +43,7 @@
 
 var day = new Date();
 document.getElementById("day").innerHTML = day.getDate();
-document.getElementById("month").innerHTML = day.getMonth();
+document.getElementById("month").innerHTML = day.getMonth() + 1;
 document.getElementById("year").innerHTML = day.getFullYear();
 
 var watchface = document.getElementById("watchface");
