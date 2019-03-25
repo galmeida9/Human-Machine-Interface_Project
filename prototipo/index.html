@@ -6,6 +6,10 @@
 
 <style>
 
+body {
+    overflow: scroll;
+}
+
 .watch{
     width: 113px;
     height: 151px;
@@ -24,7 +28,7 @@
     <h1><center>iGo prototipo</center></h1>
     <section class="container">
         <div class="watch" align: "center">
-            <canvas id="watchface" width="90" height="90" style="margin-left: 12.5px">
+            <canvas id="watchface" width="90" height="90" style="margin-left: 12.5px; margin-top: 5px">
             </canvas>
             <b><p style="margin-top: -10px"><center>
                 <span id="day"></span>
@@ -32,6 +36,9 @@
                 <span id="month"></span>
                 /
                 <span id="year"></span>
+                <br>
+                <img src="resources/sunny.png" style="width: 20px; float: left; margin-left: 25px;"> 
+                <span style= "float: right; margin-right: 25px">25°C</span>
             </center></p></b>
         </div>
         <div class="buttondiv">
