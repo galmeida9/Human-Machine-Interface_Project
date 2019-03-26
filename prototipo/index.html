@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>iGo</title>
 <link rel="stylesheet" type="text/css" href="css/sidebar.css">
+<link rel="stylesheet" type="text/css" href="css/buttons.css">
 
 <style>
 
@@ -28,19 +29,18 @@ body {
     background-color:#0099ff;
     border-radius: 25px;
     float: left;
-    z-index: 1;
+}
+
+.frame {
+    z-index: 3; 
+    width: 134px; 
+    position: absolute;
+    margin-left: -70px;
+    margin-top: -130px;
 }
 
 .buttondiv {
     margin-left: 113px;
-}
-
-.button{
-    background-color: black;
-	color: white;
-	text-align: center;
-	width: 50px;
-	border: none;
 }
 
 </style>
@@ -52,22 +52,20 @@ body {
     <h1><center>iGo prototipo</center></h1>
     <div class="container" align="center">
         <div id="iGo" class="watch">
-            <canvas id="watchface" width="90" height="90" style="margin-left: 2px; margin-top: 5px">
-            </canvas>
-            <b><p style="margin-top: -10px"><center>
-                <span id="day"></span>
-                /
-                <span id="month"></span>
-                /
-                <span id="year"></span>
-                <br>
-                <img src="resources/sunny.png" style="width: 20px; float: left; margin-left: 25px;"> 
-                <span style= "float: right; margin-right: 25px">25°C</span>
-            </center></p></b>
+            <div class="body" style="z-index: 1;">
+                <p id="hour" style="font-size: 35px; margin-top: 10px;"></p>
+                <p id="minute" style="font-size: 35px; margin-top: -35px;"></p>
+                <b><p id="Date" style="margin-top: -25px;"></p></b>
+                <b><p style="margin-top: -15px;">
+                    <img src="resources/sunny.png" style="width: 20px; float: left; margin-left: 25px;"> 
+                    <span style= "float: right; margin-right: 25px">25°C</span>
+                </p></b>
+            </div>
+            <img class="frame" src="resources/frame.png">
         </div>
         <div class="buttondiv">
-            <button class="button" style="margin-top: 10px" onclick="openNav()">menu</button>
-            <button class="button" style="margin-top: 100px" onclick="closeNav()">back</button>
+            <button class="button button1" onclick="openNav()"><img src="resources/menu.png" style="width: 8px; display: block; margin-left: -3px;"></button>
+            <button class="button button2" onclick="closeNav()"><img src="resources/back.png" style="width: 8px; display: block; margin-left: -3px;"></button>
         </div>
         <div id="menu" class="sidebar">
             <a href="#" style="margin-top:8px">CHAT</a>
@@ -80,11 +78,6 @@ body {
 <script src="js/clock.js"></script>
 <script src="js/sidebar.js"></script>
 <script>
-
-var day = new Date();
-document.getElementById("day").innerHTML = day.getDate();
-document.getElementById("month").innerHTML = day.getMonth() + 1;
-document.getElementById("year").innerHTML = day.getFullYear();
 
 </script>
 
