@@ -7,16 +7,73 @@
 <style>
 
 body {
-    overflow: scroll;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    width: 200px;
+    height: 151px;
+    margin: auto;
 }
 
 .watch{
+    position: absolute;
     width: 113px;
     height: 151px;
     border: 2px solid #000;
-    margin: 0 auto;
     background-color:#0099ff;
     border-radius: 25px;
+    float: left;
+    z-index: 1;
+}
+
+.sidebar {
+    top: 0;
+    position: absolute;
+    height: 154px;
+    width: 0;
+    z-index: 2;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin-top: 80px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.buttondiv {
+    margin-left: 113px;
+}
+
+.button{
+    background-color: black;
+	color: white;
+	text-align: center;
+	width: 50px;
+	border: none;
 }
 
 </style>
@@ -26,9 +83,9 @@ body {
 <body>
 
     <h1><center>iGo prototipo</center></h1>
-    <section class="container">
-        <div class="watch" align: "center">
-            <canvas id="watchface" width="90" height="90" style="margin-left: 12.5px; margin-top: 5px">
+    <div class="container" align="center">
+        <div id="iGo" class="watch">
+            <canvas id="watchface" width="90" height="90" style="margin-left: 2px; margin-top: 5px">
             </canvas>
             <b><p style="margin-top: -10px"><center>
                 <span id="day"></span>
@@ -42,9 +99,16 @@ body {
             </center></p></b>
         </div>
         <div class="buttondiv">
-            
+            <button class="button" style="margin-top: 10px" onclick="openNav()">menu</button>
+            <button class="button" style="margin-top: 100px" onclick="closeNav()">back</button>
         </div>
-    </section>
+        <div id="menu" class="sidebar">
+            <a href="#">CHAT</a>
+            <a href="#">NEWS</a>
+            <a href="#">POSTS</a>
+            <a href="#">HELP</a>
+        </div>
+    </div>
 
 <script>
 
@@ -131,6 +195,14 @@ function drawHand(ctx, pos, length, width) {
     ctx.lineTo(0, -length);
     ctx.stroke();
     ctx.rotate(-pos);
+}
+
+function openNav() {
+  document.getElementById("menu").style.width = "116px";
+}
+
+function closeNav() {
+  document.getElementById("menu").style.width = "0";
 }
 
 </script>
