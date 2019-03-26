@@ -5,6 +5,15 @@
     width: 10px;
     height: 40px;
     border: none;
+    outline-width: 0;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:hover {
+    cursor: pointer;
 }
 
 .button1 {
@@ -16,6 +25,6 @@
 
 .button2 {
     margin-top: 100px; 
-    margin-left: -73px; 
+    margin-left: -42px; 
     border-radius: 10px;
 }

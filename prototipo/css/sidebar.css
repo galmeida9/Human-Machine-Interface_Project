@@ -1,15 +1,15 @@
 .sidebar {
     top: 0;
     position: absolute;
-    height: 152px;
+    height: 151px;
     width: 0;
     z-index: 2;
     background-color: #0000cc;
     overflow-x: hidden;
     transition: 0.5s;
-    margin-top: 87px;
-    margin-left: 8px;
-    border-radius: 15px;
+    margin-top: 80px;
+    margin-left: 40px;
+    border-radius: 17px;
     overflow: hidden;
 }
 
