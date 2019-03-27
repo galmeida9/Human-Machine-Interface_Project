@@ -1,0 +1,26 @@
+.topbar {
+    height: 15px;
+    overflow: hidden;
+    background-color: black;
+}
+
+.topbar p{
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    margin-top: 0px;
+    padding: 4px 5px;
+    color: white;
+}
+
+.battery {
+    margin-left: 28px;
+}
+
+.topbar img {
+    width: 15px; 
+    margin-top: 1.5px; 
+    margin-left: -6px;
+    content:url("../resources/battery.png");
+}

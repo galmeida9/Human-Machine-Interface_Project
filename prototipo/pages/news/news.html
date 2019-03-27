@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>iGo</title>
+<link rel="stylesheet" type="text/css" href="../../css/sidebar.css">
+<link rel="stylesheet" type="text/css" href="../../css/buttons.css">
+<link rel="stylesheet" type="text/css" href="../../css/topbar.css">
+<link rel="stylesheet" type="text/css" href="./news.css">
+
+
+<style>
+
+body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #dd933e;
+}
+
+.container {
+    width: 200px;
+    height: 151px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.watch{
+    position: absolute;
+    width: 113px;
+    height: 152px;
+    background-color:white;
+    float: left;
+    margin-left: 40px;
+}
+
+.frame {
+    z-index: 3; 
+    width: 133px; 
+    position: absolute;
+    margin-left: -69px;
+    margin-top: -8px;
+}
+
+.buttondiv {
+    margin-left: 145px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <h1><center>iGo protótipo</center></h1>
+    <div class="container" align="center">
+        <div id="iGo" class="watch">
+            <img class="frame" src="../../resources/frame.png">
+            <div class="body" style="z-index: 1;">
+                <div class="topbar">
+                    <p><span id="hour"></span>:<span id="minute"></span></p>
+                    <p class = "battery">50%</p>
+                    <img>
+                </div>
+                <h4 style="margin-top: 5px">NEWS</h4>
+                <div id="newstitles" class="news">
+                    <hr>
+                    <p class="newstitle"><a href="#">Fuzileiros resgatam português dado como desaparecido em Moçambique</a></p>
+                    <hr>
+                    <p class="newstitle"><a href="#">“Temos até ao final de 2020 para tratar disto com calma”, garante MNE sobre Brexit</a></p>
+                    <hr>
+                    <p class="newstitle"><a href="#">Governo declara situação de alerta entre 27 e 31 de março devido ao risco de incêndio elevado</a></p>
+                    <hr>
+                    <p class="newstitle"><a href="#">Governo quer criar creches e jardins de infância em quartéis militares</a></p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="buttondiv">
+            <button class="button button1" onclick="openNav()"><img src="../../resources/menu.png" style="width: 8px; display: block; margin-left: -3.2px;"></button>
+            <button class="button button2" onclick="closeNav()"><img src="../../resources/back.png" style="width: 8px; display: block; margin-left: -4px;"></button>
+        </div>
+        <div id="menu" class="sidebar">
+            <a href="#" style="margin-top:8px">CHAT</a>
+            <a href="#">NEWS</a>
+            <a href="#">POSTS</a>
+            <a href="#">HELP</a>
+        </div>
+    </div>
+
+<script src="../../js/clock.js"></script>
+<script src="../../js/sidebar.js"></script>
+<script src="../../js/TouchScroll.js"></script>
+<script>
+
+var viewer = new TouchScroll();
+viewer.init({
+    id: 'newstitle',
+    draggable: true,
+     wait: false
+});
+
+</script>
+
+</body>
+</html>
