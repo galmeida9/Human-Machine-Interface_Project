@@ -1,9 +1,9 @@
-var date = new Date();
+var timeout;
 clock();
 displayDate();
-setInterval(clock, 60000);
 
 function clock() {
+    var date = new Date();
     var hours = date.getHours();
     var minutes = date.getMinutes();
     
@@ -12,9 +12,12 @@ function clock() {
 
     document.getElementById("hour").innerHTML = hours;
     document.getElementById("minute").innerHTML = minutes;
+
+    timeout = setTimeout(clock, 1000);
 }
 
 function displayDate() {
+    var date = new Date();
     day = date.getDate();
     month = date.getMonth() + 1;
     year = date.getFullYear();
