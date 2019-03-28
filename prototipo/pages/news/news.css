@@ -1,17 +1,36 @@
 .news {
     margin-top: -15px;
     overflow: hidden;
-    height: 108px;
+    height: 107px;
     z-index: 3;
     position: absolute;
+    border-bottom-left-radius: 17px;
+    border-bottom-right-radius: 17px;
 }
 
-.newstitle {
+.news, .frame {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+    -webkit-user-drag: none;
+}
+
+.news p {
     font-size: 6px;
     line-height: 1.1;
 }
 
-.newstitle a{
+.news a{
     text-decoration: none; 
     color: black;
+}
+
+.news hr{
+    width: 110px; 
+    border: 0; 
+    height: 0.7px; 
+    background: rgb(161, 161, 161);
 }
