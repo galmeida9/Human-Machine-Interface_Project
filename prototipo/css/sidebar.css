@@ -1,26 +1,23 @@
 .sidebar {
     top: 0;
     position: absolute;
-    height: 152px;
+    height: 4cm;
     width: 0;
-    z-index: 2;
     background-color: #0000cc;
     overflow-x: hidden;
-    transition: 0.5s;
-    margin-top: 80px;
+    transition: 0.4s;
+    margin-top: 2.11cm;
     margin-left: 40px;
     border-radius: 17px;
     overflow: hidden;
 }
 
-.sidebar a {
+.sidebar img {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 15px;
-    color: #ffffff;
     display: block;
-    transition: 0.3s;
     margin-right: 18px;
+    width: 10px;
 }
 
 .sidebar .closebtn {
@@ -33,4 +30,22 @@
 
 .sidebar a:hover {
   color: #cccccc;
+}
+
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column {
+    float: left;
+    width: 40px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.column p{
+    font-size: 10px;
+    color: white;
 }

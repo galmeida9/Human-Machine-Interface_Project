@@ -10,8 +10,10 @@ function clock() {
     if (hours < 10) hours = "0" + hours;
     if (minutes < 10) minutes = "0" + minutes;
 
-    document.getElementById("hour").innerHTML = hours;
-    document.getElementById("minute").innerHTML = minutes;
+    document.getElementsByClassName("hour")[0].innerHTML = hours;
+    document.getElementsByClassName("hour")[1].innerHTML = hours;
+    document.getElementsByClassName("minute")[0].innerHTML = minutes;
+    document.getElementsByClassName("minute")[1].innerHTML = minutes;
 
     timeout = setTimeout(clock, 1000);
 }

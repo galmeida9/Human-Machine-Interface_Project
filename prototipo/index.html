@@ -5,44 +5,12 @@
 <title>iGo</title>
 <link rel="stylesheet" type="text/css" href="css/sidebar.css">
 <link rel="stylesheet" type="text/css" href="css/buttons.css">
+<link rel="stylesheet" type="text/css" href="css/news.css">
+<link rel="stylesheet" type="text/css" href="css/popup.css">
+<link rel="stylesheet" type="text/css" href="css/topbar.css">
+<link rel="stylesheet" type="text/css" href="css/body.css">
 
 <style>
-
-body {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #dd933e;
-}
-
-.container {
-    width: 200px;
-    height: 151px;
-    margin: auto;
-}
-
-.watch{
-    position: absolute;
-    width: 113px;
-    height: 152px;
-    background-color:#0099ff;
-    border-radius: px;
-    float: left;
-    margin-left: 40px;
-}
-
-.frame {
-    z-index: 3; 
-    width: 133px; 
-    position: absolute;
-    margin-left: -69px;
-    margin-top: -128px;
-}
-
-.buttondiv {
-    margin-left: 145px;
-}
 
 </style>
 
@@ -53,32 +21,78 @@ body {
     <h1><center>iGo protótipo</center></h1>
     <div class="container" align="center">
         <div id="iGo" class="watch">
-            <div class="body" style="z-index: 1;">
-                <p id="hour" style="font-size: 35px; margin-top: 10px;"></p>
-                <p id="minute" style="font-size: 35px; margin-top: -35px;"></p>
-                <b><p id="Date" style="margin-top: -25px;"></p></b>
-                <b><p style="margin-top: -15px;">
-                    <img src="resources/sunny.png" style="width: 20px; float: left; margin-left: 25px;"> 
-                    <span style= "float: right; margin-right: 25px">25°C</span>
+            <img class="frame" src="resources/frame.png">
+            <div class="mainscreen">
+                <p class="hour" style="font-size: 35px; margin-top: 8.5%;"></p>
+                <p class="minute" style="font-size: 35px; margin-top: -30.5%;"></p>
+                <b><p id="Date" style="margin-top: -0.66cm;"></p></b>
+                <b><p style="margin-top: -13%;">
+                    <img src="resources/sunny.png" style="width: 20px; float: left; margin-left: 0.66cm;"> 
+                    <span style= "float: right; margin-right: 0.66cm">25°C</span>
                 </p></b>
             </div>
-            <img class="frame" src="resources/frame.png">
+            <div class="newsscreen">
+                <div class="topbar">
+                    <p><span class="hour"></span>:<span class="minute"></span></p>
+                    <p class = "battery">50%</p>
+                    <img>
+                </div>
+                <div id="newstitles" class="news">
+                    <h4 style="margin-top: 5px; margin-left: 10%">NEWS  <a href="#"><img src="resources/filter.png" id="filter" style="width: 0.35cm"></a></h4>
+                    <hr style="margin-top: -10px;">
+                    <p><a href="#">Fuzileiros resgatam português dado como desaparecido em Moçambique</a></p>
+                    <hr>
+                    <p><a href="#">“Temos até ao final de 2020 para tratar disto com calma”, garante MNE sobre Brexit</a></p>
+                    <hr>
+                    <p><a href="#">Governo declara situação de alerta entre 27 e 31 de março devido ao risco de incêndio elevado</a></p>
+                    <hr>
+                    <p><a href="#">Governo quer criar creches e jardins de infância em quartéis militares</a></p>
+                    <hr>
+                </div>
+                <div id="filterpopup" class="popup">
+                    <div class="popupcontent">
+                        <span class="close">&times;</span>
+                        <p style="font-size: 9px; margin-top: -0.37cm; margin-left: -0.4cm;">News Categories</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="buttondiv">
-            <button class="button button1" onclick="openNav()"><img src="resources/menu.png" style="width: 8px; display: block; margin-left: -3.2px;"></button>
-            <button class="button button2" onclick="closeNav()"><img src="resources/back.png" style="width: 8px; display: block; margin-left: -4px;"></button>
+            <button class="button button1" onclick="menuButton()"><img src="resources/menu.png" style="width: 0.21cm; display: block; margin-left: -0.085cm;"></button>
+            <button class="button button2" onclick="backButton()"><img src="resources/back.png" style="width: 0.21cm; display: block; margin-left: -0.1cm;"></button>
         </div>
         <div id="menu" class="sidebar">
-            <a href="#" style="margin-top:8px">CHAT</a>
-            <a href="pages/news/news.html">NEWS</a>
-            <a href="#">POSTS</a>
-            <a href="#">HELP</a>
+            <div class="row">
+                <div class="column">
+                    <a href="#"><img src="resources/messages.png" style="margin-left: 0.13cm; width: 1.058cm; padding: 0px;"></a>
+                    <p style="margin-top: 0px; margin-left: 0.25cm;">CHAT</p>
+                </div>
+                <div class="column">
+                    <img src="resources/news.png" onclick="openNews()" style="margin-left: 0.39cm; width: 0.79cm; cursor: pointer; padding: 0px;">
+                    <p style="margin-top: 0.26cm; margin-left: 0.39cm;">NEWS</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column" style="margin-top : 0px">
+                    <a href="#"><img src="resources/post.png" style="margin-left: 0.29cm; width: 0.79cm; padding: 0px;"></a>
+                    <p style="margin-top: 0.13cm; margin-left: 0.31cm;">POST</p>
+                </div>
+                <div class="column" style="margin-top : 0px">
+                    <a href="#"><img src="resources/help.png" style="margin-left: 0.40cm; width: 0.79cm; padding: 0px;"></a>
+                    <p style="margin-top: 0.13cm; margin-left: 0.47cm;">HELP</p>
+                </div>
+            </div>
         </div>
     </div>
 
 <script src="js/clock.js"></script>
 <script src="js/sidebar.js"></script>
+<script src="js/TouchScroll.js"></script>
+<script src="js/newspopup.js"></script>
 <script>
+document.getElementsByClassName("container")[0].draggable = false;
+
+var currentpage = "home";
 
 </script>
 

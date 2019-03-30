@@ -1,8 +1,19 @@
-.news {
-    margin-top: -15px;
-    overflow: hidden;
-    height: 107px;
+.newsscreen {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 2.985cm;
+    background-color: white;
     z-index: 3;
+    border-bottom-left-radius: 17px;
+    border-bottom-right-radius: 17px;
+    margin-left: 0.01cm;
+}
+
+.news {
+    margin-top: 0px;
+    overflow: hidden;
+    height: 136px;
     position: absolute;
     border-bottom-left-radius: 17px;
     border-bottom-right-radius: 17px;
@@ -31,6 +42,6 @@
 .news hr{
     width: 110px; 
     border: 0; 
-    height: 0.7px; 
+    height: 1px; 
     background: rgb(161, 161, 161);
 }
