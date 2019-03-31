@@ -11,6 +11,7 @@
 }
 
 .news {
+    display: block;
     margin-top: 0px;
     overflow: hidden;
     height: 136px;
@@ -19,7 +20,7 @@
     border-bottom-right-radius: 17px;
 }
 
-.news, .frame {
+.news, .frame, .newsStory {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -44,4 +45,18 @@
     border: 0; 
     height: 1px; 
     background: rgb(161, 161, 161);
+}
+
+.newsStory {
+    display: none;
+    margin-top: 0px;
+    overflow: hidden;
+    height: 136px;
+    position: absolute;
+    border-bottom-left-radius: 17px;
+    border-bottom-right-radius: 17px;
+}
+
+.newsStory p {
+    font-size: 8px;
 }

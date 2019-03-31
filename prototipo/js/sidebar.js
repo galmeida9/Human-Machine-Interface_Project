@@ -26,12 +26,28 @@ function backButton() {
           closeNav();
           currentpage = "home";
       }
+      else if (currentpage == "newsStories") {
+        document.getElementsByClassName("newsStory")[0].style.display = "none";
+        document.getElementsByClassName("news")[0].style.display = "block";
+        currentpage = "news";
+        el2.scrollLeft = 0;
+        el2.scrollTop = 0;
+        el.scrollLeft = 0;
+        el.scrollTop = 0;
+    }
+    else if (currentpage == "newspopup") {
+        document.getElementById("filterpopup").style.display = "none";
+        document.getElementsByClassName("news")[0].style.display = "block";
+        currentpage = "news";
+    }
   }
 }
 
 function openNews() {
     document.getElementsByClassName("newsscreen")[0].style.display = "block";
     document.getElementsByClassName("mainscreen")[0].style.display = "none";
+    document.getElementsByClassName("newsStory")[0].style.display = "none";
+    document.getElementsByClassName("news")[0].style.display = "block";
     closeNav();
     currentpage = "news";
 }

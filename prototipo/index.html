@@ -10,9 +10,7 @@
 <link rel="stylesheet" type="text/css" href="css/topbar.css">
 <link rel="stylesheet" type="text/css" href="css/body.css">
 
-<style>
-
-</style>
+<style></style>
 
 </head>
 
@@ -40,20 +38,41 @@
                 <div id="newstitles" class="news">
                     <h4 style="margin-top: 5px; margin-left: 10%">NEWS  <a href="#"><img src="resources/filter.png" id="filter" style="width: 0.35cm"></a></h4>
                     <hr style="margin-top: -10px;">
-                    <p><a href="#">Fuzileiros resgatam português dado como desaparecido em Moçambique</a></p>
-                    <hr>
-                    <p><a href="#">“Temos até ao final de 2020 para tratar disto com calma”, garante MNE sobre Brexit</a></p>
-                    <hr>
-                    <p><a href="#">Governo declara situação de alerta entre 27 e 31 de março devido ao risco de incêndio elevado</a></p>
-                    <hr>
-                    <p><a href="#">Governo quer criar creches e jardins de infância em quartéis militares</a></p>
-                    <hr>
+                    <div class="local">
+                        <p><a onclick="showNews('mocambique')" style="cursor: pointer;">501 mortos em Moçambique</a></p>
+                        <hr>
+                    </div>
+                    <div class="sport">
+                        <p><a onclick="showNews('futebol')" style="cursor: pointer;">"Felizmente a Federação Portuguesa de Futebol teve o bom-senso que a RTP não teve"</a></p>
+                        <hr>
+                    </div>
+                    <div class="local">
+                            <p><a onclick="showNews('lanche')" style="cursor: pointer;">Lanches das crianças do pré-escolar vão ter fruta e legumes</a></p>
+                            <hr>
+                    </div>
+                    <div class="politics">
+                        <p><a onclick="showNews('brexit')" style="cursor: pointer;">Brexit: o que os 400 mil portugueses têm de fazer para permanecer no Reino Unido?</a></p>
+                        <hr>
+                    </div>
+                    <div class="science">
+                        <p><a onclick="showNews('bebe')" style="cursor: pointer;">Como se mantém vivo um bebé na barriga de uma mulher em morte cerebral</a></p>
+                        <hr>
+                    </div>
                 </div>
                 <div id="filterpopup" class="popup">
                     <div class="popupcontent">
                         <span class="close">&times;</span>
                         <p style="font-size: 9px; margin-top: -0.37cm; margin-left: -0.4cm;">News Categories</p>
+                        <p><a onclick="showAll()" style="cursor: pointer;">All</a></p>
+                        <p><a onclick="showLocal()" style="cursor: pointer;">Local</a></p>
+                        <p><a onclick="showPolitics()" style="cursor: pointer;">Politics</a></p>
+                        <p><a onclick="showScience()" style="cursor: pointer;">Science</a></p>
+                        <p><a onclick="showSports()" style="cursor: pointer;">Sports</a></p>
                     </div>
+                </div>
+                <div id="newsStory" class="newsStory">
+                    <h5 id="title" class="newsPart"></h5>
+                    <p id="text" class="newsPart"></p>
                 </div>
             </div>
         </div>
@@ -89,8 +108,9 @@
 <script src="js/sidebar.js"></script>
 <script src="js/TouchScroll.js"></script>
 <script src="js/newspopup.js"></script>
+<script src="js/news.js"></script>
 <script>
-document.getElementsByClassName("container")[0].draggable = false;
+document.body.draggable = false;
 
 var currentpage = "home";
 
