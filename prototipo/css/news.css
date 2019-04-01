@@ -1,7 +1,7 @@
 .newsscreen {
     display: none;
-    position: absolute;
-    height: 100%;
+    position: fixed;
+    height: 4cm;
     width: 2.985cm;
     background-color: white;
     z-index: 3;
