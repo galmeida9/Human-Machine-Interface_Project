@@ -2,6 +2,10 @@
     height: 15px;
     overflow: hidden;
     background-color: black;
+    position: fixed;
+    width: 3cm;
+    z-index: 4;
+
 }
 
 .topbar p{

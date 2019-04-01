@@ -8,12 +8,12 @@
     border-bottom-left-radius: 17px;
     border-bottom-right-radius: 17px;
     margin-left: 0.01cm;
+    overflow: hidden;
 }
 
 .news {
     display: block;
-    margin-top: 0px;
-    overflow: hidden;
+    margin-top: 0.4cm;
     height: 136px;
     position: absolute;
     border-bottom-left-radius: 17px;
@@ -50,7 +50,6 @@
 .newsStory {
     display: none;
     margin-top: 0px;
-    overflow: hidden;
     height: 136px;
     position: absolute;
     border-bottom-left-radius: 17px;

@@ -1,14 +1,9 @@
 var el;
-var el2;
 var drag = false;
 var startx = 0;
 var starty = 0;
 var diffx = 0;
 var diffy = 0;
-var startx2 = 0;
-var starty2 = 0;
-var diffx2 = 0;
-var diffy2 = 0;
 
 if ("newstitles") {
     el = document.getElementById("newstitles");
@@ -17,16 +12,6 @@ if ("newstitles") {
         el = document.documentElement;
     } else {
         el = document.body;
-    }
-}
-
-if ("newsStory") {
-    el2 = document.getElementById("newsStory");
-} else {
-    if (isIE || isFirefox) {
-        el2 = document.documentElement;
-    } else {
-        el2 = document.body;
     }
 }
 
@@ -57,12 +42,8 @@ function onMouseDown(e) {
     }
     startx = e.clientX + el.scrollLeft;
     starty = e.clientY + el.scrollTop;
-    startx2 = e.clientX + el2.scrollLeft;
-    starty2 = e.clientY + el2.scrollTop;
     diffx = 0;
     diffy = 0;
-    diffx2 = 0;
-    diffy2 = 0;
     drag = true;
 }
 
@@ -71,12 +52,8 @@ function onMouseMove(e) {
         if (!e) { e = window.event; }
         diffx = (startx - (e.clientX + el.scrollLeft));
         diffy = (starty - (e.clientY + el.scrollTop));
-        diffx2 = (startx2 - (e.clientX + el2.scrollLeft));
-        diffy2 = (starty2 - (e.clientY + el2.scrollTop));
         el.scrollLeft += diffx;
         el.scrollTop += diffy;
-        el2.scrollLeft += diffx2;
-        el2.scrollTop += diffy2;
     }
 }
 
@@ -91,8 +68,6 @@ function onMouseUp(e) {
             } else {
                 el.scrollLeft += diffx * step;
                 el.scrollTop += diffy * step;
-                el2.scrollLeft += diffx2 * step;
-                el2.scrollTop += diffy2 * step;
                 start -= 0.02;
                 window.requestAnimationFrame(animate);
             }

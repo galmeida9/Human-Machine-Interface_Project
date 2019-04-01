@@ -30,8 +30,6 @@ function backButton() {
         document.getElementsByClassName("newsStory")[0].style.display = "none";
         document.getElementsByClassName("news")[0].style.display = "block";
         currentpage = "news";
-        el2.scrollLeft = 0;
-        el2.scrollTop = 0;
         el.scrollLeft = 0;
         el.scrollTop = 0;
     }

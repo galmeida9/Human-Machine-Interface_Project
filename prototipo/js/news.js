@@ -22,8 +22,6 @@ var newsStories = {
 }
 
 function showNews(News) {
-    el2.scrollLeft = 0;
-    el2.scrollTop = 0;
     el.scrollLeft = 0;
     el.scrollTop = 0;
     currentpage = "newsStories";
