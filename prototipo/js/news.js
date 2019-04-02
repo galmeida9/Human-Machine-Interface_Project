@@ -21,6 +21,8 @@ var newsStories = {
     }
 }
 
+document.getElementById("allCheck").style.display = "block";
+
 function showNews(News) {
     el.scrollLeft = 0;
     el.scrollTop = 0;
@@ -33,6 +35,11 @@ function showNews(News) {
 }
 
 function showLocal() {
+    document.getElementById("allCheck").style.display = "none";
+    document.getElementById("localCheck").style.display = "block";
+    document.getElementById("politicsCheck").style.display = "none";
+    document.getElementById("scienceCheck").style.display = "none";
+    document.getElementById("sportsCheck").style.display = "none";
     document.getElementsByClassName("local")[0].style.display = "block";
     document.getElementsByClassName("local")[1].style.display = "block";
     document.getElementsByClassName("politics")[0].style.display = "none";
@@ -42,6 +49,11 @@ function showLocal() {
 }
 
 function showPolitics() {
+    document.getElementById("allCheck").style.display = "none";
+    document.getElementById("localCheck").style.display = "none";
+    document.getElementById("politicsCheck").style.display = "block";
+    document.getElementById("scienceCheck").style.display = "none";
+    document.getElementById("sportsCheck").style.display = "none";
     document.getElementsByClassName("politics")[0].style.display = "block";
     document.getElementsByClassName("local")[0].style.display = "none";
     document.getElementsByClassName("local")[1].style.display = "none";
@@ -51,6 +63,11 @@ function showPolitics() {
 }
 
 function showScience() {
+    document.getElementById("allCheck").style.display = "none";
+    document.getElementById("localCheck").style.display = "none";
+    document.getElementById("politicsCheck").style.display = "none";
+    document.getElementById("scienceCheck").style.display = "block";
+    document.getElementById("sportsCheck").style.display = "none";
     document.getElementsByClassName("science")[0].style.display = "block";
     document.getElementsByClassName("politics")[0].style.display = "none";
     document.getElementsByClassName("sport")[0].style.display = "none";
@@ -60,6 +77,11 @@ function showScience() {
 }
 
 function showSports() {
+    document.getElementById("allCheck").style.display = "none";
+    document.getElementById("sportsCheck").style.display = "block";
+    document.getElementById("localCheck").style.display = "none";
+    document.getElementById("politicsCheck").style.display = "none";
+    document.getElementById("scienceCheck").style.display = "none";
     document.getElementsByClassName("sport")[0].style.display = "block";
     document.getElementsByClassName("politics")[0].style.display = "none";
     document.getElementsByClassName("local")[0].style.display = "none";
@@ -69,6 +91,11 @@ function showSports() {
 }
 
 function showAll() {
+    document.getElementById("allCheck").style.display = "block";
+    document.getElementById("localCheck").style.display = "none";
+    document.getElementById("politicsCheck").style.display = "none";
+    document.getElementById("scienceCheck").style.display = "none";
+    document.getElementById("sportsCheck").style.display = "none";
     document.getElementsByClassName("local")[0].style.display = "block";
     document.getElementsByClassName("local")[1].style.display = "block";
     document.getElementsByClassName("politics")[0].style.display = "block";

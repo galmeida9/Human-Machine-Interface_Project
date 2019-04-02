@@ -29,10 +29,6 @@ addEvent('mousedown', el, onMouseDown);
 addEvent('mousemove', el, onMouseMove);
 addEvent('mouseup', el, onMouseUp);
 
-addEvent('mousedown', el2, onMouseDown);
-addEvent('mousemove', el2, onMouseMove);
-addEvent('mouseup', el2, onMouseUp);
-
 function onMouseDown(e) {
     if (!e) { e = window.event; }
     if (e.target && e.target.nodeName === 'IMG') {

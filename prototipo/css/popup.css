@@ -50,3 +50,11 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.popupcontent img {
+    width: 0.2cm; 
+    margin-left: 1.5cm;
+    margin-top: -0.25cm; 
+    position: absolute; 
+    display: none;
+}
