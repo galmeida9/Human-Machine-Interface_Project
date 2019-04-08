@@ -1,13 +1,13 @@
 .newsscreen {
     display: none;
     position: fixed;
-    height: 3.98cm;
-    width: 2.972cm;
+    height: 4cm;
+    width: 2.985cm;
     background-color: white;
     z-index: 3;
     border-bottom-left-radius: 17px;
     border-bottom-right-radius: 17px;
-    margin-left: 0.015cm;
+    margin-left: 0.01cm;
     overflow: hidden;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .news p {
-    font-size: 8px;
+    font-size: 6px;
     line-height: 1.1;
 }
 
@@ -43,7 +43,7 @@
 .news hr{
     width: 110px; 
     border: 0; 
-    height: 0.02cm; 
+    height: 1px; 
     background: rgb(161, 161, 161);
 }
 
