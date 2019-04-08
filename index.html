@@ -2,114 +2,109 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>iGo</title>
-<link rel="stylesheet" type="text/css" href="css/sidebar.css">
-<link rel="stylesheet" type="text/css" href="css/buttons.css">
-<link rel="stylesheet" type="text/css" href="css/news.css">
-<link rel="stylesheet" type="text/css" href="css/popup.css">
-<link rel="stylesheet" type="text/css" href="css/topbar.css">
-<link rel="stylesheet" type="text/css" href="css/body.css">
+<title>IPM</title>
+<!--<link rel="stylesheet" href="style.css">-->
+<link rel="stylesheet" href="style.css">
 
-<style></style>
+<style type="text/css">
 
-</head>
+</style>
 
-<body>
-    <h1><center>iGo protótipo</center></h1>
-    <div class="container" align="center">
-        <div id="iGo" class="watch">
-            <img class="frame" src="resources/frame.png">
-            <div class="mainscreen">
-               	<p class="hour" style="font-size: 65px; font-weight: bold; color: #fff; text-shadow: 0px 0px 8px #000; margin-top: 0%"></p>	 
-		 	    <p class="minute" style="font-size: 65px; font-weight: bold; color: white; text-shadow: 0px 0px 8px #000; margin-top: -55.5%;"></p>	
-                <b><p id="Date"></p></b>
-            </div>
-            <div id="newstitles" class="newsscreen">
-                <div class="topbar">
-                    <p><span class="hour"></span>:<span class="minute"></span></p>
-                    <p class = "battery">50%</p>
-                    <img>
-                </div>
-                <div class="news">
-                    <h4 style="margin-top: 5px; margin-left: 10%">NEWS  <a href="#"><img src="resources/filter.png" id="filter" style="width: 0.35cm"></a></h4>
-                    <hr style="margin-top: -10px;">
-                    <div class="local">
-                        <p><a onclick="showNews('mocambique')" style="cursor: pointer;">501 mortos em Moçambique</a></p>
-                        <hr>
-                    </div>
-                    <div class="sport">
-                        <p><a onclick="showNews('futebol')" style="cursor: pointer;">"Felizmente a Federação Portuguesa de Futebol teve o bom-senso que a RTP não teve"</a></p>
-                        <hr>
-                    </div>
-                    <div class="local">
-                            <p><a onclick="showNews('lanche')" style="cursor: pointer;">Lanches das crianças do pré-escolar vão ter fruta e legumes</a></p>
-                            <hr>
-                    </div>
-                    <div class="politics">
-                        <p><a onclick="showNews('brexit')" style="cursor: pointer;">Brexit: o que os 400 mil portugueses têm de fazer para permanecer no Reino Unido?</a></p>
-                        <hr>
-                    </div>
-                    <div class="science">
-                        <p><a onclick="showNews('bebe')" style="cursor: pointer;">Como se mantém vivo um bebé na barriga de uma mulher em morte cerebral</a></p>
-                        <hr>
-                    </div>
-                </div>
-                <div id="newsStory" class="newsStory">
-                    <h5 id="title" class="newsPart"></h5>
-                    <p id="text" class="newsPart"></p>
-                </div>
-            </div>
-            <div id="filterpopup" class="popup">
-                <div class="popupcontent">
-                    <span class="close">&times;</span>
-                    <p style="font-size: 9px; margin-top: -0.37cm; margin-left: -0.4cm;">News Categories</p>
-                    <p><a onclick="showAll()" style="cursor: pointer;">All</a><img src="resources/check.png" id="allCheck"></p>
-                    <p><a onclick="showLocal()" style="cursor: pointer;">Local</a><img src="resources/check.png" id="localCheck"></p>
-                    <p><a onclick="showPolitics()" style="cursor: pointer;">Politics</a><img src="resources/check.png" id="politicsCheck"></p>
-                    <p><a onclick="showScience()" style="cursor: pointer;">Science</a><img src="resources/check.png" id="scienceCheck"></p>
-                    <p><a onclick="showSports()" style="cursor: pointer;">Sports</a><img src="resources/check.png" id="sportsCheck"></p>
-                </div>
-            </div>
-        </div>
-        <div class="buttondiv">
-            <button class="button button1" onclick="menuButton()"><img src="resources/menu.png" style="width: 0.21cm; display: block; margin-left: -0.085cm;"></button>
-            <button class="button button2" onclick="backButton()"><img src="resources/back.png" style="width: 0.21cm; display: block; margin-left: -0.1cm;"></button>
-        </div>
-        <div id="menu" class="sidebar">
-            <div class="row">
-                <div class="column">
-                    <a href="#"><img src="resources/messages.png" style="margin-left: 0.13cm; width: 1.058cm; padding: 0px;"></a>
-                    <p style="margin-top: 0px; margin-left: 0.25cm;">CHAT</p>
-                </div>
-                <div class="column">
-                    <img src="resources/news.png" onclick="openNews()" style="margin-left: 0.39cm; width: 0.79cm; cursor: pointer; padding: 0px;">
-                    <p style="margin-top: 0.26cm; margin-left: 0.39cm;">NEWS</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column" style="margin-top : 0px">
-                    <a href="#"><img src="resources/post.png" style="margin-left: 0.29cm; width: 0.79cm; padding: 0px;"></a>
-                    <p style="margin-top: 0.13cm; margin-left: 0.31cm;">POST</p>
-                </div>
-                <div class="column" style="margin-top : 0px">
-                    <a href="#"><img src="resources/help.png" style="margin-left: 0.40cm; width: 0.79cm; padding: 0px;"></a>
-                    <p style="margin-top: 0.13cm; margin-left: 0.47cm;">HELP</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-<script src="js/clock.js"></script>
-<script src="js/sidebar.js"></script>
-<script src="js/TouchScroll.js"></script>
-<script src="js/newspopup.js"></script>
-<script src="js/news.js"></script>
-<script>
-document.body.draggable = false;
-
-var currentpage = "home";
+<script type="text/javascript">
+  function toggleVisible(id) {    
+  }
 
 </script>
+</head>
+
+
+<body style="font-family:calibri; text-align: center;">
+
+<h1 style="color: rgb(0, 134, 191); font-family: OCR A Std, monospace;">Interfaces Pessoa M&aacute;quina 2018-19</h1>
+<h2>Grupo 41A - Turno IPM20111326L08</h2>
+
+
+<table align=center>
+  <tr>
+    <td width="33%">Gabriel Almeida</td>
+    <td width="33%">Diogo Ravasco</td> 
+    <td width="33%">Roman Babynyuk</td>
+    </tr>
+    <tr>
+    <td>ist189446</td>
+    <td>ist189434</td> 
+    <td>ist189536</td>
+  </tr>
+  <tr>
+    <td><img id="rgb" onclick="changeImage('rgb', 'resources/gabriel.png', 'resources/student_3.png')" src = "resources/student_3.png" width="96"></td>
+    <td><img id="cmy" onclick="changeImage('cmy', 'resources/diogo.png', 'resources/student_2.png')" src = "resources/student_2.png" width="100"></td> 
+    <td><img id="hsv" onclick="changeImage('hsv', 'resources/roman.png', 'resources/student_3.png')" src = "resources/student_3.png" width="96"></td>
+  </tr>
+</table>
+
+<script>
+function changeImage(id, image, standardImg) {
+    var img = document.getElementById(id);
+    if (img.src.indexOf(image) != -1)    
+        img.src = standardImg;
+    else
+        img.src = image;
+}
+</script>
+
+<div id="links" style="text-align: left; padding-left: 100px;">
+<p>
+
+<div id="at" class="section">
+<h2 class="section">Análise de Tarefas</h2>
+<div id="at_inner" class="inner_section">
+<a href="resources/questionario_AUT.pdf">Question&aacute;rio para an&aacute;lise de tarefas</a> <br />
+<a href="resources/questionario_AUT_melhorado.pdf">Question&aacute;rio para an&aacute;lise de tarefas (melhorado)</a> <br />
+<a href="resources/relatorio_AUT.pdf">An&aacute;lise de tarefas + Funcionalidades</a> <br />
+<a href="resources/relatorio_AUT_melhorado.pdf">An&aacute;lise de tarefas + Funcionalidades (melhorados)</a> <br />
+</div>
+</div>
+
+<div id="mc" class="section">
+<h2 class="section">Modelo Conceptual</h2>
+<div id="mc_inner" class="inner_section">
+<a href="resources/modelo_conceptual.zip">Modelo Conceptual</a> <br />
+<a href="mod-conceptual2.html">Modelo Conceptual (melhorado)</a> <br />
+</div>
+</div>
+
+<div id="proto" class="section">
+<h2 class="section">Protótipos</h2>
+<div id="proto_inner" class="inner_section">
+<a href="pbf1.html">PBF</a> <br />
+<a href="pbf2.html">PBF (melhorado)</a> <br />
+<a href="https://web.tecnico.ulisboa.pt/~ist189446/IPM/prototipo/">Primeiro prot&oacute;tipo funcional</a> <br />
+<a href="protFuncional1-completo.html">Primeiro prot&oacute;tipo funcional completo</a> <br />
+<a href="protFuncional2-beta.html">Segundo prot&oacute;tipo funcional</a> <br />
+<a href="protFuncional2-completo.html">Segundo prot&oacute;tipo funcional completo</a><br />
+<a href="protFinal-beta.html">Prot&oacute;tipo Final</a> <br />
+<a href="protFinal-completo.html">Prot&oacute;tipo Final completo</a><br />
+</div>
+</div>
+
+<div id="au" class="section">
+<h2 class="section">Avaliação com Utilizadores</h2>
+<div id="au_inner" class="inner_section">
+<a href="tarefas-criterios1.html">Tarefas e Crit&eacute;rios de usabilidade</a> <br />
+<a href="tarefas-criterios2.html">Tarefas e Crit&eacute;rios de usabilidade (melhorado)</a> <br />
+<a href="relatorioTestes1.html">Relat&oacute;rio da avalia&ccedil;&atilde;o com utilizadores</a> <br />
+<a href="relatorioTestes2.html">Relat&oacute;rio da avalia&ccedil;&atilde;o com utilizadores (melhorado)</a> <br />
+<a href="manual.html">Manual do Utilizador</a> <br />
+</p>
+</div>
+</div>
+
+</div>
+<script>
+
+</script>
+
 
 </body>
 </html>
