@@ -24,14 +24,17 @@ var newsStories = {
 document.getElementById("allCheck").style.display = "block";
 
 function showNews(News) {
-    el.scrollLeft = 0;
-    el.scrollTop = 0;
-    currentpage = "newsStories";
-    document.getElementsByClassName("news")[0].style.display = "none";
-    document.getElementsByClassName("newsStory")[0].style.display = "block";
-    document.querySelectorAll(".newsPart").forEach(function(element) {
-        element.innerHTML = newsStories[News][element.id];
-    });
+    console.log(mouseMovement);
+    if (mouseMovement < 3 && mouseMovement > -3) {
+        el.scrollLeft = 0;
+        el.scrollTop = 0;
+        currentpage = "newsStories";
+        document.getElementsByClassName("news")[0].style.display = "none";
+        document.getElementsByClassName("newsStory")[0].style.display = "block";
+        document.querySelectorAll(".newsPart").forEach(function(element) {
+            element.innerHTML = newsStories[News][element.id];
+        });
+    }
 }
 
 function showLocal() {

@@ -21,12 +21,12 @@
         <div id="iGo" class="watch">
             <img class="frame" src="resources/frame.png">
             <div class="mainscreen">
-                <p class="hour" style="font-size: 35px; margin-top: 8.5%;"></p>
-                <p class="minute" style="font-size: 35px; margin-top: -30.5%;"></p>
-                <b><p id="Date" style="margin-top: -0.66cm;"></p></b>
+                <p class="hour" style="font-size: 35px; margin-top: 8.5%;color:#ff8c36"></p>
+                <p class="minute" style="font-size: 35px; margin-top: -30.5%;color:#fc6932;"></p>
+                <b><p id="Date" style="margin-top: -0.66cm;color:white"></p></b>
                 <b><p style="margin-top: -13%;">
                     <img src="resources/sunny.png" style="width: 20px; float: left; margin-left: 0.66cm;"> 
-                    <span style= "float: right; margin-right: 0.66cm">25°C</span>
+                    <span style= "float: right; margin-right: 0.66cm;color:white">25°C</span>
                 </p></b>
             </div>
             <div id="newstitles" class="newsscreen">
@@ -61,13 +61,13 @@
                 </div>
                 <div id="newsStory" class="newsStory">
                     <h5 id="title" class="newsPart"></h5>
-                    <p id="text" class="newsPart"></p>
+                    <p id="text" class="newsPart" style="font-size: 9px;"></p>
                 </div>
             </div>
             <div id="filterpopup" class="popup">
                 <div class="popupcontent">
                     <span class="close">&times;</span>
-                    <p style="font-size: 9px; margin-top: -0.37cm; margin-left: -0.4cm;">News Categories</p>
+                    <b><p style="font-size: 9px; margin-top: -0.37cm;">News Categories</p></b>
                     <p><a onclick="showAll()" style="cursor: pointer;">All</a><img src="resources/check.png" id="allCheck"></p>
                     <p><a onclick="showLocal()" style="cursor: pointer;">Local</a><img src="resources/check.png" id="localCheck"></p>
                     <p><a onclick="showPolitics()" style="cursor: pointer;">Politics</a><img src="resources/check.png" id="politicsCheck"></p>
@@ -84,7 +84,8 @@
             <div class="row">
                 <div class="column">
                     <a href="#"><img src="resources/messages.png" style="margin-left: 0.13cm; width: 1.058cm; padding: 0px;"></a>
-                    <p style="margin-top: 0px; margin-left: 0.25cm;">CHAT</p>
+                    <p style="margin-top: 0px; margin-left: 0.25cm;
+                        ">CHAT</p>
                 </div>
                 <div class="column">
                     <img src="resources/news.png" onclick="openNews()" style="margin-left: 0.39cm; width: 0.79cm; cursor: pointer; padding: 0px;">

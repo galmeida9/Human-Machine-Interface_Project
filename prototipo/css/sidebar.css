@@ -1,12 +1,12 @@
 .sidebar {
     top: 0;
     position: absolute;
-    height: 4cm;
+    height: 3.99cm;
     width: 0;
-    background-color: #0000cc;
+    background-color: #185ebd;
     overflow-x: hidden;
     transition: 0.4s;
-    margin-top: 2.11cm;
+    margin-top: 2.1cm;
     margin-left: 40px;
     border-radius: 17px;
     overflow: hidden;

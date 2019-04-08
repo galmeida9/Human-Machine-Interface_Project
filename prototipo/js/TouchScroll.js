@@ -4,6 +4,7 @@ var startx = 0;
 var starty = 0;
 var diffx = 0;
 var diffy = 0;
+var mouseMovement = 0;
 
 if ("newstitles") {
     el = document.getElementById("newstitles");
@@ -41,6 +42,7 @@ function onMouseDown(e) {
     diffx = 0;
     diffy = 0;
     drag = true;
+    mouseMovement = 0;
 }
 
 function onMouseMove(e) {
@@ -50,6 +52,7 @@ function onMouseMove(e) {
         diffy = (starty - (e.clientY + el.scrollTop));
         el.scrollLeft += diffx;
         el.scrollTop += diffy;
+        mouseMovement += diffy;
     }
 }
 
