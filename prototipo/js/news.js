@@ -22,6 +22,18 @@ var newsStories = {
 }
 
 document.getElementById("allCheck").style.display = "block";
+var newsCheck = ["allCheck", "localCheck", "politicsCheck", "scienceCheck", "sportsCheck"];
+var newsCategories = ["local", "politics", "sport", "science"];
+weather();
+
+
+function weather() {
+    var weather = Math.round(Math.random() * 35);
+    weather += "°C";
+    document.querySelectorAll(".weather").forEach(function(element) {
+        element.innerHTML = weather;
+    });
+}
 
 function showNews(News) {
     console.log(mouseMovement);
@@ -38,71 +50,65 @@ function showNews(News) {
 }
 
 function showLocal() {
-    document.getElementById("allCheck").style.display = "none";
-    document.getElementById("localCheck").style.display = "block";
-    document.getElementById("politicsCheck").style.display = "none";
-    document.getElementById("scienceCheck").style.display = "none";
-    document.getElementById("sportsCheck").style.display = "none";
-    document.getElementsByClassName("local")[0].style.display = "block";
-    document.getElementsByClassName("local")[1].style.display = "block";
-    document.getElementsByClassName("politics")[0].style.display = "none";
-    document.getElementsByClassName("sport")[0].style.display = "none";
-    document.getElementsByClassName("science")[0].style.display = "none";
+    var i;
+    for (i = 0; i < newsCheck.length; i++) {
+        if (newsCheck[i] == "localCheck") document.getElementById(newsCheck[i]).style.display = "block";
+        else document.getElementById(newsCheck[i]).style.display = "none";
+    }
+    for (i = 0; i < newsCategories.length; i++) {
+        if (newsCategories[i] == "local") document.getElementById(newsCategories[i]).style.display = "block";
+        else document.getElementById(newsCategories[i]).style.display = "none";
+    }
     document.getElementById("filterpopup").style.display = "none";
 }
 
 function showPolitics() {
-    document.getElementById("allCheck").style.display = "none";
-    document.getElementById("localCheck").style.display = "none";
-    document.getElementById("politicsCheck").style.display = "block";
-    document.getElementById("scienceCheck").style.display = "none";
-    document.getElementById("sportsCheck").style.display = "none";
-    document.getElementsByClassName("politics")[0].style.display = "block";
-    document.getElementsByClassName("local")[0].style.display = "none";
-    document.getElementsByClassName("local")[1].style.display = "none";
-    document.getElementsByClassName("sport")[0].style.display = "none";
-    document.getElementsByClassName("science")[0].style.display = "none";
+    var i;
+    for (i = 0; i < newsCheck.length; i++) {
+        if (newsCheck[i] == "politicsCheck") document.getElementById(newsCheck[i]).style.display = "block";
+        else document.getElementById(newsCheck[i]).style.display = "none";
+    }
+    for (i = 0; i < newsCategories.length; i++) {
+        if (newsCategories[i] == "politics") document.getElementById(newsCategories[i]).style.display = "block";
+        else document.getElementById(newsCategories[i]).style.display = "none";
+    }
     document.getElementById("filterpopup").style.display = "none";
 }
 
 function showScience() {
-    document.getElementById("allCheck").style.display = "none";
-    document.getElementById("localCheck").style.display = "none";
-    document.getElementById("politicsCheck").style.display = "none";
-    document.getElementById("scienceCheck").style.display = "block";
-    document.getElementById("sportsCheck").style.display = "none";
-    document.getElementsByClassName("science")[0].style.display = "block";
-    document.getElementsByClassName("politics")[0].style.display = "none";
-    document.getElementsByClassName("sport")[0].style.display = "none";
-    document.getElementsByClassName("local")[0].style.display = "none";
-    document.getElementsByClassName("local")[1].style.display = "none";
+    var i;
+    for (i = 0; i < newsCheck.length; i++) {
+        if (newsCheck[i] == "scienceCheck") document.getElementById(newsCheck[i]).style.display = "block";
+        else document.getElementById(newsCheck[i]).style.display = "none";
+    }
+    for (i = 0; i < newsCategories.length; i++) {
+        if (newsCategories[i] == "science") document.getElementById(newsCategories[i]).style.display = "block";
+        else document.getElementById(newsCategories[i]).style.display = "none";
+    }
     document.getElementById("filterpopup").style.display = "none";
 }
 
 function showSports() {
-    document.getElementById("allCheck").style.display = "none";
-    document.getElementById("sportsCheck").style.display = "block";
-    document.getElementById("localCheck").style.display = "none";
-    document.getElementById("politicsCheck").style.display = "none";
-    document.getElementById("scienceCheck").style.display = "none";
-    document.getElementsByClassName("sport")[0].style.display = "block";
-    document.getElementsByClassName("politics")[0].style.display = "none";
-    document.getElementsByClassName("local")[0].style.display = "none";
-    document.getElementsByClassName("local")[1].style.display = "none";
-    document.getElementsByClassName("science")[0].style.display = "none";
+    var i;
+    for (i = 0; i < newsCheck.length; i++) {
+        if (newsCheck[i] == "sportsCheck") document.getElementById(newsCheck[i]).style.display = "block";
+        else document.getElementById(newsCheck[i]).style.display = "none";
+    }
+    for (i = 0; i < newsCategories.length; i++) {
+        if (newsCategories[i] == "sports") document.getElementById(newsCategories[i]).style.display = "block";
+        else document.getElementById(newsCategories[i]).style.display = "none";
+    }
     document.getElementById("filterpopup").style.display = "none";
 }
 
 function showAll() {
-    document.getElementById("allCheck").style.display = "block";
-    document.getElementById("localCheck").style.display = "none";
-    document.getElementById("politicsCheck").style.display = "none";
-    document.getElementById("scienceCheck").style.display = "none";
-    document.getElementById("sportsCheck").style.display = "none";
-    document.getElementsByClassName("local")[0].style.display = "block";
-    document.getElementsByClassName("local")[1].style.display = "block";
-    document.getElementsByClassName("politics")[0].style.display = "block";
-    document.getElementsByClassName("sport")[0].style.display = "block";
-    document.getElementsByClassName("science")[0].style.display = "block";
+    var i;
+    for (i = 0; i < newsCheck.length; i++) {
+        if (newsCheck[i] == "allCheck") document.getElementById(newsCheck[i]).style.display = "block";
+        else document.getElementById(newsCheck[i]).style.display = "none";
+    }
+    for (i = 0; i < newsCategories.length; i++) {
+        document.getElementById(newsCategories[i]).style.display = "block";
+    }
     document.getElementById("filterpopup").style.display = "none";
 }
