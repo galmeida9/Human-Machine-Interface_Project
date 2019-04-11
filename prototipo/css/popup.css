@@ -1,7 +1,7 @@
 .popup {
     display: none; 
     position: absolute; 
-    z-index: 10; 
+    z-index: 5; 
     padding-top: 0.5cm;
     padding-right: 0.2cm; 
     padding-bottom: 0cm;
