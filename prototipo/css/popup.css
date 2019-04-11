@@ -25,6 +25,13 @@
     height: 2.2cm;
     margin-left: 0.2cm;
     border-radius: 0.45cm;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+    -webkit-user-drag: none;
 }
 
 .popupcontent p {
