@@ -2,8 +2,8 @@
     background-color: rgb(138, 136, 136);
 	color: white;
 	text-align: center;
-    width: 10px;
-    height: 40px;
+    width: 7.5pt;
+    height: 30pt;
     border: none;
     outline-width: 0;
 }
@@ -17,14 +17,14 @@
 }
 
 .button1 {
-    margin-top: 20px; 
-    margin-left: 13px; 
+    margin-top: 15pt; 
+    margin-left: 9.75pt; 
     float: left; 
-    border-radius: 10px;
+    border-radius: 7.5pt;
 }
 
 .button2 {
-    margin-top: 95px; 
-    margin-left: -42px; 
-    border-radius: 10px;
+    margin-top: 71.25pt; 
+    margin-left: -31.5pt; 
+    border-radius: 7.5pt;
 }

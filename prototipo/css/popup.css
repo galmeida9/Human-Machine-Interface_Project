@@ -19,8 +19,8 @@
 
 .popupcontent {
     background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
+    padding: 15pt;
+    border: 0.75pt solid #888;
     width: 1.5cm;
     height: 2.2cm;
     margin-left: 0.2cm;
@@ -35,7 +35,7 @@
 }
 
 .popupcontent p {
-    font-size: 8px;
+    font-size: 6pt;
 }
 
 .popupcontent a{
@@ -46,7 +46,7 @@
 .close {
     color: #aaaaaa;
     float: right;
-    font-size: 15px;
+    font-size: 11.25pt;
     font-weight: bold;
     margin-right: -0.35cm;
     margin-top: -0.45cm;

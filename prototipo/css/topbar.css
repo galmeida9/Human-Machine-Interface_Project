@@ -1,5 +1,5 @@
 .topbar {
-    height: 15px;
+    height: 11.25pt;
     overflow: hidden;
     background-color: black;
     position: fixed;
@@ -12,9 +12,9 @@
     float: left;
     text-align: center;
     text-decoration: none;
-    font-size: 10px;
-    margin-top: 0px;
-    padding: 4px 5px;
+    font-size: 7.5pt;
+    margin-top: 0pt;
+    padding: 3pt 3.75pt;
     color: white;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -26,12 +26,12 @@
 }
 
 .battery {
-    margin-left: 28px;
+    margin-left: 21pt;
 }
 
 .topbar img {
-    width: 15px; 
-    margin-top: 1.5px; 
-    margin-left: -6px;
+    width: 11.25pt; 
+    margin-top: 1.125pt; 
+    margin-left: -4.5pt;
     content:url("../resources/battery.png");
 }

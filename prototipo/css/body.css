@@ -40,10 +40,10 @@ body {
 
 .frame {
     z-index: 2; 
-    width: 3.52cm;
+    width: 3.51cm;
     height: 4.41cm; 
     position: absolute;
-    margin-left: -60.7%;
+    margin-left: -60.6%;
     margin-top: -7.5%;
 }
 
@@ -53,8 +53,8 @@ body {
 
 #Date{
     font-family: 'digital-7'; 
-    font-size: 13px; 
+    font-size: 9.75pt; 
     margin-top: -3.9cm; 
     font-weight: lighter; 
-    text-shadow: 0px 0px 4px white;
+    text-shadow: 0pt 0pt 3pt white;
 }

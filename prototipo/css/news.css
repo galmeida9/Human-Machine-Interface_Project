@@ -5,8 +5,8 @@
     width: 2.988cm;
     background-color: white;
     z-index: 3;
-    border-bottom-left-radius: 17px;
-    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 12.75pt;
+    border-bottom-right-radius: 12.75pt;
     margin-left: 0.008cm;
     overflow: hidden;
 }
@@ -14,10 +14,10 @@
 .news {
     display: block;
     margin-top: 0.4cm;
-    height: 136px;
+    height: 102pt;
     position: absolute;
-    border-bottom-left-radius: 17px;
-    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 12.75pt;
+    border-bottom-right-radius: 12.75pt;
 }
 
 .news, .frame, .newsStory {
@@ -31,7 +31,7 @@
 }
 
 .news p {
-    font-size: 6pt;  
+    font-size: 8pt;  
 }
 
 .news a{
@@ -40,21 +40,21 @@
 }
 
 .news hr{
-    width: 110px; 
+    width: 82.5pt; 
     border: 0; 
-    height: 1px; 
+    height: 0.75pt; 
     background: rgb(161, 161, 161);
 }
 
 .newsStory {
     display: none;
-    margin-top: 0px;
-    height: 136px;
+    margin-top: 0pt;
+    height: 102pt;
     position: absolute;
-    border-bottom-left-radius: 17px;
-    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 12.75pt;
+    border-bottom-right-radius: 12.75pt;
 }
 
 .newsStory p {
-    font-size: 8px;
+    font-size: 7pt;
 }
