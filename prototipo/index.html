@@ -32,7 +32,7 @@
                 </div>
                 <div class="news">
                     <h4 style="margin-top: 3.75pt; margin-left: 10%">NEWS  <a href="#"><img src="resources/filter.png" id="filter" style="width: 0.35cm"></a><a onclick="nightmode()" style="cursor: pointer;"><img src="resources/night_mode_off.png" id="nightmodeIcon" style="width: 0.33cm"></a></h4>
-                    <p style="margin-top: -0.5cm"><img src="resources/sunny.png" style="width: 0.3cm; vertical-align: middle; margin-top: -0.09cm;">  <span class="weather" style="font-size: 8pt"></span></p>
+                    <p style="margin-top: -0.5cm"><a onclick="openWeather()" style="cursor: pointer;"><img src="resources/sunny.png" style="width: 0.3cm; vertical-align: middle; margin-top: -0.09cm;">  <span class="weatherToday" style="font-size: 8pt"></span></a></p>
                     <hr>
                     <div id="local">
                         <p><a class="newsTitle" onclick="showNews('mocambique')" style="cursor: pointer;">501 mortos em Moçambique</a></p>
@@ -56,6 +56,48 @@
                 <div id="newsStory" class="newsStory">
                     <h5 id="title" class="newsPart"></h5>
                     <p id="text" class="newsPart"></p>
+                </div>
+                <div class="weatherScreen">
+                    <img src="resources/sunny.png" style="width: 1cm; margin-top: 20%;">
+                    <p class="weatherToday" style="text-align: center; margin-top: -2%;">
+                    <table style="width: 100%">
+                        <tr>
+                            <th><p id="day2" class="day" style="margin-top: -20%"></p></th>
+                            <th><p id="day3" class="day" style="margin-top: -20%"></p></th>
+                        </tr>
+                        <tr>
+                            <th><img src="resources/sunny.png" style="width: 0.5cm;"></th>
+                            <th><img src="resources/sunny.png" style="width: 0.5cm;"></th>
+                        </tr>
+                        <tr>
+                            <th><p id="weatherDay2" class="weather"></p></th>
+                            <th><p id="weatherDay3" class="weather"></p></th>
+                        </tr>
+                        <tr>
+                            <th><p id="day4" class="day"></p></th>
+                            <th><p id="day5" class="day"></p></th>
+                        </tr>
+                        <tr>
+                            <th><img src="resources/sunny.png" style="width: 0.5cm;"></th>
+                            <th><img src="resources/sunny.png" style="width: 0.5cm;"></th>
+                        </tr>
+                        <tr>
+                            <th><p id="weatherDay4" class="weather"></p></th>
+                            <th><p id="weatherDay5" class="weather"></p></th>
+                        </tr>
+                        <tr>
+                            <th><p id="day6" class="day"></p></th>
+                            <th><p id="day7" class="day"></p></th>
+                        </tr>
+                        <tr>
+                            <th><img src="resources/sunny.png" style="width: 0.5cm;"></th>
+                            <th><img src="resources/sunny.png" style="width: 0.5cm;"></th>
+                        </tr>
+                        <tr>
+                            <th><p id="weatherDay6" class="weather"></p></th>
+                            <th><p id="weatherDay7" class="weather"></p></th>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div id="filterpopup" class="popup">

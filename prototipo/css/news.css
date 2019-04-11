@@ -20,7 +20,7 @@
     border-bottom-right-radius: 12.75pt;
 }
 
-.news, .frame, .newsStory {
+.news, .frame, .newsStory, .weatherScreen{
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -56,5 +56,22 @@
 }
 
 .newsStory p {
+    font-size: 7pt;
+}
+
+.weatherScreen {
+    display: none;
+    margin-top: 0pt;
+    height: 102pt;
+    border-bottom-left-radius: 12.75pt;
+    border-bottom-right-radius: 12.75pt;
+}
+
+.weather {
+    font-size: 7pt;
+    margin-top: -4%;
+}
+
+.day {
     font-size: 7pt;
 }

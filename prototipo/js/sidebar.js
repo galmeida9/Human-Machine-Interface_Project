@@ -20,13 +20,13 @@ function menuButton() {
 function backButton() {
   if (isOpen == 1) closeNav();
   else {
-      if (currentpage == "news") {
-          document.getElementsByClassName("newsscreen")[0].style.display = "none";
-          document.getElementsByClassName("mainscreen")[0].style.display = "block";
-          closeNav();
-          currentpage = "home";
-      }
-      else if (currentpage == "newsStories") {
+    if (currentpage == "news") {
+        document.getElementsByClassName("newsscreen")[0].style.display = "none";
+        document.getElementsByClassName("mainscreen")[0].style.display = "block";
+        closeNav();
+        currentpage = "home";
+    }
+    else if (currentpage == "newsStories") {
         document.getElementsByClassName("newsStory")[0].style.display = "none";
         document.getElementsByClassName("news")[0].style.display = "block";
         currentpage = "news";
@@ -38,6 +38,13 @@ function backButton() {
         document.getElementsByClassName("news")[0].style.display = "block";
         currentpage = "news";
     }
+    else if (currentpage == "weather") {
+        document.getElementsByClassName("weatherScreen")[0].style.display = "none";
+        document.getElementsByClassName("news")[0].style.display = "block";
+        currentpage = "news";
+        el.scrollLeft = 0;
+        el.scrollTop = 0;
+    }
   }
 }
 
@@ -46,6 +53,7 @@ function openNews() {
     document.getElementsByClassName("mainscreen")[0].style.display = "none";
     document.getElementsByClassName("newsStory")[0].style.display = "none";
     document.getElementsByClassName("news")[0].style.display = "block";
+    document.getElementsByClassName("weatherScreen")[0].style.display = "none";
     document.getElementById("filterpopup").style.display = "none";
     closeNav();
     currentpage = "news";

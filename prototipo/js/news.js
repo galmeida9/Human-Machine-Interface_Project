@@ -24,6 +24,8 @@ var newsStories = {
 document.getElementById("allCheck").style.display = "block";
 var newsCheck = ["allCheck", "localCheck", "politicsCheck", "scienceCheck", "sportsCheck"];
 var newsCategories = ["local", "politics", "sport", "science"];
+var weatherDays = ["weatherDay2", "weatherDay3", "weatherDay4", "weatherDay5", "weatherDay6", "weatherDay7"];
+var days = ["day2", "day3", "day4", "day5", "day6", "day7"];
 var numberOfNews = 5;
 var numberOfCategories = 5;
 var nightmodeOn = 0;
@@ -31,11 +33,33 @@ weather();
 
 
 function weather() {
+    var i;
+    var date;
     var weather = Math.round(Math.random() * 35);
     weather += "°C";
-    document.querySelectorAll(".weather").forEach(function(element) {
+    document.querySelectorAll(".weatherToday").forEach(function(element) {
         element.innerHTML = weather;
     });
+
+    for(i = 0; i < 6; i++) {
+        weather = Math.round(Math.random() * 35);
+        weather += "°C";
+        document.getElementById(weatherDays[i]).innerHTML = weather;
+
+        date = new Date(new Date().getTime() + (i+1) * 24 * 60 * 60 * 1000);
+        day = date.getDate();
+        month = date.getMonth() + 1;
+        if (day < 10) day = "0" + day;
+        if (month < 10) month = "0" + month;
+
+        document.getElementById(days[i]).innerHTML = day + "/" + month;
+    }
+}
+
+function openWeather() {
+    currentpage = "weather";
+    document.getElementsByClassName("news")[0].style.display = "none";
+    document.getElementsByClassName("weatherScreen")[0].style.display = "block";
 }
 
 function showNews(News) {
@@ -130,9 +154,15 @@ function nightmode() {
         document.getElementById("nightmodeIcon").src = "resources/night_mode_on.png";
         document.getElementsByClassName("popupcontent")[0].style.background = 'black';
         document.getElementsByClassName("popupcontent")[0].style.color = 'white';
+        document.getElementsByClassName("weatherToday")[0].style.color = 'white';
+        document.getElementsByClassName("weatherToday")[1].style.color = 'white';
         for (i = 0; i < numberOfCategories; i++) {
             document.getElementsByClassName("popupCategory")[i].style.color = 'white';
             document.getElementsByClassName("newsCheckmark")[i].src = "resources/check_white.png";
+        }
+        for (i = 0; i < 6; i++) {
+            document.getElementById(weatherDays[i]).style.color = 'white';
+            document.getElementById(days[i]).style.color = 'white';
         }
         nightmodeOn = 1;
     }
@@ -149,9 +179,15 @@ function nightmode() {
         document.getElementById("nightmodeIcon").src = "resources/night_mode_off.png";
         document.getElementsByClassName("popupcontent")[0].style.background = 'white';
         document.getElementsByClassName("popupcontent")[0].style.color = 'black';
+        document.getElementsByClassName("weatherToday")[0].style.color = 'black';
+        document.getElementsByClassName("weatherToday")[1].style.color = 'black';
         for (i = 0; i < numberOfCategories; i++) {
             document.getElementsByClassName("popupCategory")[i].style.color = 'black';
             document.getElementsByClassName("newsCheckmark")[i].src = "resources/check.png";
+        }
+        for (i = 0; i < 6; i++) {
+            document.getElementById(weatherDays[i]).style.color = 'black';
+            document.getElementById(days[i]).style.color = 'black';
         }
         nightmodeOn = 0;
     }
