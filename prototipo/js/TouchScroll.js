@@ -6,8 +6,8 @@ var diffx = 0;
 var diffy = 0;
 var mouseMovement = 0;
 
-if ("newstitles") {
-    el = document.getElementById("newstitles");
+if ("newsscreen") {
+    el = document.getElementById("newsscreen");
 } else {
     if (isIE || isFirefox) {
         el = document.documentElement;

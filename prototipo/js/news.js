@@ -24,6 +24,9 @@ var newsStories = {
 document.getElementById("allCheck").style.display = "block";
 var newsCheck = ["allCheck", "localCheck", "politicsCheck", "scienceCheck", "sportsCheck"];
 var newsCategories = ["local", "politics", "sport", "science"];
+var numberOfNews = 5;
+var numberOfCategories = 5;
+var nightmodeOn = 0;
 weather();
 
 
@@ -110,5 +113,48 @@ function showAll() {
     for (i = 0; i < newsCategories.length; i++) {
         document.getElementById(newsCategories[i]).style.display = "block";
     }
+    document.getElementById("filterpopup").style.display = "none";
+}
+
+function nightmode() {
+    var i;
+    if (nightmodeOn == 0) {
+        document.getElementsByClassName("newsscreen")[0].style.background = 'black';
+        document.getElementsByClassName("news")[0].style.color = 'white';
+        for (i = 0; i < numberOfNews; i++) {
+            document.getElementsByClassName("newsTitle")[i].style.color = 'white';
+        }
+        document.getElementsByClassName("newsPart")[0].style.color = 'white';
+        document.getElementsByClassName("newsPart")[1].style.color = 'white';
+        document.getElementById("filter").src = "resources/filter_white.png";
+        document.getElementById("nightmodeIcon").src = "resources/night_mode_on.png";
+        document.getElementsByClassName("popupcontent")[0].style.background = 'black';
+        document.getElementsByClassName("popupcontent")[0].style.color = 'white';
+        for (i = 0; i < numberOfCategories; i++) {
+            document.getElementsByClassName("popupCategory")[i].style.color = 'white';
+            document.getElementsByClassName("newsCheckmark")[i].src = "resources/check_white.png";
+        }
+        nightmodeOn = 1;
+    }
+
+    else if (nightmodeOn == 1) {
+        document.getElementsByClassName("newsscreen")[0].style.background = 'white';
+        document.getElementsByClassName("news")[0].style.color = 'black';
+        for (i = 0; i < numberOfNews; i++) {
+            document.getElementsByClassName("newsTitle")[i].style.color = 'black';
+        }
+        document.getElementsByClassName("newsPart")[0].style.color = 'black';
+        document.getElementsByClassName("newsPart")[1].style.color = 'black';
+        document.getElementById("filter").src = "resources/filter.png";
+        document.getElementById("nightmodeIcon").src = "resources/night_mode_off.png";
+        document.getElementsByClassName("popupcontent")[0].style.background = 'white';
+        document.getElementsByClassName("popupcontent")[0].style.color = 'black';
+        for (i = 0; i < numberOfCategories; i++) {
+            document.getElementsByClassName("popupCategory")[i].style.color = 'black';
+            document.getElementsByClassName("newsCheckmark")[i].src = "resources/check.png";
+        }
+        nightmodeOn = 0;
+    }
+
     document.getElementById("filterpopup").style.display = "none";
 }

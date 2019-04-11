@@ -1,13 +1,13 @@
 .newsscreen {
     display: none;
     position: fixed;
-    height: 4cm;
-    width: 2.985cm;
+    height: 3.99cm;
+    width: 2.988cm;
     background-color: white;
     z-index: 3;
     border-bottom-left-radius: 17px;
     border-bottom-right-radius: 17px;
-    margin-left: 0.01cm;
+    margin-left: 0.008cm;
     overflow: hidden;
 }
 
