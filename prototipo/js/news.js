@@ -26,6 +26,8 @@ var newsCheck = ["allCheck", "localCheck", "politicsCheck", "scienceCheck", "spo
 var newsCategories = ["local", "politics", "sport", "science"];
 var weatherDays = ["weatherDay2", "weatherDay3", "weatherDay4", "weatherDay5", "weatherDay6", "weatherDay7"];
 var days = ["day2", "day3", "day4", "day5", "day6", "day7"];
+var weatherIcons = ["resources/sunny.png", "resources/cloud.png", "resources/rain.png"];
+var weatherImg = ["weatherImg2", "weatherImg3", "weatherImg4", "weatherImg5", "weatherImg6", "weatherImg7"];
 var numberOfNews = 5;
 var numberOfCategories = 5;
 var nightmodeOn = 0;
@@ -35,6 +37,7 @@ weather();
 function weather() {
     var i;
     var date;
+    var random;
     var weather = Math.round(Math.random() * 35);
     weather += "°C";
     document.querySelectorAll(".weatherToday").forEach(function(element) {
@@ -53,6 +56,9 @@ function weather() {
         if (month < 10) month = "0" + month;
 
         document.getElementById(days[i]).innerHTML = day + "/" + month;
+
+        random = Math.round(Math.random() * 2);
+        document.getElementById(weatherImg[i]).src = weatherIcons[random];
     }
 }
 
