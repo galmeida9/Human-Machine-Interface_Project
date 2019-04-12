@@ -170,6 +170,7 @@ function nightmode() {
             document.getElementById(weatherDays[i]).style.color = 'white';
             document.getElementById(days[i]).style.color = 'white';
         }
+        document.getElementById("weatherTitle").style.color = 'white';
         nightmodeOn = 1;
     }
 
@@ -195,6 +196,7 @@ function nightmode() {
             document.getElementById(weatherDays[i]).style.color = 'black';
             document.getElementById(days[i]).style.color = 'black';
         }
+        document.getElementById("weatherTitle").style.color = 'black';
         nightmodeOn = 0;
     }
 
