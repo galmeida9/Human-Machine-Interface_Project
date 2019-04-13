@@ -17,3 +17,9 @@ function viewVideo(video){
         currentpage = "viewPost";
     }
 }
+
+function newPost(){
+    document.getElementsByClassName("recentPosts")[0].style.display = "none";
+    document.getElementsByClassName("newPost")[0].style.display = "block";
+    currentpage = "newPost"
+}

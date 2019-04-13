@@ -43,6 +43,8 @@
 
                 <!--NEWS SCREEN------------------------------------------------------------->
                 <div  class="newsscreen">
+
+                    <!--NEWS TITLES--------------------------------------------------------->
                     <div class="news">
                         <h4 style="margin-top: 3.75pt; margin-left: 10%">NEWS  <a href="#"><img src="resources/filter.png" id="filter" style="width: 0.35cm"></a><a onclick="nightmode()" style="cursor: pointer;"><img src="resources/night_mode_off.png" id="nightmodeIcon" style="width: 0.33cm"></a></h4>
                         <p style="margin-top: -0.5cm"><a onclick="openWeather()" style="cursor: pointer;"><img src="resources/sunny.png" style="width: 0.3cm; vertical-align: middle; margin-top: -0.09cm;">  <span class="weatherToday" style="font-size: 8pt"></span></a></p>
@@ -66,10 +68,14 @@
                             <hr>
                         </div>
                     </div>
+
+                    <!--NEWS STORIES-------------------------------------------------------->
                     <div id="newsStory" class="newsStory">
                         <h5 id="title" class="newsPart"></h5>
                         <p id="text" class="newsPart"></p>
                     </div>
+
+                    <!--WEATHER SCREEN------------------------------------------------------>
                     <div class="weatherScreen">
                         <h4 id="weatherTitle">Lisbon, Today</h4>
                         <img src="resources/sunny.png" style="width: 1cm; margin-top: -16%;">
@@ -119,29 +125,44 @@
 
                 <!--POST SCREEN-------------------------------------------------------------->
                 <div class="postScreen">
-                    <img src="resources/plus.png" style="width: 0.5cm; margin-top: 3pt; cursor: pointer;">
-                    <div class="postItem">
-                        <p><img class="user" src="resources/user.png"> Gabriel posted</p>
-                        <img class="postedImg" src="resources/alameda.jpg" onclick="viewImg('resources/alameda.jpg')">
-                        <br>
+
+                    <!--RECENT POSTS--------------------------------------------------------->
+                    <div class="recentPosts">
+                        <img src="resources/plus.png" onclick="newPost()" style="width: 0.5cm; margin-top: 3pt; cursor: pointer;">
+                        <div class="postItem">
+                            <p><img class="user" src="resources/user.png"> Gabriel posted</p>
+                            <img class="postedImg" src="resources/alameda.jpg" onclick="viewImg('resources/alameda.jpg')">
+                            <br>
+                        </div>
+                        <div class="postItem">
+                            <p><img class="user" src="resources/user.png"> André posted</p>
+                            <video class="postedVideo" onclick="viewVideo('resources/avengers.mp4')">
+                                <source src="resources/avengers.mp4" type="video/mp4">
+                            </video>
+                            <br>
+                        </div>
+                        <div class="postItem">
+                            <p><img class="user" src="resources/user.png"> Andreia posted</p>
+                            <img class="postedImg" src="resources/paris.png" onclick="viewImg('resources/paris.png')">
+                            <br>
+                        </div>
+                        <div class="postItem">
+                            <p><img class="user" src="resources/user.png"> António posted</p>
+                            <img class="postedImg" src="resources/Antwerpen.jpg" onclick="viewImg('resources/Antwerpen.jpg')">
+                            <br>
+                        </div>
+                        <div class="postItem">
+                            <p><img class="user" src="resources/user.png"> Diogo posted</p>
+                            <p>Estou a adorar a minha viagem a Inglaterra!! Se podesse vinha cá sempre!</p>
+                            <br>
+                        </div>
+                        <div class="postItem">
+                            <p><img class="user" src="resources/user.png"> João posted</p>
+                            <img class="postedImg" src="resources/ramen.jpg" onclick="viewImg('resources/ramen.jpg')">
+                            <br>
+                        </div>
                     </div>
-                    <div class="postItem">
-                        <p><img class="user" src="resources/user.png"> André posted</p>
-                        <video class="postedVideo" onclick="viewVideo('resources/avengers.mp4')">
-                            <source src="resources/avengers.mp4" type="video/mp4">
-                        </video>
-                        <br>
-                    </div>
-                    <div class="postItem">
-                        <p><img class="user" src="resources/user.png"> António posted</p>
-                        <img class="postedImg" src="resources/Antwerpen.jpg" onclick="viewImg('resources/Antwerpen.jpg')">
-                        <br>
-                    </div>
-                    <div class="postItem">
-                        <p><img class="user" src="resources/user.png"> João posted</p>
-                        <img class="postedImg" src="resources/ramen.jpg" onclick="viewImg('resources/ramen.jpg')">
-                        <br>
-                    </div>
+
                 </div>
                 <!--------------------------------------------------------------------------->
             
@@ -161,10 +182,37 @@
             </div>
             <!------------------------------------------------------------------------------->
         
+            
+            <!--SELECT NEW TYPE OF POST------------------------------------------------------>
+            <div class="newPost">
+                <table style="width: 100%">
+                    <tr>
+                        <th><img src="resources/image.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                        <th><img src="resources/video.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                    </tr>
+                    <tr>
+                        <th><p style="margin-top: -10pt">Images</p></th>
+                        <th><p style="margin-top: -10pt">Videos</p></th>
+                    </tr>
+                    <tr>
+                        <th><img src="resources/location.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                        <th><img src="resources/microphone.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                    </tr>
+                    <tr>
+                        <th><p style="margin-top: -10pt">Location</p></th>
+                        <th><p style="margin-top: -10pt">Voice to Text</p></th>
+                    </tr>
+                </table>
+            </div>
+            <!------------------------------------------------------------------------------>
+            
+            
+            <!--VIEW POST------------------------------------------------------------------->
             <div id="viewPost">
                 <img id="viewImgLarge">
                 <video id="viewVideoLarge" onclick="this.paused?this.play():this.pause()">
             </div>
+            <!------------------------------------------------------------------------------>
         
         </div>
 

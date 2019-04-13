@@ -5,6 +5,10 @@
     margin-top: 11.4pt;
 }
 
+.recentPosts{
+    display: none;
+}
+
 .postItem {
     text-align: left;
     margin-left: 6pt;
@@ -36,7 +40,7 @@
     cursor: pointer;
 }
 
-.postItem p, .postedImg, .user{
+.postItem p, .postedImg, .user, .newPost img{
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -49,7 +53,7 @@
 #viewPost{
     display: none; 
     position: absolute; 
-    z-index: 5; 
+    z-index: 4; 
     padding-top: 0.5cm;
     padding-right: 0.2cm; 
     padding-bottom: 0cm;
@@ -71,4 +75,17 @@
     width: 2.8cm;
     display: none;
     cursor: pointer;
+}
+
+.newPost{
+    display: none;
+    position: absolute; 
+    z-index: 4;
+    margin-top: 0.4cm;
+    height: 102pt;
+    margin-top: 11.4pt;
+}
+
+.newPost p {
+    font-size: 6pt;
 }

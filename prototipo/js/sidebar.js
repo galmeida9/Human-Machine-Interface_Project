@@ -59,6 +59,11 @@ function backButton() {
         document.getElementById("viewVideoLarge").pause();
         currentpage = "posts";
     }
+    else if (currentpage == "newPost") {
+        document.getElementsByClassName("newPost")[0].style.display = "none"
+        document.getElementsByClassName("recentPosts")[0].style.display = "block"
+        currentpage = "posts";
+    }
   }
 }
 
@@ -66,6 +71,7 @@ function openNews() {
     document.getElementsByClassName("scrollable")[0].style.display = "block";
     document.getElementsByClassName("newsscreen")[0].style.display = "block";
     document.getElementsByClassName("postScreen")[0].style.display = "none";
+    document.getElementsByClassName("newPost")[0].style.display = "none"
     document.getElementsByClassName("mainscreen")[0].style.display = "none";
     document.getElementsByClassName("newsStory")[0].style.display = "none";
     document.getElementsByClassName("news")[0].style.display = "block";
@@ -83,6 +89,8 @@ function openPosts(){
     document.getElementsByClassName("scrollable")[0].style.display = "block";
     document.getElementsByClassName("newsscreen")[0].style.display = "none";
     document.getElementsByClassName("postScreen")[0].style.display = "block";
+    document.getElementsByClassName("newPost")[0].style.display = "none"
+    document.getElementsByClassName("recentPosts")[0].style.display = "block";
     document.getElementById("viewPost").style.display = "none";
     document.getElementById("viewVideoLarge").pause();
     el.scrollLeft = 0;
