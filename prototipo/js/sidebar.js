@@ -54,6 +54,11 @@ function backButton() {
         el.scrollLeft = 0;
         el.scrollTop = 0;
     }
+    else if (currentpage == "viewPost") {
+        document.getElementById("viewPost").style.display = "none"
+        document.getElementById("viewVideoLarge").pause();
+        currentpage = "posts";
+    }
   }
 }
 

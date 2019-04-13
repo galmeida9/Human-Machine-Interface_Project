@@ -11,10 +11,3 @@ span.onclick = function() {
     filterpopup.style.display = "none";
     currentpage = "news";
 }
-
-window.onclick = function(event) {
-    if (event.target == filterpopup) {
-        filterpopup.style.display = "none";
-        currentpage = "news";
-    }
-}

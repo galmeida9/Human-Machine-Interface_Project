@@ -122,17 +122,28 @@
                     <img src="resources/plus.png" style="width: 0.5cm; margin-top: 3pt; cursor: pointer;">
                     <div class="postItem">
                         <p><img class="user" src="resources/user.png"> Gabriel posted</p>
-                        <img class="postedImg" src="resources/alameda.jpg">
+                        <img class="postedImg" src="resources/alameda.jpg" onclick="viewImg('resources/alameda.jpg')">
+                        <br>
+                    </div>
+                    <div class="postItem">
+                        <p><img class="user" src="resources/user.png"> André posted</p>
+                        <video class="postedVideo" onclick="viewVideo('resources/avengers.mp4')">
+                            <source src="resources/avengers.mp4" type="video/mp4">
+                        </video>
+                        <br>
                     </div>
                     <div class="postItem">
                         <p><img class="user" src="resources/user.png"> António posted</p>
-                        <img class="postedImg" src="resources/Antwerpen.jpg">
+                        <img class="postedImg" src="resources/Antwerpen.jpg" onclick="viewImg('resources/Antwerpen.jpg')">
+                        <br>
                     </div>
                     <div class="postItem">
                         <p><img class="user" src="resources/user.png"> João posted</p>
-                        <img class="postedImg" src="resources/ramen.jpg">
+                        <img class="postedImg" src="resources/ramen.jpg" onclick="viewImg('resources/ramen.jpg')">
+                        <br>
                     </div>
                 </div>
+                <!--------------------------------------------------------------------------->
             
             </div>
 
@@ -150,6 +161,10 @@
             </div>
             <!------------------------------------------------------------------------------->
         
+            <div id="viewPost">
+                <img id="viewImgLarge">
+                <video id="viewVideoLarge" onclick="this.paused?this.play():this.pause()">
+            </div>
         
         </div>
 
@@ -192,10 +207,26 @@
 <script src="js/TouchScroll.js"></script>
 <script src="js/newspopup.js"></script>
 <script src="js/news.js"></script>
+<script src="js/posts.js"></script>
 <script>
 document.body.draggable = false;
 
 var currentpage = "home";
+
+window.onclick = function(event) {
+    var post = document.getElementById("viewPost");
+
+    if (event.target == filterpopup) {
+        filterpopup.style.display = "none";
+        currentpage = "news";
+    }
+
+    else if (event.target == post) {
+        post.style.display = "none";
+        document.getElementById("viewVideoLarge").pause();
+        currentpage = "posts";
+    }
+}
 
 </script>
 

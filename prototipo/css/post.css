@@ -25,6 +25,15 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
+}
+
+.postedVideo {
+    width: 2.4cm;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
 }
 
 .postItem p, .postedImg, .user{
@@ -35,4 +44,30 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
     -webkit-user-drag: none;
+}
+
+#viewPost{
+    display: none; 
+    position: absolute; 
+    z-index: 5; 
+    padding-top: 0.5cm;
+    padding-right: 0.2cm; 
+    padding-bottom: 0cm;
+    border-radius: 0.45cm;
+    width: 3cm; 
+    height: 3.5cm; 
+    overflow: hidden;  
+    background-color: rgba(0,0,0,0.9); 
+}
+
+#viewImgLarge {
+    margin-top: 10pt;
+    width: 2.8cm;
+    display: none;
+}
+
+#viewVideoLarge {
+    margin-top: 15pt;
+    width: 2.8cm;
+    display: none;
 }
