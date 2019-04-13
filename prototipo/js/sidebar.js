@@ -46,17 +46,38 @@ function backButton() {
         el.scrollLeft = 0;
         el.scrollTop = 0;
     }
+    else if (currentpage == "posts") {
+        document.getElementsByClassName("scrollable")[0].style.display = "none";
+        document.getElementsByClassName("postScreen")[0].style.display = "none";
+        document.getElementsByClassName("mainscreen")[0].style.display = "block";
+        currentpage = "home";
+        el.scrollLeft = 0;
+        el.scrollTop = 0;
+    }
   }
 }
 
 function openNews() {
     document.getElementsByClassName("scrollable")[0].style.display = "block";
     document.getElementsByClassName("newsscreen")[0].style.display = "block";
+    document.getElementsByClassName("postScreen")[0].style.display = "none";
     document.getElementsByClassName("mainscreen")[0].style.display = "none";
     document.getElementsByClassName("newsStory")[0].style.display = "none";
     document.getElementsByClassName("news")[0].style.display = "block";
     document.getElementsByClassName("weatherScreen")[0].style.display = "none";
     document.getElementById("filterpopup").style.display = "none";
+    el.scrollLeft = 0;
+    el.scrollTop = 0;
     closeNav();
     currentpage = "news";
+}
+
+function openPosts(){
+    document.getElementsByClassName("scrollable")[0].style.display = "block";
+    document.getElementsByClassName("newsscreen")[0].style.display = "none";
+    document.getElementsByClassName("postScreen")[0].style.display = "block";
+    el.scrollLeft = 0;
+    el.scrollTop = 0;
+    closeNav();
+    currentpage="posts";
 }

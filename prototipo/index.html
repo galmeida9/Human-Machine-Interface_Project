@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="css/popup.css">
 <link rel="stylesheet" type="text/css" href="css/topbar.css">
 <link rel="stylesheet" type="text/css" href="css/body.css">
+<link rel="stylesheet" type="text/css" href="css/post.css">
 
 <style></style>
 
@@ -19,18 +20,29 @@
     <div class="container" align="center">
         <div id="iGo" class="watch">
             <img class="frame" src="resources/frame.png">
+            
+            <!--MAIN SCREEN----------------------------------------------------------------->
             <div class="mainscreen">
                	<p class="hour" style="font-size: 48.75pt; font-weight: bold; color: #fff; text-shadow: 0pt 0pt 6pt #000; margin-top: 0%"></p>	 
 		 	    <p class="minute" style="font-size: 48.75pt; font-weight: bold; color: white; text-shadow: 0pt 0pt 6pt #000; margin-top: -55.5%;"></p>	
                 <b><p id="Date"></p></b>
             </div>
+            <!------------------------------------------------------------------------------>
+
+
             <div id="scrollable"  class="scrollable">
+
+                <!--TOPBAR------------------------------------------------------------------>
+                <div class="topbar">
+                    <p><span class="hour"></span>:<span class="minute"></span></p>
+                    <p class = "battery">50%</p>
+                    <img>
+                </div>
+                <!-------------------------------------------------------------------------->
+                
+
+                <!--NEWS SCREEN------------------------------------------------------------->
                 <div  class="newsscreen">
-                    <div class="topbar">
-                        <p><span class="hour"></span>:<span class="minute"></span></p>
-                        <p class = "battery">50%</p>
-                        <img>
-                    </div>
                     <div class="news">
                         <h4 style="margin-top: 3.75pt; margin-left: 10%">NEWS  <a href="#"><img src="resources/filter.png" id="filter" style="width: 0.35cm"></a><a onclick="nightmode()" style="cursor: pointer;"><img src="resources/night_mode_off.png" id="nightmodeIcon" style="width: 0.33cm"></a></h4>
                         <p style="margin-top: -0.5cm"><a onclick="openWeather()" style="cursor: pointer;"><img src="resources/sunny.png" style="width: 0.3cm; vertical-align: middle; margin-top: -0.09cm;">  <span class="weatherToday" style="font-size: 8pt"></span></a></p>
@@ -102,7 +114,29 @@
                         </table>
                     </div>
                 </div>
+                <!--------------------------------------------------------------------------->
+                
+
+                <!--POST SCREEN-------------------------------------------------------------->
+                <div class="postScreen">
+                    <img src="resources/plus.png" style="width: 0.5cm; margin-top: 3pt; cursor: pointer;">
+                    <div class="postItem">
+                        <p><img class="user" src="resources/user.png"> Gabriel posted</p>
+                        <img class="postedImg" src="resources/alameda.jpg">
+                    </div>
+                    <div class="postItem">
+                        <p><img class="user" src="resources/user.png"> António posted</p>
+                        <img class="postedImg" src="resources/Antwerpen.jpg">
+                    </div>
+                    <div class="postItem">
+                        <p><img class="user" src="resources/user.png"> João posted</p>
+                        <img class="postedImg" src="resources/ramen.jpg">
+                    </div>
+                </div>
+            
             </div>
+
+            <!--FILTER POPUP FOR NEWS SCREEN------------------------------------------------->
             <div id="filterpopup" class="popup">
                 <div class="popupcontent">
                     <span class="close">&times;</span>
@@ -114,15 +148,24 @@
                     <p><a class="popupCategory" onclick="showSports()" style="cursor: pointer;">Sports</a><img class="newsCheckmark" src="resources/check.png" id="sportsCheck"></p>
                 </div>
             </div>
+            <!------------------------------------------------------------------------------->
+        
+        
         </div>
+
+        <!--IGO SIDE BUTTONS----------------------------------------------------------------->
         <div class="buttondiv">
             <button class="button button1" onclick="menuButton()"><img src="resources/menu.png" style="width: 0.21cm; display: block; margin-left: -0.085cm;"></button>
             <button class="button button2" onclick="backButton()"><img src="resources/back.png" style="width: 0.21cm; display: block; margin-left: -0.1cm;"></button>
         </div>
+        <!----------------------------------------------------------------------------------->
+        
+
+        <!--MENU----------------------------------------------------------------------------->
         <div id="menu" class="sidebar">
             <div class="row">
                 <div class="column">
-                    <a href="#"><img src="resources/messages.png" style="margin-left: 0.13cm; width: 1.058cm; padding: 0pt;"></a>
+                    <a href="#"></a><img src="resources/messages.png" style="margin-left: 0.13cm; width: 1.058cm; padding: 0pt; cursor: pointer;"></a>
                     <p style="margin-top: 0px; margin-left: 0.25cm;">CHAT</p>
                 </div>
                 <div class="column">
@@ -132,7 +175,7 @@
             </div>
             <div class="row">
                 <div class="column" style="margin-top : 0pt">
-                    <a href="#"><img src="resources/post.png" style="margin-left: 0.29cm; width: 0.79cm; padding: 0pt;"></a>
+                    <img src="resources/post.png" onclick="openPosts()" style="margin-left: 0.29cm; width: 0.79cm; padding: 0pt; cursor: pointer;">
                     <p style="margin-top: 0.13cm; margin-left: 0.31cm;">POST</p>
                 </div>
                 <div class="column" style="margin-top : 0px">
@@ -141,6 +184,7 @@
                 </div>
             </div>
         </div>
+        <!----------------------------------------------------------------------------------->
     </div>
 
 <script src="js/clock.js"></script>

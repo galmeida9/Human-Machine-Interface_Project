@@ -1,0 +1,38 @@
+.postScreen{
+    display: none;
+    margin-top: 0.4cm;
+    height: 102pt;
+    margin-top: 11.4pt;
+}
+
+.postItem {
+    text-align: left;
+    margin-left: 6pt;
+    margin-right: 6pt;
+}
+
+.user {
+    width: 0.4cm;
+    vertical-align: middle;
+}
+
+.postItem p {
+    font-size: 7pt;
+}
+
+.postedImg {
+    width: 2.4cm;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.postItem p, .postedImg, .user{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+    -webkit-user-drag: none;
+}

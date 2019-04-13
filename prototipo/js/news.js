@@ -1,3 +1,7 @@
+/*-------------------------------------------------------------------------------------
+Global variables
+--------------------------------------------------------------------------------------*/
+
 var newsStories = {
     "mocambique": {
         title: "501 mortos em Moçambique",
@@ -34,6 +38,10 @@ var nightmodeOn = 0;
 weather();
 
 
+/*-------------------------------------------------------------------------------------
+Displays weather function
+--------------------------------------------------------------------------------------*/
+
 function weather() {
     var i;
     var date;
@@ -62,12 +70,20 @@ function weather() {
     }
 }
 
+
+/*-------------------------------------------------------------------------------------
+Opens weather page
+--------------------------------------------------------------------------------------*/
 function openWeather() {
     currentpage = "weather";
     document.getElementsByClassName("news")[0].style.display = "none";
     document.getElementsByClassName("weatherScreen")[0].style.display = "block";
 }
 
+
+/*-------------------------------------------------------------------------------------
+Opens selected news story
+--------------------------------------------------------------------------------------*/
 function showNews(News) {
     console.log(mouseMovement);
     if (mouseMovement < 3 && mouseMovement > -3) {
@@ -82,6 +98,10 @@ function showNews(News) {
     }
 }
 
+
+/*-------------------------------------------------------------------------------------
+Filter news category
+--------------------------------------------------------------------------------------*/
 function showLocal() {
     var i;
     for (i = 0; i < newsCheck.length; i++) {
@@ -146,6 +166,10 @@ function showAll() {
     document.getElementById("filterpopup").style.display = "none";
 }
 
+
+/*-------------------------------------------------------------------------------------
+Toggle night mode
+--------------------------------------------------------------------------------------*/
 function nightmode() {
     var i;
     if (nightmodeOn == 0) {
