@@ -24,88 +24,90 @@
 		 	    <p class="minute" style="font-size: 48.75pt; font-weight: bold; color: white; text-shadow: 0pt 0pt 6pt #000; margin-top: -55.5%;"></p>	
                 <b><p id="Date"></p></b>
             </div>
-            <div id="newsscreen" class="newsscreen">
-                <div class="topbar">
-                    <p><span class="hour"></span>:<span class="minute"></span></p>
-                    <p class = "battery">50%</p>
-                    <img>
-                </div>
-                <div class="news">
-                    <h4 style="margin-top: 3.75pt; margin-left: 10%">NEWS  <a href="#"><img src="resources/filter.png" id="filter" style="width: 0.35cm"></a><a onclick="nightmode()" style="cursor: pointer;"><img src="resources/night_mode_off.png" id="nightmodeIcon" style="width: 0.33cm"></a></h4>
-                    <p style="margin-top: -0.5cm"><a onclick="openWeather()" style="cursor: pointer;"><img src="resources/sunny.png" style="width: 0.3cm; vertical-align: middle; margin-top: -0.09cm;">  <span class="weatherToday" style="font-size: 8pt"></span></a></p>
-                    <hr>
-                    <div id="local">
-                        <p><a class="newsTitle" onclick="showNews('mocambique')" style="cursor: pointer;">501 mortos em Moçambique</a></p>
-                        <hr>
-                        <p><a class="newsTitle" onclick="showNews('lanche')" style="cursor: pointer;">Lanches das crianças do pré-escolar vão ter fruta e legumes</a></p>
-                        <hr>
+            <div id="scrollable"  class="scrollable">
+                <div  class="newsscreen">
+                    <div class="topbar">
+                        <p><span class="hour"></span>:<span class="minute"></span></p>
+                        <p class = "battery">50%</p>
+                        <img>
                     </div>
-                    <div id="sport">
-                        <p><a class="newsTitle" onclick="showNews('futebol')" style="cursor: pointer;">"Felizmente a Federação Portuguesa de Futebol teve o bom-senso que a RTP não teve"</a></p>
+                    <div class="news">
+                        <h4 style="margin-top: 3.75pt; margin-left: 10%">NEWS  <a href="#"><img src="resources/filter.png" id="filter" style="width: 0.35cm"></a><a onclick="nightmode()" style="cursor: pointer;"><img src="resources/night_mode_off.png" id="nightmodeIcon" style="width: 0.33cm"></a></h4>
+                        <p style="margin-top: -0.5cm"><a onclick="openWeather()" style="cursor: pointer;"><img src="resources/sunny.png" style="width: 0.3cm; vertical-align: middle; margin-top: -0.09cm;">  <span class="weatherToday" style="font-size: 8pt"></span></a></p>
                         <hr>
+                        <div id="local">
+                            <p><a class="newsTitle" onclick="showNews('mocambique')" style="cursor: pointer;">501 mortos em Moçambique</a></p>
+                            <hr>
+                            <p><a class="newsTitle" onclick="showNews('lanche')" style="cursor: pointer;">Lanches das crianças do pré-escolar vão ter fruta e legumes</a></p>
+                            <hr>
+                        </div>
+                        <div id="sport">
+                            <p><a class="newsTitle" onclick="showNews('futebol')" style="cursor: pointer;">"Felizmente a Federação Portuguesa de Futebol teve o bom-senso que a RTP não teve"</a></p>
+                            <hr>
+                        </div>
+                        <div id="politics">
+                            <p><a class="newsTitle" onclick="showNews('brexit')" style="cursor: pointer;">Brexit: o que os 400 mil portugueses têm de fazer para permanecer no Reino Unido?</a></p>
+                            <hr>
+                        </div>
+                        <div id="science">
+                            <p><a class="newsTitle" onclick="showNews('bebe')" style="cursor: pointer;">Como se mantém vivo um bebé na barriga de uma mulher em morte cerebral</a></p>
+                            <hr>
+                        </div>
                     </div>
-                    <div id="politics">
-                        <p><a class="newsTitle" onclick="showNews('brexit')" style="cursor: pointer;">Brexit: o que os 400 mil portugueses têm de fazer para permanecer no Reino Unido?</a></p>
-                        <hr>
+                    <div id="newsStory" class="newsStory">
+                        <h5 id="title" class="newsPart"></h5>
+                        <p id="text" class="newsPart"></p>
                     </div>
-                    <div id="science">
-                        <p><a class="newsTitle" onclick="showNews('bebe')" style="cursor: pointer;">Como se mantém vivo um bebé na barriga de uma mulher em morte cerebral</a></p>
-                        <hr>
+                    <div class="weatherScreen">
+                        <h4 id="weatherTitle">Lisbon, Today</h4>
+                        <img src="resources/sunny.png" style="width: 1cm; margin-top: -16%;">
+                        <p class="weatherToday" style="text-align: center; margin-top: -2%;">
+                        <table style="width: 100%">
+                            <tr>
+                                <th><p id="day2" class="day" style="margin-top: -20%"></p></th>
+                                <th><p id="day3" class="day" style="margin-top: -20%"></p></th>
+                            </tr>
+                            <tr>
+                                <th><img id="weatherImg2" style="width: 0.5cm;"></th>
+                                <th><img id="weatherImg3" style="width: 0.5cm;"></th>
+                            </tr>
+                            <tr>
+                                <th><p id="weatherDay2" class="weather"></p></th>
+                                <th><p id="weatherDay3" class="weather"></p></th>
+                            </tr>
+                            <tr>
+                                <th><p id="day4" class="day"></p></th>
+                                <th><p id="day5" class="day"></p></th>
+                            </tr>
+                            <tr>
+                                <th><img id="weatherImg4" style="width: 0.5cm;"></th>
+                                <th><img id="weatherImg5" style="width: 0.5cm;"></th>
+                            </tr>
+                            <tr>
+                                <th><p id="weatherDay4" class="weather"></p></th>
+                                <th><p id="weatherDay5" class="weather"></p></th>
+                            </tr>
+                            <tr>
+                                <th><p id="day6" class="day"></p></th>
+                                <th><p id="day7" class="day"></p></th>
+                            </tr>
+                            <tr>
+                                <th><img id="weatherImg6" style="width: 0.5cm;"></th>
+                                <th><img id="weatherImg7" style="width: 0.5cm;"></th>
+                            </tr>
+                            <tr>
+                                <th><p id="weatherDay6" class="weather"></p></th>
+                                <th><p id="weatherDay7" class="weather"></p></th>
+                            </tr>
+                        </table>
                     </div>
-                </div>
-                <div id="newsStory" class="newsStory">
-                    <h5 id="title" class="newsPart"></h5>
-                    <p id="text" class="newsPart"></p>
-                </div>
-                <div class="weatherScreen">
-                    <h4 id="weatherTitle">Lisbon, Today</h4>
-                    <img src="resources/sunny.png" style="width: 1cm; margin-top: -16%;">
-                    <p class="weatherToday" style="text-align: center; margin-top: -2%;">
-                    <table style="width: 100%">
-                        <tr>
-                            <th><p id="day2" class="day" style="margin-top: -20%"></p></th>
-                            <th><p id="day3" class="day" style="margin-top: -20%"></p></th>
-                        </tr>
-                        <tr>
-                            <th><img id="weatherImg2" style="width: 0.5cm;"></th>
-                            <th><img id="weatherImg3" style="width: 0.5cm;"></th>
-                        </tr>
-                        <tr>
-                            <th><p id="weatherDay2" class="weather"></p></th>
-                            <th><p id="weatherDay3" class="weather"></p></th>
-                        </tr>
-                        <tr>
-                            <th><p id="day4" class="day"></p></th>
-                            <th><p id="day5" class="day"></p></th>
-                        </tr>
-                        <tr>
-                            <th><img id="weatherImg4" style="width: 0.5cm;"></th>
-                            <th><img id="weatherImg5" style="width: 0.5cm;"></th>
-                        </tr>
-                        <tr>
-                            <th><p id="weatherDay4" class="weather"></p></th>
-                            <th><p id="weatherDay5" class="weather"></p></th>
-                        </tr>
-                        <tr>
-                            <th><p id="day6" class="day"></p></th>
-                            <th><p id="day7" class="day"></p></th>
-                        </tr>
-                        <tr>
-                            <th><img id="weatherImg6" style="width: 0.5cm;"></th>
-                            <th><img id="weatherImg7" style="width: 0.5cm;"></th>
-                        </tr>
-                        <tr>
-                            <th><p id="weatherDay6" class="weather"></p></th>
-                            <th><p id="weatherDay7" class="weather"></p></th>
-                        </tr>
-                    </table>
                 </div>
             </div>
             <div id="filterpopup" class="popup">
                 <div class="popupcontent">
                     <span class="close">&times;</span>
-                    <b><p style="text-align: center; margin-top: -0.3cm;">News Categories</p></b>
-                    <p><a class="popupCategory" onclick="showAll()" style="cursor: pointer;">All</a><img class="newsCheckmark" src="resources/check.png" id="allCheck"></p>
+                    <b><p style="text-align: center; margin-top: -0.4cm; font-size: 8pt;">Categories</p></b>
+                    <p style="margin-top: -0.1cm;"><a class="popupCategory" onclick="showAll()" style="cursor: pointer;">All</a><img class="newsCheckmark" src="resources/check.png" id="allCheck"></p>
                     <p><a class="popupCategory" onclick="showLocal()" style="cursor: pointer;">Local</a><img class="newsCheckmark" src="resources/check.png" id="localCheck"></p>
                     <p><a class="popupCategory" onclick="showPolitics()" style="cursor: pointer;">Politics</a><img class="newsCheckmark" src="resources/check.png" id="politicsCheck"></p>
                     <p><a class="popupCategory" onclick="showScience()" style="cursor: pointer;">Science</a><img class="newsCheckmark" src="resources/check.png" id="scienceCheck"></p>

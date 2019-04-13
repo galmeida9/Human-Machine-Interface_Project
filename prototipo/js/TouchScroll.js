@@ -6,8 +6,8 @@ var diffx = 0;
 var diffy = 0;
 var mouseMovement = 0;
 
-if ("newsscreen") {
-    el = document.getElementById("newsscreen");
+if ("scrollable") {
+    el = document.getElementById("scrollable");
 } else {
     if (isIE || isFirefox) {
         el = document.documentElement;

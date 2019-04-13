@@ -21,6 +21,7 @@ function backButton() {
   if (isOpen == 1) closeNav();
   else {
     if (currentpage == "news") {
+        document.getElementsByClassName("scrollable")[0].style.display = "none";
         document.getElementsByClassName("newsscreen")[0].style.display = "none";
         document.getElementsByClassName("mainscreen")[0].style.display = "block";
         closeNav();
@@ -49,6 +50,7 @@ function backButton() {
 }
 
 function openNews() {
+    document.getElementsByClassName("scrollable")[0].style.display = "block";
     document.getElementsByClassName("newsscreen")[0].style.display = "block";
     document.getElementsByClassName("mainscreen")[0].style.display = "none";
     document.getElementsByClassName("newsStory")[0].style.display = "none";

@@ -149,7 +149,7 @@ function showAll() {
 function nightmode() {
     var i;
     if (nightmodeOn == 0) {
-        document.getElementsByClassName("newsscreen")[0].style.background = 'black';
+        document.getElementsByClassName("scrollable")[0].style.background = 'black';
         document.getElementsByClassName("news")[0].style.color = 'white';
         for (i = 0; i < numberOfNews; i++) {
             document.getElementsByClassName("newsTitle")[i].style.color = 'white';
@@ -175,7 +175,7 @@ function nightmode() {
     }
 
     else if (nightmodeOn == 1) {
-        document.getElementsByClassName("newsscreen")[0].style.background = 'white';
+        document.getElementsByClassName("scrollable")[0].style.background = 'white';
         document.getElementsByClassName("news")[0].style.color = 'black';
         for (i = 0; i < numberOfNews; i++) {
             document.getElementsByClassName("newsTitle")[i].style.color = 'black';

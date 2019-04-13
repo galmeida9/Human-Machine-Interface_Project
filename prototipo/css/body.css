@@ -58,3 +58,16 @@ body {
     font-weight: lighter; 
     text-shadow: 0pt 0pt 3pt white;
 }
+
+.scrollable {
+    display: none;
+    position: fixed;
+    height: 3.99cm;
+    width: 2.988cm;
+    background-color: white;
+    z-index: 3;
+    border-bottom-left-radius: 12.75pt;
+    border-bottom-right-radius: 12.75pt;
+    margin-left: 0.008cm;
+    overflow: hidden;
+}
