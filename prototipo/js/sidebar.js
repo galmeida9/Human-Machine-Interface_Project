@@ -71,6 +71,8 @@ function openNews() {
     document.getElementsByClassName("news")[0].style.display = "block";
     document.getElementsByClassName("weatherScreen")[0].style.display = "none";
     document.getElementById("filterpopup").style.display = "none";
+    document.getElementById("viewPost").style.display = "none";
+    document.getElementById("viewVideoLarge").pause();
     el.scrollLeft = 0;
     el.scrollTop = 0;
     closeNav();
@@ -81,6 +83,8 @@ function openPosts(){
     document.getElementsByClassName("scrollable")[0].style.display = "block";
     document.getElementsByClassName("newsscreen")[0].style.display = "none";
     document.getElementsByClassName("postScreen")[0].style.display = "block";
+    document.getElementById("viewPost").style.display = "none";
+    document.getElementById("viewVideoLarge").pause();
     el.scrollLeft = 0;
     el.scrollTop = 0;
     closeNav();
