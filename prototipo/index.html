@@ -164,6 +164,25 @@
                         </div>
                     </div>
 
+
+                    <!--IMAGE SELECTION------------------------------------------------------>
+                    <div class="selectIMG">
+                        <table style="width: 100%">
+                            <tr>
+                                <th><img onclick="imgConfirmation('resources/sharePhotos/alameda.jpg')" src="resources/sharePhotos/alameda.jpg"></th>
+                                <th><img onclick="imgConfirmation('resources/sharePhotos/antwerpen1.jpg')" src="resources/sharePhotos/antwerpen1.jpg"></th>
+                            </tr>
+                            <tr>
+                                <th><img onclick="imgConfirmation('resources/sharePhotos/paris.jpg')" src="resources/sharePhotos/paris.jpg"></th>
+                                <th><img onclick="imgConfirmation('resources/sharePhotos/belem.jpg')" src="resources/sharePhotos/belem.jpg"></th>
+                            </tr>
+                            <tr>
+                                <th><img onclick="imgConfirmation('resources/sharePhotos/marques_pombal.jpg')" src="resources/sharePhotos/marques_pombal.jpg"></th>
+                                <th><img onclick="imgConfirmation('resources/sharePhotos/antwerpen2.jpg')" src="resources/sharePhotos/antwerpen2.jpg"></th>
+                            </tr>
+                        </table>
+                    </div>
+
                 </div>
                 <!--------------------------------------------------------------------------->
             
@@ -188,7 +207,7 @@
             <div class="newPost">
                 <table style="width: 100%">
                     <tr>
-                        <th><img src="resources/image.png" onclick="postImg()" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                        <th><img src="resources/image.png" onclick="selectIMG()" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
                         <th><img src="resources/video.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
                     </tr>
                     <tr>
@@ -216,6 +235,14 @@
             <!------------------------------------------------------------------------------>
         
         
+            <!--POPUP CONFIRMATION---------------------------------------------------------->
+            <div id="confirmationPopup">
+                <div id="confirmationPopupContent">
+                    <p>Are you sure?</p>
+                    <p><img onclick="backButton()" src="resources/cancel.png" style="margin-left: -2pt"><img onclick="postImg()" src="resources/confirm.png" style="margin-left: 17pt"></p>
+                </div>
+            </div>
+
             <!--SETIINGS-------------------------------------------------------------------->
             <div class="settings">
                 <p>Nightmode<a onclick="nightmode()" style="cursor: pointer;"><img src="resources/night_mode_off.png" id="nightmodeIcon" style="width: 0.33cm; margin-left: 26pt; vertical-align: -1.5pt;"></a></p>
@@ -274,6 +301,7 @@ var currentpage = "home";
 
 window.onclick = function(event) {
     var post = document.getElementById("viewPost");
+    var confirmation = document.getElementById("confirmationPopup");
 
     if (event.target == filterpopup) {
         filterpopup.style.display = "none";
@@ -284,6 +312,11 @@ window.onclick = function(event) {
         post.style.display = "none";
         document.getElementById("viewVideoLarge").pause();
         currentpage = "posts";
+    }
+
+    else if (event.target == confirmation) {
+        confirmation.style.display = "none";
+        currentpage = "selectIMG";
     }
 }
 

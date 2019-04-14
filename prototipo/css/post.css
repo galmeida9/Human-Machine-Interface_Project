@@ -40,7 +40,7 @@
     cursor: pointer;
 }
 
-.postItem p, .postedImg, .user, .newPost img{
+.postItem p, .postedImg, .user, .newPost, .newPost img,.selectIMG, .confirmationPopupContent{
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -67,6 +67,7 @@
 #viewImgLarge {
     margin-top: 10pt;
     width: 2.8cm;
+    max-height: 2.8cm;
     display: none;
 }
 
@@ -88,4 +89,55 @@
 
 .newPost p {
     font-size: 6pt;
+}
+
+.selectIMG {
+    display: none; 
+    height: 102pt;
+}
+
+.selectIMG img{
+    width: 1.2cm;
+    cursor: pointer;
+}
+
+#confirmationPopup{
+    display: none; 
+    position: absolute; 
+    z-index: 4; 
+    padding-top: 0.5cm;
+    padding-right: 0.2cm; 
+    padding-bottom: 0cm;
+    border-radius: 0.45cm;
+    left: 0;
+    top: 0;
+    width: 3cm; 
+    height: 3.5cm; 
+    margin-left: -0.1cm;
+    margin-top: 0cm;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.4); 
+}
+
+#confirmationPopupContent{
+    background-color: #fefefe;
+    padding: 15pt;
+    border: 0.75pt solid #888;
+    width: 1.5cm;
+    height: 0.2cm;
+    margin-left: 0.2cm;
+    margin-top: 27pt;
+    border-radius: 0.45cm;
+}
+
+#confirmationPopupContent p{
+    font-size: 7pt;
+    width: 44pt;
+    margin-top: -10pt;
+}
+
+#confirmationPopupContent img{
+    width: 0.5cm;
+    margin-top: 6pt;
+    cursor: pointer;
 }

@@ -56,5 +56,14 @@ function backButton() {
             document.getElementsByClassName("mainscreen")[0].style.display = "block";
             currentpage = "home";
         }
+        else if (currentpage == "selectIMG") {
+            document.getElementsByClassName("newPost")[0].style.display = "block";
+            document.getElementsByClassName("selectIMG")[0].style.display = "none";
+            currentpage = "newPost";
+        }
+        else if (currentpage == "confirmationPopup") {
+            document.getElementById("confirmationPopup").style.display = "none";
+            currentpage = "selectIMG";
+        }
     }
 }
