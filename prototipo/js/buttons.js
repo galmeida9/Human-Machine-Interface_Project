@@ -1,0 +1,60 @@
+function menuButton() {
+    if (isOpen == 0) openNav();
+    else closeNav();
+}
+
+function backButton() {
+    if (isOpen == 1) closeNav();
+    else {
+        if (currentpage == "news") {
+            document.getElementsByClassName("scrollable")[0].style.display = "none";
+            document.getElementsByClassName("newsscreen")[0].style.display = "none";
+            document.getElementsByClassName("mainscreen")[0].style.display = "block";
+            closeNav();
+            currentpage = "home";
+        }
+        else if (currentpage == "newsStories") {
+            document.getElementsByClassName("newsStory")[0].style.display = "none";
+            document.getElementsByClassName("news")[0].style.display = "block";
+            currentpage = "news";
+            el.scrollLeft = 0;
+            el.scrollTop = 0;
+        }
+        else if (currentpage == "newspopup") {
+            document.getElementById("filterpopup").style.display = "none";
+            document.getElementsByClassName("news")[0].style.display = "block";
+            currentpage = "news";
+        }
+        else if (currentpage == "weather") {
+            document.getElementsByClassName("weatherScreen")[0].style.display = "none";
+            document.getElementsByClassName("news")[0].style.display = "block";
+            currentpage = "news";
+            el.scrollLeft = 0;
+            el.scrollTop = 0;
+        }
+        else if (currentpage == "posts") {
+            document.getElementsByClassName("scrollable")[0].style.display = "none";
+            document.getElementsByClassName("postScreen")[0].style.display = "none";
+            document.getElementsByClassName("mainscreen")[0].style.display = "block";
+            currentpage = "home";
+            el.scrollLeft = 0;
+            el.scrollTop = 0;
+        }
+        else if (currentpage == "viewPost") {
+            document.getElementById("viewPost").style.display = "none"
+            document.getElementById("viewVideoLarge").pause();
+            currentpage = "posts";
+        }
+        else if (currentpage == "newPost") {
+            document.getElementsByClassName("newPost")[0].style.display = "none";
+            document.getElementsByClassName("recentPosts")[0].style.display = "block";
+            currentpage = "posts";
+        }
+        else if (currentpage == "settings") {
+            document.getElementsByClassName("settings")[0].style.display = "none";
+            document.getElementsByClassName("scrollable")[0].style.display = "none";
+            document.getElementsByClassName("mainscreen")[0].style.display = "block";
+            currentpage = "home";
+        }
+    }
+}

@@ -23,3 +23,12 @@ function newPost(){
     document.getElementsByClassName("newPost")[0].style.display = "block";
     currentpage = "newPost"
 }
+
+function postImg(){
+    var lastPost = document.getElementsByClassName("postItem")[0];
+    var newPost = document.createElement("div");
+    newPost.classList.add("postItem");
+    newPost.innerHTML = "<p><img class='user' src='resources/user.png'> João posted</p><img class='postedImg' src='resources/ramen.jpg' onclick=" + "viewImg('resources/ramen.jpg')" + "><br>";
+    lastPost.insertAdjacentElement("beforebegin", newPost);
+    backButton();
+}
