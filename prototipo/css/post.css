@@ -40,7 +40,7 @@
     cursor: pointer;
 }
 
-.postItem p, .postedImg, .user, .newPost, .newPost img,.selectIMG, .confirmationPopupContent{
+.postItem p, .postedImg, .user, .newPost, .newPost img,.selectPost, .confirmationPopupContent{
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -66,7 +66,7 @@
 
 #viewImgLarge {
     margin-top: 10pt;
-    width: 2.8cm;
+    max-width: 2.8cm;
     max-height: 2.8cm;
     display: none;
 }
@@ -91,14 +91,21 @@
     font-size: 6pt;
 }
 
-.selectIMG {
+.selectPost {
     display: none; 
     height: 102pt;
 }
 
-.selectIMG img{
+.selectIMG{
     width: 1.2cm;
     cursor: pointer;
+    display: none;
+}
+
+.selectVideo{
+    width: 1.2cm;
+    cursor: pointer;
+    display: none;
 }
 
 #confirmationPopup{

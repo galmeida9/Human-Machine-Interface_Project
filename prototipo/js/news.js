@@ -38,6 +38,24 @@ weather();
 
 
 /*-------------------------------------------------------------------------------------
+Enables/Disables News 
+--------------------------------------------------------------------------------------*/
+function disableNews() {
+    document.getElementsByClassName("newsscreen")[0].style.display = "none";
+    document.getElementById("filterpopup").style.display = "none";
+    document.getElementsByClassName("weatherScreen")[0].style.display = "none";
+}
+
+function enableNews() {
+    document.getElementsByClassName("newsscreen")[0].style.display = "block";
+    document.getElementsByClassName("newsStory")[0].style.display = "none";
+    document.getElementsByClassName("news")[0].style.display = "block";
+    document.getElementsByClassName("weatherScreen")[0].style.display = "none";
+    document.getElementById("filterpopup").style.display = "none";
+}
+
+
+/*-------------------------------------------------------------------------------------
 Displays weather function
 --------------------------------------------------------------------------------------*/
 

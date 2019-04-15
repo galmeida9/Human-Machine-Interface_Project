@@ -1,5 +1,9 @@
 var isOpen = 0;
 
+
+/*-----------------------------------------------------------------------------------
+Open/Close menu
+-----------------------------------------------------------------------------------*/
 function openNav() {
     document.getElementById("menu").style.width = "113px";
     document.getElementById("menu").style.zIndex = 10;
@@ -12,52 +16,88 @@ function closeNav() {
     isOpen = 0;
 }
 
+
+/*-----------------------------------------------------------------------------------
+Open news
+-----------------------------------------------------------------------------------*/
 function openNews() {
-    document.getElementsByClassName("settings")[0].style.display = "none";
-    document.getElementsByClassName("scrollable")[0].style.display = "block";
-    document.getElementsByClassName("newsscreen")[0].style.display = "block";
-    document.getElementsByClassName("postScreen")[0].style.display = "none";
-    document.getElementsByClassName("newPost")[0].style.display = "none"
-    document.getElementsByClassName("mainscreen")[0].style.display = "none";
-    document.getElementsByClassName("newsStory")[0].style.display = "none";
-    document.getElementsByClassName("news")[0].style.display = "block";
-    document.getElementsByClassName("weatherScreen")[0].style.display = "none";
-    document.getElementById("filterpopup").style.display = "none";
-    document.getElementById("viewPost").style.display = "none";
-    document.getElementById("viewVideoLarge").pause();
-    el.scrollLeft = 0;
-    el.scrollTop = 0;
+    disableSettings();
+    enableWrapper();
+    disableMainScreen();
+    enableNews();
+    disablePosts();
+    resetScroll();
     closeNav();
     currentpage = "news";
 }
 
+
+/*-----------------------------------------------------------------------------------
+open posts
+-----------------------------------------------------------------------------------*/
 function openPosts(){
-    document.getElementsByClassName("mainscreen")[0].style.display = "none";
-    document.getElementsByClassName("settings")[0].style.display = "none";
-    document.getElementsByClassName("scrollable")[0].style.display = "block";
-    document.getElementsByClassName("newsscreen")[0].style.display = "none";
-    document.getElementsByClassName("postScreen")[0].style.display = "block";
-    document.getElementsByClassName("newPost")[0].style.display = "none"
-    document.getElementsByClassName("recentPosts")[0].style.display = "block";
-    document.getElementById("viewPost").style.display = "none";
-    document.getElementById("viewVideoLarge").pause();
-    el.scrollLeft = 0;
-    el.scrollTop = 0;
+    disableNews();
+    enablePosts();
+    disableMainScreen();
+    disableSettings()
+    enableWrapper();
+    resetScroll();
     closeNav();
     currentpage="posts";
 }
 
+
+/*-----------------------------------------------------------------------------------
+Open Settings
+-----------------------------------------------------------------------------------*/
 function openSettings(){
-    document.getElementsByClassName("mainscreen")[0].style.display = "none";
-    document.getElementsByClassName("scrollable")[0].style.display = "block";
-    document.getElementsByClassName("newsscreen")[0].style.display = "none";
-    document.getElementsByClassName("popup")[0].style.display = "none";
-    document.getElementsByClassName("newPost")[0].style.display = "none";
-    document.getElementsByClassName("postScreen")[0].style.display = "none";
-    document.getElementById("viewPost").style.display = "none";
-    document.getElementsByClassName("settings")[0].style.display = "block";
-    el.scrollLeft = 0;
-    el.scrollTop = 0;
+    disableNews();
+    disablePosts();
+    disableMainScreen();
+    enableWrapper();
+    enableSettings();
+    resetScroll();
     closeNav();
     currentpage="settings";
+}
+
+
+/*-----------------------------------------------------------------------------------
+Reset scroll
+-----------------------------------------------------------------------------------*/
+function resetScroll() {
+    el.scrollLeft = 0;
+    el.scrollTop = 0;
+}
+
+
+/*-----------------------------------------------------------------------------------
+Disable main screen
+-----------------------------------------------------------------------------------*/
+function disableMainScreen() {
+    document.getElementsByClassName("mainscreen")[0].style.display = "none";
+}
+
+
+/*-----------------------------------------------------------------------------------
+Disable/Enable settings
+-----------------------------------------------------------------------------------*/
+function disableSettings() {
+    document.getElementsByClassName("settings")[0].style.display = "none";
+}
+
+function enableSettings(){
+    document.getElementsByClassName("settings")[0].style.display = "block";
+}
+
+
+/*-----------------------------------------------------------------------------------
+Disable/Enable wrapper
+-----------------------------------------------------------------------------------*/
+function disableWrapper(){
+    document.getElementsByClassName("scrollable")[0].style.display = "none";
+}
+
+function enableWrapper(){
+    document.getElementsByClassName("scrollable")[0].style.display = "block";
 }

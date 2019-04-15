@@ -31,6 +31,7 @@
             <!------------------------------------------------------------------------------>
 
 
+            <!--SCROLL WRAPPER-------------------------------------------------------------->
             <div id="scrollable"  class="scrollable">
 
                 <!--TOPBAR------------------------------------------------------------------>
@@ -41,6 +42,7 @@
                 </div>
                 <!-------------------------------------------------------------------------->
                 
+
 
                 <!--NEWS SCREEN------------------------------------------------------------->
                 <div  class="newsscreen">
@@ -124,6 +126,7 @@
                 <!--------------------------------------------------------------------------->
                 
 
+
                 <!--POST SCREEN-------------------------------------------------------------->
                 <div class="postScreen">
 
@@ -165,20 +168,28 @@
                     </div>
 
 
-                    <!--IMAGE SELECTION------------------------------------------------------>
-                    <div class="selectIMG">
+                    <!--IMAGE/VIDEO SELECTION------------------------------------------------------>
+                    <div class="selectPost">
                         <table style="width: 100%">
                             <tr>
-                                <th><img onclick="imgConfirmation('resources/sharePhotos/alameda.jpg')" src="resources/sharePhotos/alameda.jpg"></th>
-                                <th><img onclick="imgConfirmation('resources/sharePhotos/antwerpen1.jpg')" src="resources/sharePhotos/antwerpen1.jpg"></th>
+                                <th><img class="selectIMG" onclick="postConfirmation('resources/sharePhotos/alameda.jpg', 'photo')" src="resources/sharePhotos/alameda.jpg" style="margin-left: 3pt"></th>
+                                <th><img class="selectIMG" onclick="postConfirmation('resources/sharePhotos/antwerpen1.jpg', 'photo')" src="resources/sharePhotos/antwerpen1.jpg"></th>
                             </tr>
                             <tr>
-                                <th><img onclick="imgConfirmation('resources/sharePhotos/paris.jpg')" src="resources/sharePhotos/paris.jpg"></th>
-                                <th><img onclick="imgConfirmation('resources/sharePhotos/belem.jpg')" src="resources/sharePhotos/belem.jpg"></th>
+                                <th><img class="selectIMG" onclick="postConfirmation('resources/sharePhotos/paris.jpg', 'photo')" src="resources/sharePhotos/paris.jpg" style="margin-left: 3pt"></th>
+                                <th><img class="selectIMG" onclick="postConfirmation('resources/sharePhotos/belem.jpg', 'photo')" src="resources/sharePhotos/belem.jpg"></th>
                             </tr>
                             <tr>
-                                <th><img onclick="imgConfirmation('resources/sharePhotos/marques_pombal.jpg')" src="resources/sharePhotos/marques_pombal.jpg"></th>
-                                <th><img onclick="imgConfirmation('resources/sharePhotos/antwerpen2.jpg')" src="resources/sharePhotos/antwerpen2.jpg"></th>
+                                <th><img class="selectIMG" onclick="postConfirmation('resources/sharePhotos/marques_pombal.jpg', 'photo')" src="resources/sharePhotos/marques_pombal.jpg" style="margin-left: 3pt"></th>
+                                <th><img class="selectIMG" onclick="postConfirmation('resources/sharePhotos/antwerpen2.jpg', 'photo')" src="resources/sharePhotos/antwerpen2.jpg"></th>
+                            </tr>
+                            <tr>
+                                <th><video class="selectVideo" onclick="postConfirmation('resources/shareVideos/brussels.mp4', 'video')" src="resources/shareVideos/brussels.mp4" style="margin-left: 3pt"></th>
+                                <th><video class="selectVideo" onclick="postConfirmation('resources/shareVideos/paris.mp4', 'video')" src="resources/shareVideos/paris.mp4"></th>
+                            </tr>
+                            <tr>
+                                <th><video class="selectVideo" onclick="postConfirmation('resources/shareVideos/lisbon.mp4', 'video')" src="resources/shareVideos/lisbon.mp4" style="margin-left: 3pt"></th>
+                                <th><video class="selectVideo" onclick="postConfirmation('resources/shareVideos/spain.mp4', 'video')" src="resources/shareVideos/spain.mp4"></th>
                             </tr>
                         </table>
                     </div>
@@ -187,6 +198,7 @@
                 <!--------------------------------------------------------------------------->
             
             </div>
+
 
             <!--FILTER POPUP FOR NEWS SCREEN------------------------------------------------->
             <div id="filterpopup" class="popup">
@@ -207,8 +219,8 @@
             <div class="newPost">
                 <table style="width: 100%">
                     <tr>
-                        <th><img src="resources/image.png" onclick="selectIMG()" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
-                        <th><img src="resources/video.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                        <th><img src="resources/image.png" onclick="selectPost('photo')" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                        <th><img src="resources/video.png" onclick="selectPost('video')" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
                     </tr>
                     <tr>
                         <th><p style="margin-top: -10pt">Images</p></th>
@@ -239,7 +251,7 @@
             <div id="confirmationPopup">
                 <div id="confirmationPopupContent">
                     <p>Are you sure?</p>
-                    <p><img onclick="backButton()" src="resources/cancel.png" style="margin-left: -2pt"><img onclick="postImg()" src="resources/confirm.png" style="margin-left: 17pt"></p>
+                    <p><img onclick="backButton()" src="resources/cancel.png" style="margin-left: -2pt"><img onclick="postImgVideo()" src="resources/confirm.png" style="margin-left: 17pt"></p>
                 </div>
             </div>
 
