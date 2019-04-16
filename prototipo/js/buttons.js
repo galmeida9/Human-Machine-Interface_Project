@@ -44,6 +44,7 @@ function backButton() {
             document.getElementById("viewPost").style.display = "none"
             document.getElementById("viewVideoLarge").pause();
             document.querySelectorAll(".postedVideo").forEach(function(element) {
+                element.muted = true;
                 element.play();
             });
             currentpage = "posts";
@@ -52,6 +53,7 @@ function backButton() {
             document.getElementsByClassName("newPost")[0].style.display = "none";
             document.getElementsByClassName("recentPosts")[0].style.display = "block";
             document.querySelectorAll(".postedVideo").forEach(function(element) {
+                element.muted = true;
                 element.play();
             });
             currentpage = "posts";
