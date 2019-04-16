@@ -49,27 +49,25 @@
 
                     <!--NEWS TITLES--------------------------------------------------------->
                     <div class="news">
-                        <h4 style="margin-top: 3.75pt; margin-left: 10%">NEWS  <a href="#"><img src="resources/filter.png" id="filter" style="width: 0.35cm"></a></h4>
-                        <p style="margin-top: -0.5cm"><a onclick="openWeather()" style="cursor: pointer;"><img src="resources/sunny.png" style="width: 0.3cm; vertical-align: middle; margin-top: -0.09cm;">  <span class="weatherToday" style="font-size: 8pt"></span></a></p>
-                        <hr>
-                        <div id="local">
-                            <p><a class="newsTitle" onclick="showNews('mocambique')" style="cursor: pointer;">501 mortos em Moçambique</a></p>
-                            <hr>
-                            <p><a class="newsTitle" onclick="showNews('lanche')" style="cursor: pointer;">Lanches das crianças do pré-escolar vão ter fruta e legumes</a></p>
-                            <hr>
+                        <h4 style="height: 0%; padding: 5%; margin-top: 0%; margin-bottom: 16%; text-shadow: 0px 0px 1px white">NEWS    <a href="#"><button class="btn" id="filter" style="width: 20%; margin-left: 22%; height: 20px"><img src="resources/filter.png" style="width: 12px; margin-left: -5px"/></button></a></h4>
+                        <p style="margin-top: 0.5cm"><button class="btn" onclick="openWeather()"><img src="resources/sunny.png" style="width: 0.3cm; vertical-align: middle; margin-top: -0.09cm;">  <span class="weatherToday" style="font-size: 8pt"></span></a></button>
+                        <hr style="margin-top: -8%; margin-bottom: 0%">
+                        <div class="local">
+                            <button class="btn" type="button" onclick="showNews('mocambique')">501 mortos em Moçambique</button>
                         </div>
-                        <div id="sport">
-                            <p><a class="newsTitle" onclick="showNews('futebol')" style="cursor: pointer;">"Felizmente a Federação Portuguesa de Futebol teve o bom-senso que a RTP não teve"</a></p>
-                            <hr>
+                        <div class="sport">
+                            <button class="btn" type="button" onclick="showNews('futebol')">"Felizmente a Federação Portuguesa de Futebol teve o bom-senso que a RTP não teve"</button> 
                         </div>
-                        <div id="politics">
-                            <p><a class="newsTitle" onclick="showNews('brexit')" style="cursor: pointer;">Brexit: o que os 400 mil portugueses têm de fazer para permanecer no Reino Unido?</a></p>
-                            <hr>
+                        <div class="local">
+                            <button class="btn" type="button" onclick="showNews('lanche')">Lanches das crianças do pré-escolar vão ter fruta e legumes</button> 
                         </div>
-                        <div id="science">
-                            <p><a class="newsTitle" onclick="showNews('bebe')" style="cursor: pointer;">Como se mantém vivo um bebé na barriga de uma mulher em morte cerebral</a></p>
-                            <hr>
+                        <div class="politics">
+                            <button class="btn" type="button" onclick="showNews('brexit')">Brexit: o que os 400 mil portugueses têm de fazer para permanecer no Reino Unido?</button> 
                         </div>
+                        <div class="science">
+                            <button class="btn" type="button" onclick="showNews('bebe')">Como se mantém vivo um bebé na barriga de uma mulher em morte cerebral</button> 
+                        </div>
+                        <br>
                     </div>
 
                     <!--NEWS STORIES-------------------------------------------------------->
@@ -134,34 +132,34 @@
                     <div class="recentPosts">
                         <img src="resources/plus.png" onclick="newPost()" style="width: 0.5cm; margin-top: 3pt; cursor: pointer;">
                         <div class="postItem">
-                            <p><img class="user" src="resources/user.png"> Gabriel posted</p>
+                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> Gabriel <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/alameda.jpg" onclick="viewImg('resources/alameda.jpg')">
                             <br>
                         </div>
                         <div class="postItem">
-                            <p><img class="user" src="resources/user.png"> André posted</p>
+                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> André <span style="font-weight: lighter">posted</span></p>
                             <video class="postedVideo" onclick="viewVideo('resources/avengers.mp4')">
                                 <source src="resources/avengers.mp4" type="video/mp4">
                             </video>
                             <br>
                         </div>
                         <div class="postItem">
-                            <p><img class="user" src="resources/user.png"> Andreia posted</p>
+                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> Andreia <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/paris.png" onclick="viewImg('resources/paris.png')">
                             <br>
                         </div>
                         <div class="postItem">
-                            <p><img class="user" src="resources/user.png"> António posted</p>
+                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> António <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/Antwerpen.jpg" onclick="viewImg('resources/Antwerpen.jpg')">
                             <br>
                         </div>
                         <div class="postItem">
-                            <p><img class="user" src="resources/user.png"> Diogo posted</p>
+                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> Diogo <span style="font-weight: lighter">posted</span></p>
                             <p>Estou a adorar a minha viagem a Inglaterra!! Se podesse vinha cá sempre!</p>
                             <br>
                         </div>
                         <div class="postItem">
-                            <p><img class="user" src="resources/user.png"> João posted</p>
+                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> João <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/ramen.jpg" onclick="viewImg('resources/ramen.jpg')">
                             <br>
                         </div>
@@ -256,10 +254,10 @@
             </div>
 
             <!--SETIINGS-------------------------------------------------------------------->
-            <div class="settings">
-                <p>Nightmode<a onclick="nightmode()" style="cursor: pointer;"><img src="resources/night_mode_off.png" id="nightmodeIcon" style="width: 0.33cm; margin-left: 26pt; vertical-align: -1.5pt;"></a></p>
-                <a href="#" style="text-decoration: none; color: black;"><p>Change Wallpaper</p></a>
-                <a href="#" style="text-decoration: none; color: black;"><p>Help</p></a>
+            <div class="settings" style="margin-left: 6%; margin-top: 20%">
+                <button class="btn" onclick="nightmode()">Nightmode <img src="resources/night_mode_off.png" id="nightmodeIcon" style="width: 0.33cm; vertical-align: -1.5pt; margin-left: 4px"></button> 
+                <button class="btn">Change Wallpaper</button> 
+                <button class="btn">Help</button>                
             </div>
         
         </div>

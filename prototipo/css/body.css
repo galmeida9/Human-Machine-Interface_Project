@@ -71,3 +71,23 @@ body {
     margin-left: 0.008cm;
     overflow: hidden;
 }
+
+.btn{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    padding: 3px 12px;
+    font-size: 8px;
+    line-height: 1.1;
+    width: 95%;
+ 
+     -o-transition: background-color .2s ease-in; 
+     -moz-transition: background-color .2s ease-in;
+     -webkit-transition: background-color .2s ease-in; 
+     transition: background-color .2s ease-in; 
+ }
+ 
+
+ .btn:focus{
+     outline: none;
+ }
