@@ -130,6 +130,7 @@ function showLocal() {
         else document.getElementById(newsCategories[i]).style.display = "none";
     }
     document.getElementById("filterpopup").style.display = "none";
+    currentpage = "news";
 }
 
 function showPolitics() {
@@ -143,6 +144,7 @@ function showPolitics() {
         else document.getElementById(newsCategories[i]).style.display = "none";
     }
     document.getElementById("filterpopup").style.display = "none";
+    currentpage = "news";
 }
 
 function showScience() {
@@ -156,6 +158,7 @@ function showScience() {
         else document.getElementById(newsCategories[i]).style.display = "none";
     }
     document.getElementById("filterpopup").style.display = "none";
+    currentpage = "news";
 }
 
 function showSports() {
@@ -169,6 +172,7 @@ function showSports() {
         else document.getElementById(newsCategories[i]).style.display = "none";
     }
     document.getElementById("filterpopup").style.display = "none";
+    currentpage = "news";
 }
 
 function showAll() {
@@ -181,4 +185,5 @@ function showAll() {
         document.getElementById(newsCategories[i]).style.display = "block";
     }
     document.getElementById("filterpopup").style.display = "none";
+    currentpage = "news";
 }
