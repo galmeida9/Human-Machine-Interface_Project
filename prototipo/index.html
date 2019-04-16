@@ -319,6 +319,9 @@ window.onclick = function(event) {
     else if (event.target == post) {
         post.style.display = "none";
         document.getElementById("viewVideoLarge").pause();
+        document.querySelectorAll(".postedVideo").forEach(function(element) {
+            element.play();
+        });
         currentpage = "posts";
     }
 

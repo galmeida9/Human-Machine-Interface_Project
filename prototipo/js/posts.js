@@ -12,6 +12,9 @@ function disablePosts() {
     document.getElementById("viewPost").style.display = "none";
     document.getElementById("viewVideoLarge").pause();
     document.getElementById("confirmationPopup").style.display = "none";
+    document.querySelectorAll(".postedVideo").forEach(function(element) {
+        element.pause();
+    });
     disablePhotos();
     disableVideos();
 
@@ -24,6 +27,10 @@ function enablePosts() {
     document.getElementById("viewPost").style.display = "none";
     document.getElementById("viewVideoLarge").pause();
     document.getElementById("confirmationPopup").style.display = "none";
+    document.querySelectorAll(".postedVideo").forEach(function(element) {
+        element.play();
+        element.muted = true;
+    });
     disablePhotos();
     disableVideos();
 }
@@ -38,6 +45,9 @@ function viewImg(img){
         document.getElementById("viewImgLarge").style.display = "block";
         document.getElementById("viewVideoLarge").style.display = "none";
         document.getElementById("viewImgLarge").src = img;
+        document.querySelectorAll(".postedVideo").forEach(function(element) {
+            element.pause();
+        });
         currentpage = "viewPost";
     }
 }
@@ -52,6 +62,10 @@ function viewVideo(video){
         document.getElementById("viewImgLarge").style.display = "none";
         document.getElementById("viewVideoLarge").style.display = "block";
         document.getElementById("viewVideoLarge").src = video;
+        document.querySelectorAll(".postedVideo").forEach(function(element) {
+            element.pause();
+        });
+        document.getElementById("viewVideoLarge").play();
         currentpage = "viewPost";
     }
 }

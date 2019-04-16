@@ -43,11 +43,17 @@ function backButton() {
         else if (currentpage == "viewPost") {
             document.getElementById("viewPost").style.display = "none"
             document.getElementById("viewVideoLarge").pause();
+            document.querySelectorAll(".postedVideo").forEach(function(element) {
+                element.play();
+            });
             currentpage = "posts";
         }
         else if (currentpage == "newPost") {
             document.getElementsByClassName("newPost")[0].style.display = "none";
             document.getElementsByClassName("recentPosts")[0].style.display = "block";
+            document.querySelectorAll(".postedVideo").forEach(function(element) {
+                element.play();
+            });
             currentpage = "posts";
         }
         else if (currentpage == "settings") {
