@@ -32,7 +32,7 @@
 
 
             <!--SCROLL WRAPPER-------------------------------------------------------------->
-            <div id="scrollable"  class="scrollable">
+            <div id="scrollable"  class="scrollable darkmodeBackground">
 
                 <!--TOPBAR------------------------------------------------------------------>
                 <div class="topbar">
@@ -48,7 +48,7 @@
                 <div  class="newsscreen">
 
                     <!--NEWS TITLES--------------------------------------------------------->
-                    <div class="news">
+                    <div class="news darkmodeText">
                         <h4 style="height: 0%; padding: 5%; margin-top: 0%; margin-bottom: 16%; text-shadow: 0px 0px 1px white;">NEWS    <button class="btn" id="filter" style="width: 20%; margin-left: 17pt; height: 20px"><img src="resources/filter.png" style="width: 12px; margin-left: -5px"/></button></h4>
                         <p style="margin-top: 0.5cm"><button class="btn" onclick="openWeather()"><img src="resources/sunny.png" style="width: 0.3cm; vertical-align: middle; margin-top: -0.09cm;">  <span class="weatherToday" style="font-size: 8pt"></span></a></button>
                         <hr style="margin-top: -8%; margin-bottom: 0%">
@@ -70,51 +70,51 @@
 
                     <!--NEWS STORIES-------------------------------------------------------->
                     <div id="newsStory" class="newsStory">
-                        <h5 id="title" class="newsPart"></h5>
-                        <p id="text" class="newsPart"></p>
+                        <h5 id="title" class="newsPart darkmodeText"></h5>
+                        <p id="text" class="newsPart darkmodeText"></p>
                     </div>
 
                     <!--WEATHER SCREEN------------------------------------------------------>
                     <div class="weatherScreen">
                         <h4 id="weatherTitle">Lisbon, Today</h4>
                         <img src="resources/sunny.png" style="width: 1cm; margin-top: -16%;">
-                        <p class="weatherToday" style="text-align: center; margin-top: -2%;">
+                        <p class="weatherToday darkmodeText" style="text-align: center; margin-top: -2%;">
                         <table style="width: 100%">
                             <tr>
-                                <th><p id="day2" class="day" style="margin-top: -20%"></p></th>
-                                <th><p id="day3" class="day" style="margin-top: -20%"></p></th>
+                                <th><p id="day2" class="day darkmodeText" style="margin-top: -20%"></p></th>
+                                <th><p id="day3" class="day darkmodeText" style="margin-top: -20%"></p></th>
                             </tr>
                             <tr>
                                 <th><img id="weatherImg2" style="width: 0.5cm;"></th>
                                 <th><img id="weatherImg3" style="width: 0.5cm;"></th>
                             </tr>
                             <tr>
-                                <th><p id="weatherDay2" class="weather"></p></th>
-                                <th><p id="weatherDay3" class="weather"></p></th>
+                                <th><p id="weatherDay2" class="weather darkmodeText"></p></th>
+                                <th><p id="weatherDay3" class="weather darkmodeText"></p></th>
                             </tr>
                             <tr>
-                                <th><p id="day4" class="day"></p></th>
-                                <th><p id="day5" class="day"></p></th>
+                                <th><p id="day4" class="day darkmodeText"></p></th>
+                                <th><p id="day5" class="day darkmodeText"></p></th>
                             </tr>
                             <tr>
                                 <th><img id="weatherImg4" style="width: 0.5cm;"></th>
                                 <th><img id="weatherImg5" style="width: 0.5cm;"></th>
                             </tr>
                             <tr>
-                                <th><p id="weatherDay4" class="weather"></p></th>
-                                <th><p id="weatherDay5" class="weather"></p></th>
+                                <th><p id="weatherDay4" class="weather darkmodeText"></p></th>
+                                <th><p id="weatherDay5" class="weather darkmodeText"></p></th>
                             </tr>
                             <tr>
-                                <th><p id="day6" class="day"></p></th>
-                                <th><p id="day7" class="day"></p></th>
+                                <th><p id="day6" class="day darkmodeText"></p></th>
+                                <th><p id="day7" class="day darkmodeText"></p></th>
                             </tr>
                             <tr>
                                 <th><img id="weatherImg6" style="width: 0.5cm;"></th>
                                 <th><img id="weatherImg7" style="width: 0.5cm;"></th>
                             </tr>
                             <tr>
-                                <th><p id="weatherDay6" class="weather"></p></th>
-                                <th><p id="weatherDay7" class="weather"></p></th>
+                                <th><p id="weatherDay6" class="weather darkmodeText"></p></th>
+                                <th><p id="weatherDay7" class="weather darkmodeText"></p></th>
                             </tr>
                         </table>
                     </div>
@@ -130,34 +130,34 @@
                     <div class="recentPosts">
                         <img id="addPostImg" src="resources/plus.png" onclick="newPost()" style="width: 0.5cm; margin-top: 3pt; cursor: pointer;">
                         <div class="postItem">
-                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> Gabriel <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText darkmodeText" style="font-weight: bold"><img class="user" src="resources/user.png"> Gabriel <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/alameda.jpg" onclick="viewImg('resources/alameda.jpg')">
                             <br>
                         </div>
                         <div class="postItem">
-                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> André <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText darkmodeText" style="font-weight: bold"><img class="user" src="resources/user.png"> André <span style="font-weight: lighter">posted</span></p>
                             <video class="postedVideo" onclick="viewVideo('resources/avengers.mp4')">
                                 <source src="resources/avengers.mp4" type="video/mp4">
                             </video>
                             <br>
                         </div>
                         <div class="postItem">
-                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> Andreia <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText darkmodeText" style="font-weight: bold"><img class="user" src="resources/user.png"> Andreia <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/paris.png" onclick="viewImg('resources/paris.png')">
                             <br>
                         </div>
                         <div class="postItem">
-                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> António <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText darkmodeText" style="font-weight: bold"><img class="user" src="resources/user.png"> António <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/Antwerpen.jpg" onclick="viewImg('resources/Antwerpen.jpg')">
                             <br>
                         </div>
                         <div class="postItem">
-                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> Diogo <span style="font-weight: lighter">posted</span></p>
-                            <p class="postItemText" style="font-size: 7pt">Estou a adorar a minha viagem a Inglaterra!! Se podesse vinha cá sempre!</p>
+                            <p class="postItemText darkmodeText" style="font-weight: bold"><img class="user" src="resources/user.png"> Diogo <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText darkmodeText" style="font-size: 7pt">Estou a adorar a minha viagem a Inglaterra!! Se podesse vinha cá sempre!</p>
                             <br>
                         </div>
                         <div class="postItem">
-                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> João <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText darkmodeText" style="font-weight: bold"><img class="user" src="resources/user.png"> João <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/ramen.jpg" onclick="viewImg('resources/ramen.jpg')">
                             <br>
                         </div>
@@ -198,14 +198,14 @@
 
             <!--FILTER POPUP FOR NEWS SCREEN------------------------------------------------->
             <div id="filterpopup" class="popup">
-                <div class="popupcontent">
+                <div class="popupcontent darkmodeText darkmodeBackground">
                     <span class="close">&times;</span>
                     <b><p style="text-align: center; margin-top: -0.4cm; font-size: 8pt;">Categories</p></b>
-                    <p style="margin-top: -0.1cm;"><a class="popupCategory" onclick="showAll()" style="cursor: pointer;">All</a><img class="newsCheckmark" src="resources/check.png" id="allCheck"></p>
-                    <p><a class="popupCategory" onclick="showLocal()" style="cursor: pointer;">Local</a><img class="newsCheckmark" src="resources/check.png" id="localCheck"></p>
-                    <p><a class="popupCategory" onclick="showPolitics()" style="cursor: pointer;">Politics</a><img class="newsCheckmark" src="resources/check.png" id="politicsCheck"></p>
-                    <p><a class="popupCategory" onclick="showScience()" style="cursor: pointer;">Science</a><img class="newsCheckmark" src="resources/check.png" id="scienceCheck"></p>
-                    <p><a class="popupCategory" onclick="showSports()" style="cursor: pointer;">Sports</a><img class="newsCheckmark" src="resources/check.png" id="sportsCheck"></p>
+                    <p style="margin-top: -0.1cm;"><a class="popupCategory darkmodeText" onclick="showAll()" style="cursor: pointer;">All</a><img class="newsCheckmark" src="resources/check.png" id="allCheck"></p>
+                    <p><a class="popupCategory darkmodeText" onclick="showLocal()" style="cursor: pointer;">Local</a><img class="newsCheckmark" src="resources/check.png" id="localCheck"></p>
+                    <p><a class="popupCategory darkmodeText" onclick="showPolitics()" style="cursor: pointer;">Politics</a><img class="newsCheckmark" src="resources/check.png" id="politicsCheck"></p>
+                    <p><a class="popupCategory darkmodeText" onclick="showScience()" style="cursor: pointer;">Science</a><img class="newsCheckmark" src="resources/check.png" id="scienceCheck"></p>
+                    <p><a class="popupCategory darkmodeText" onclick="showSports()" style="cursor: pointer;">Sports</a><img class="newsCheckmark" src="resources/check.png" id="sportsCheck"></p>
                 </div>
             </div>
             <!------------------------------------------------------------------------------->
@@ -215,20 +215,20 @@
             <div class="newPost">
                 <table style="width: 100%">
                     <tr>
-                        <th><img src="resources/image.png" onclick="selectPost('photo')" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
-                        <th><img src="resources/video.png" onclick="selectPost('video')" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                        <th><img id="selectImg" src="resources/image.png" onclick="selectPost('photo')" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                        <th><img id="selectVideo" src="resources/video.png" onclick="selectPost('video')" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
                     </tr>
                     <tr>
-                        <th><p style="margin-top: -10pt">Images</p></th>
-                        <th><p style="margin-top: -10pt">Videos</p></th>
+                        <th><p class="darkmodeText" style="margin-top: -10pt">Images</p></th>
+                        <th><p class="darkmodeText" style="margin-top: -10pt">Videos</p></th>
                     </tr>
                     <tr>
-                        <th><img src="resources/location.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
-                        <th><img src="resources/microphone.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                        <th><img id="selectLocation" src="resources/location.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                        <th><img id="selectMicrophone" src="resources/microphone.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
                     </tr>
                     <tr>
-                        <th><p style="margin-top: -10pt">Location</p></th>
-                        <th><p style="margin-top: -10pt">Voice to Text</p></th>
+                        <th><p class="darkmodeText" style="margin-top: -10pt">Location</p></th>
+                        <th><p class="darkmodeText" style="margin-top: -10pt">Voice to Text</p></th>
                     </tr>
                 </table>
             </div>
@@ -327,7 +327,7 @@ window.onclick = function(event) {
 
     else if (event.target == confirmation) {
         confirmation.style.display = "none";
-        currentpage = "selectIMG";
+        currentpage = "selectPost";
     }
 }
 

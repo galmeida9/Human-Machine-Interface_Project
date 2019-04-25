@@ -91,3 +91,11 @@ body {
  .btn:focus{
      outline: none;
  }
+
+ .darkmodeText{
+     color: black;
+ }
+
+ .darkmodeBackground{
+     background: white;
+ }

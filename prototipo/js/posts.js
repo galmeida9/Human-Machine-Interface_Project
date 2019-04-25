@@ -117,10 +117,16 @@ function postImgVideo(){
     var newPost = document.createElement("div");
     newPost.classList.add("postItem");
     if (img == 1) 
-        newPost.innerHTML = "<p class='postItemText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src=" + imgToPost + " onclick=" + "viewImg('" + imgToPost + "')" + "><br>";
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src=" + imgToPost + " onclick=" + "viewImg('" + imgToPost + "')" + "><br>";
     else
-    newPost.innerHTML = "<p class='postItemText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><Video class='postedVideo' src=" + videoToPost + " onclick=" + "viewVideo('" + videoToPost + "')" + "><br>";
+    newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><Video class='postedVideo' src=" + videoToPost + " onclick=" + "viewVideo('" + videoToPost + "')" + "><br>";
     lastPost.insertAdjacentElement("beforebegin", newPost);
+    if (nightmodeOn == 1) {
+        document.querySelectorAll(".darkmodeText").forEach(function(element) {
+            element.style.color = 'white';
+        });
+        document.getElementsByClassName("user")[0].src="resources/user_white.png";
+    }
     disablePhotos();
     backButton();
     backButton();
