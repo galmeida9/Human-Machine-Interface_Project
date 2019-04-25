@@ -3,7 +3,10 @@
     position: absolute;
     height: 4.01cm;
     width: 0;
-    background-color: #1162a4;
+    background-image: url("../resources/menu_back.png");
+    background-repeat: no-repeat;
+    background-size: 275px;
+    /*background-color: #1162a4;*/
     overflow-x: hidden;
     transition: 0.4s;
     margin-top: 2.11cm;
@@ -47,5 +50,5 @@
 
 .column p{
     font-size: 7.5pt;
-    color: white;
+    color: black;
 }
