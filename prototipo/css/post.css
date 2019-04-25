@@ -20,7 +20,7 @@
     vertical-align: middle;
 }
 
-.postItem p {
+.postItemText {
     font-size: 7pt;
 }
 
@@ -40,7 +40,7 @@
     cursor: pointer;
 }
 
-.postItem p, .postedImg, .user, .newPost, .newPost img,.selectPost, .confirmationPopupContent{
+.recentPosts, .postItemText, .postedImg, .user, .newPost, .newPost img,.selectPost, .confirmationPopupContent{
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */

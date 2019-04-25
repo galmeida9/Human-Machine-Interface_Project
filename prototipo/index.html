@@ -53,17 +53,17 @@
                         <p style="margin-top: 0.5cm"><button class="btn" onclick="openWeather()"><img src="resources/sunny.png" style="width: 0.3cm; vertical-align: middle; margin-top: -0.09cm;">  <span class="weatherToday" style="font-size: 8pt"></span></a></button>
                         <hr style="margin-top: -8%; margin-bottom: 0%">
                         <div id="local">
-                            <button class="btn" type="button" onclick="showNews('mocambique')">501 mortos em Moçambique</button>
-                            <button class="btn" type="button" onclick="showNews('lanche')">Lanches das crianças do pré-escolar vão ter fruta e legumes</button>
+                            <button class="btn newsTitle" type="button" onclick="showNews('mocambique')">501 mortos em Moçambique</button>
+                            <button class="btn newsTitle" type="button" onclick="showNews('lanche')">Lanches das crianças do pré-escolar vão ter fruta e legumes</button>
                         </div>
                         <div id="sport">
-                            <button class="btn" type="button" onclick="showNews('futebol')">"Felizmente a Federação Portuguesa de Futebol teve o bom-senso que a RTP não teve"</button> 
+                            <button class="btn newsTitle" type="button" onclick="showNews('futebol')">"Felizmente a Federação Portuguesa de Futebol teve o bom-senso que a RTP não teve"</button> 
                         </div>
                         <div id="politics">
-                            <button class="btn" type="button" onclick="showNews('brexit')">Brexit: o que os 400 mil portugueses têm de fazer para permanecer no Reino Unido?</button> 
+                            <button class="btn newsTitle" type="button" onclick="showNews('brexit')">Brexit: o que os 400 mil portugueses têm de fazer para permanecer no Reino Unido?</button> 
                         </div>
                         <div id="science">
-                            <button class="btn" type="button" onclick="showNews('bebe')">Como se mantém vivo um bebé na barriga de uma mulher em morte cerebral</button> 
+                            <button class="btn newsTitle" type="button" onclick="showNews('bebe')">Como se mantém vivo um bebé na barriga de uma mulher em morte cerebral</button> 
                         </div>
                         <br>
                     </div>
@@ -128,36 +128,36 @@
 
                     <!--RECENT POSTS--------------------------------------------------------->
                     <div class="recentPosts">
-                        <img src="resources/plus.png" onclick="newPost()" style="width: 0.5cm; margin-top: 3pt; cursor: pointer;">
+                        <img id="addPostImg" src="resources/plus.png" onclick="newPost()" style="width: 0.5cm; margin-top: 3pt; cursor: pointer;">
                         <div class="postItem">
-                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> Gabriel <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> Gabriel <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/alameda.jpg" onclick="viewImg('resources/alameda.jpg')">
                             <br>
                         </div>
                         <div class="postItem">
-                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> André <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> André <span style="font-weight: lighter">posted</span></p>
                             <video class="postedVideo" onclick="viewVideo('resources/avengers.mp4')">
                                 <source src="resources/avengers.mp4" type="video/mp4">
                             </video>
                             <br>
                         </div>
                         <div class="postItem">
-                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> Andreia <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> Andreia <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/paris.png" onclick="viewImg('resources/paris.png')">
                             <br>
                         </div>
                         <div class="postItem">
-                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> António <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> António <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/Antwerpen.jpg" onclick="viewImg('resources/Antwerpen.jpg')">
                             <br>
                         </div>
                         <div class="postItem">
-                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> Diogo <span style="font-weight: lighter">posted</span></p>
-                            <p>Estou a adorar a minha viagem a Inglaterra!! Se podesse vinha cá sempre!</p>
+                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> Diogo <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText" style="font-size: 7pt">Estou a adorar a minha viagem a Inglaterra!! Se podesse vinha cá sempre!</p>
                             <br>
                         </div>
                         <div class="postItem">
-                            <p style="font-weight: bold"><img class="user" src="resources/user.png"> João <span style="font-weight: lighter">posted</span></p>
+                            <p class="postItemText" style="font-weight: bold"><img class="user" src="resources/user.png"> João <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/ramen.jpg" onclick="viewImg('resources/ramen.jpg')">
                             <br>
                         </div>
