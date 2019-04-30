@@ -75,5 +75,10 @@ function backButton() {
             document.getElementById("confirmationPopup").style.display = "none";
             currentpage = "selectPost";
         }
+        else if (currentpage == "locationShare") {
+            document.getElementsByClassName("locationShare")[0].style.display = "none";
+            document.getElementsByClassName("newPost")[0].style.display = "block";
+            currentpage = "newPost";
+        }
     }
 }

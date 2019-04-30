@@ -1,6 +1,6 @@
 var imgToPost;
 var videoToPost;
-var img = 0;
+var typeOfPost = 0; /* {0:video, 1:image; 2:location} */
 
 
 /*-----------------------------------------------------------------------------------
@@ -8,7 +8,8 @@ Disable/Enable Posts
 -----------------------------------------------------------------------------------*/
 function disablePosts() {
     document.getElementsByClassName("postScreen")[0].style.display = "none";
-    document.getElementsByClassName("newPost")[0].style.display = "none"
+    document.getElementsByClassName("newPost")[0].style.display = "none";
+    document.getElementsByClassName("locationShare")[0].style.display = "none"
     document.getElementById("viewPost").style.display = "none";
     document.getElementById("viewVideoLarge").pause();
     document.getElementById("confirmationPopup").style.display = "none";
@@ -103,8 +104,8 @@ function postConfirmation(source, mode){
     if (mouseMovement < 3 && mouseMovement > -3) {
         document.getElementById("confirmationPopup").style.display = "block";
         currentpage = "confirmationPopup";
-        if (mode == "photo") { imgToPost = source; img = 1; }
-        else { videoToPost = source; img = 0;}
+        if (mode == "photo") { imgToPost = source; typeOfPost = 1; }
+        else { videoToPost = source; typeOfPost = 0;}
     }
 }
 
@@ -112,14 +113,18 @@ function postConfirmation(source, mode){
 /*-----------------------------------------------------------------------------------
 Post img/Video
 -----------------------------------------------------------------------------------*/
-function postImgVideo(){
+function post(){
     var lastPost = document.getElementsByClassName("postItem")[0];
     var newPost = document.createElement("div");
     newPost.classList.add("postItem");
-    if (img == 1) 
+    
+    if (typeOfPost == 1) 
         newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src=" + imgToPost + " onclick=" + "viewImg('" + imgToPost + "')" + "><br>";
+    else if (typeOfPost == 0)
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><Video class='postedVideo' src=" + videoToPost + " onclick=" + "viewVideo('" + videoToPost + "')" + "><br>";
     else
-    newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><Video class='postedVideo' src=" + videoToPost + " onclick=" + "viewVideo('" + videoToPost + "')" + "><br>";
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src='resources/tecnico_location.png' onclick=" + "viewImg('resources/tecnico_location.png')" + "><br>";
+    
     lastPost.insertAdjacentElement("beforebegin", newPost);
     if (nightmodeOn == 1) {
         document.querySelectorAll(".darkmodeText").forEach(function(element) {
@@ -130,7 +135,20 @@ function postImgVideo(){
     disablePhotos();
     backButton();
     backButton();
-    backButton();
+    if (typeOfPost != 2) backButton();
+
+    console.log(currentpage);
+}
+
+
+/*-----------------------------------------------------------------------------------
+Open Share Location Screen
+-----------------------------------------------------------------------------------*/
+function openShareLocation() {
+    document.getElementsByClassName("newPost")[0].style.display = "none";
+    document.getElementsByClassName("locationShare")[0].style.display = "block";
+    currentpage = "locationShare";
+    typeOfPost = 2;
 }
 
 

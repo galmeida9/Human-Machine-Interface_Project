@@ -215,16 +215,16 @@
             <div class="newPost">
                 <table style="width: 100%">
                     <tr>
-                        <th><img id="selectImg" src="resources/image.png" onclick="selectPost('photo')" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
-                        <th><img id="selectVideo" src="resources/video.png" onclick="selectPost('video')" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                        <th><img id="selectImg" src="resources/image.png" onclick="selectPost('photo')"></th>
+                        <th><img id="selectVideo" src="resources/video.png" onclick="selectPost('video')"></th>
                     </tr>
                     <tr>
                         <th><p class="darkmodeText" style="margin-top: -10pt">Images</p></th>
                         <th><p class="darkmodeText" style="margin-top: -10pt">Videos</p></th>
                     </tr>
                     <tr>
-                        <th><img id="selectLocation" src="resources/location.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
-                        <th><img id="selectMicrophone" src="resources/microphone.png" style="width: 1cm; padding: 5pt; cursor: pointer;"></th>
+                        <th><img id="selectLocation" src="resources/location.png" onclick="openShareLocation()"></th>
+                        <th><img id="selectMicrophone" src="resources/microphone.png"></th>
                     </tr>
                     <tr>
                         <th><p class="darkmodeText" style="margin-top: -10pt">Location</p></th>
@@ -235,6 +235,14 @@
             <!------------------------------------------------------------------------------>
             
             
+            <!--LOCATION SHARE-------------------------------------------------------------->
+            <div class="locationShare">
+                <img id="locationShareIMG" src="resources/tecnico_location.png">
+                <p class="darkmodeText">Are you sure?</p>
+                <p><img class="confirmationButtonsLocation" onclick="backButton()" src="resources/cancel.png" style="margin-left: 2pt"><img class="confirmationButtonsLocation" onclick="post()" src="resources/confirm.png" style="margin-left: 33pt"></p>
+            </div>
+            <!------------------------------------------------------------------------------>
+
             <!--VIEW POST------------------------------------------------------------------->
             <div id="viewPost">
                 <img id="viewImgLarge">
@@ -247,7 +255,7 @@
             <div id="confirmationPopup">
                 <div id="confirmationPopupContent">
                     <p>Are you sure?</p>
-                    <p><img onclick="backButton()" src="resources/cancel.png" style="margin-left: -2pt"><img onclick="postImgVideo()" src="resources/confirm.png" style="margin-left: 17pt"></p>
+                    <p><img onclick="backButton()" src="resources/cancel.png" style="margin-left: -2pt"><img onclick="post()" src="resources/confirm.png" style="margin-left: 17pt"></p>
                 </div>
             </div>
 
@@ -272,22 +280,22 @@
         <div id="menu" class="sidebar">
             <div class="row">
                 <div class="column">
-                    <a href="#"></a><img src="resources/messages.png" style="margin-left: 0.13cm; width: 1.058cm; padding: 0pt; cursor: pointer;"></a>
+                    <a href="#"></a><img src="resources/msg.png" style="margin-left: 0.13cm; width: 1.058cm; padding: 0pt; cursor: pointer;"></a>
                     <p style="margin-top: 0px; margin-left: 0.25cm;">CHAT</p>
                 </div>
                 <div class="column">
-                    <img src="resources/news.png" onclick="openNews()" style="margin-left: 0.39cm; width: 0.79cm; cursor: pointer; padding: 0pt;">
-                    <p style="margin-top: 0.26cm; margin-left: 0.39cm;">NEWS</p>
+                    <img src="resources/news.png" onclick="openNews()" style="margin-left: 0.23cm; width: 1.058cm; cursor: pointer; padding: 0pt;">
+                    <p style="margin-top: 0px; margin-left: 0.39cm;">NEWS</p>
                 </div>
             </div>
             <div class="row">
                 <div class="column" style="margin-top : 0pt">
-                    <img src="resources/post.png" onclick="openPosts()" style="margin-left: 0.29cm; width: 0.79cm; padding: 0pt; cursor: pointer;">
-                    <p style="margin-top: 0.13cm; margin-left: 0.31cm;">POST</p>
+                    <img src="resources/post.png" onclick="openPosts()" style="margin-left: 0.13cm; width: 1.058cm; padding: 0pt; cursor: pointer;">
+                    <p style="margin-top: 0px; margin-left: 0.31cm;">POST</p>
                 </div>
                 <div class="column" style="margin-top : 0px">
-                    <img src="resources/settings.png" onclick="openSettings()" style="margin-left: 0.40cm; width: 0.79cm; padding: 0pt; cursor: pointer;">
-                    <p style="margin-top: 0.13cm; margin-left: 0.17cm;">SETTINGS</p>
+                    <img src="resources/settings.png" onclick="openSettings()" style="margin-left: 0.23cm; width: 1.058cm; padding: 0pt; cursor: pointer;">
+                    <p style="margin-top: 0px; margin-left: 0.10cm;">SETTINGS</p>
                 </div>
             </div>
         </div>

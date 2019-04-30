@@ -91,6 +91,12 @@
     font-size: 6pt;
 }
 
+.newPost img{
+    width: 1cm; 
+    padding: 5pt; 
+    cursor: pointer;
+}
+
 .selectPost {
     display: none; 
     height: 102pt;
@@ -146,5 +152,32 @@
 #confirmationPopupContent img{
     width: 0.5cm;
     margin-top: 6pt;
+    cursor: pointer;
+}
+
+.locationShare{
+    display: none;
+    position: absolute; 
+    z-index: 4;
+    margin-top: 0.4cm;
+    height: 102pt;
+    margin-top: 11.4pt;
+}
+
+#locationShareIMG{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6pt;
+}
+
+.locationShare p{
+    font-size: 9pt;
+    margin-top: 1pt;
+}
+
+.confirmationButtonsLocation{
+    width: 0.7cm;
+    margin-top: -4pt;
     cursor: pointer;
 }
