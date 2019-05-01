@@ -24,15 +24,7 @@
     font-size: 7pt;
 }
 
-.postedImg {
-    width: 2.4cm;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-}
-
-.postedVideo {
+.postedImg, .postedVideo {
     width: 2.4cm;
     display: block;
     margin-left: auto;
@@ -78,7 +70,7 @@
     cursor: pointer;
 }
 
-.newPost{
+.newPost, .locationShare, .textToSpeech, .showVoiceInput{
     display: none;
     position: absolute; 
     z-index: 4;
@@ -102,13 +94,7 @@
     height: 102pt;
 }
 
-.selectIMG{
-    width: 1.2cm;
-    cursor: pointer;
-    display: none;
-}
-
-.selectVideo{
+.selectIMG, .selectVideo{
     width: 1.2cm;
     cursor: pointer;
     display: none;
@@ -155,15 +141,6 @@
     cursor: pointer;
 }
 
-.locationShare{
-    display: none;
-    position: absolute; 
-    z-index: 4;
-    margin-top: 0.4cm;
-    height: 102pt;
-    margin-top: 11.4pt;
-}
-
 #locationShareIMG{
     width: 85%;
     margin-left: auto;
@@ -180,4 +157,27 @@
     width: 0.7cm;
     margin-top: -4pt;
     cursor: pointer;
+}
+
+#microphoneGIF{
+    width: 79%;
+    margin-top: 0pt;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textToSpeech p {
+    font-size: 9pt;
+    margin-top: -8pt;
+}
+
+.predictedText{
+    font-size: 9pt;
+}
+
+.confirmationButtons{
+    position: absolute;
+    width: 0.7cm;
+    cursor: pointer;
+    margin-top: 14pt;
 }

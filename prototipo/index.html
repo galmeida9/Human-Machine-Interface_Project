@@ -224,7 +224,7 @@
                     </tr>
                     <tr>
                         <th><img id="selectLocation" src="resources/location.png" onclick="openShareLocation()"></th>
-                        <th><img id="selectMicrophone" src="resources/microphone.png"></th>
+                        <th><img id="selectMicrophone" src="resources/microphone.png" onclick="openTextToSpeech()"></th>
                     </tr>
                     <tr>
                         <th><p class="darkmodeText" style="margin-top: -10pt">Location</p></th>
@@ -240,6 +240,20 @@
                 <img id="locationShareIMG" src="resources/tecnico_location.png">
                 <p class="darkmodeText">Are you sure?</p>
                 <p><img class="confirmationButtonsLocation" onclick="backButton()" src="resources/cancel.png" style="margin-left: 2pt"><img class="confirmationButtonsLocation" onclick="post()" src="resources/confirm.png" style="margin-left: 33pt"></p>
+            </div>
+            <!------------------------------------------------------------------------------>
+
+
+            <!--TEXT TO SPEECH-------------------------------------------------------------->
+            <div class="textToSpeech">
+                <img id="microphoneGIF" src="resources/microphone_animation.gif">
+                <p class="darkmodeText">Listening...</p>
+                <button class="btn darkmodeText" type="button" onclick="openShowVoiceInput()" style="width: 40pt; background: #dc0101; border: #fe3f3f; font-weight: bold; cursor: pointer;">STOP</button>
+            </div>
+
+            <div class="showVoiceInput">
+                <p class="predictedText"></p>
+                <p><img class="confirmationButtons" onclick="backButton()" src="resources/cancel.png" style="margin-left: -36pt"><img class="confirmationButtons" onclick="post()" src="resources/confirm.png" style="margin-left: 16pt"></p>
             </div>
             <!------------------------------------------------------------------------------>
 

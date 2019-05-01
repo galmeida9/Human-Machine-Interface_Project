@@ -80,5 +80,15 @@ function backButton() {
             document.getElementsByClassName("newPost")[0].style.display = "block";
             currentpage = "newPost";
         }
+        else if (currentpage == "textToSpeech") {
+            document.getElementsByClassName("textToSpeech")[0].style.display = "none";
+            document.getElementsByClassName("newPost")[0].style.display = "block";
+            currentpage = "newPost";
+        }
+        else if (currentpage == "showVoiceInput") {
+            document.getElementsByClassName("textToSpeech")[0].style.display = "block";
+            document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
+            currentpage = "textToSpeech";
+        }
     }
 }

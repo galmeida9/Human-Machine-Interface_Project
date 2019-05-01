@@ -25,6 +25,7 @@ function nightmode() {
         document.getElementById("selectVideo").src="resources/video_white.png";
         document.getElementById("selectLocation").src="resources/location_white.png";
         document.getElementById("selectMicrophone").src="resources/microphone_white.png";
+        document.getElementById("microphoneGIF").src="resources/microphone_animation_dark.gif";
         nightmodeOn = 1;
     }
 
@@ -48,6 +49,7 @@ function nightmode() {
         document.getElementById("selectLocation").src="resources/location.png";
         document.getElementById("selectMicrophone").src="resources/microphone.png";
         document.getElementById("nightmodeIcon").src = "resources/night_mode_off.png";
+        document.getElementById("microphoneGIF").src="resources/microphone_animation.gif";
         nightmodeOn = 0;
     }
 }

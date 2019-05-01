@@ -102,7 +102,6 @@ function openWeather() {
 Opens selected news story
 --------------------------------------------------------------------------------------*/
 function showNews(News) {
-    console.log(mouseMovement);
     if (mouseMovement < 3 && mouseMovement > -3) {
         el.scrollLeft = 0;
         el.scrollTop = 0;

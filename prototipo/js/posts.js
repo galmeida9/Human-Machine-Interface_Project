@@ -1,6 +1,10 @@
 var imgToPost;
 var videoToPost;
-var typeOfPost = 0; /* {0:video, 1:image; 2:location} */
+var typeOfPost = 0; /* {0:video, 1:image; 2:location; 3:voice input} */
+var predictedText=["Estou a adorar descobrir Lisboa e especialmente os pastéis de Belém.",
+                    "Não esperava gostar tanto de Bruxelas, surpreendeu-me imenso.",
+                    "Gostava de poder ficar mais tempo em Paris para passear mais."]
+var textToPost;
 
 
 /*-----------------------------------------------------------------------------------
@@ -9,7 +13,8 @@ Disable/Enable Posts
 function disablePosts() {
     document.getElementsByClassName("postScreen")[0].style.display = "none";
     document.getElementsByClassName("newPost")[0].style.display = "none";
-    document.getElementsByClassName("locationShare")[0].style.display = "none"
+    document.getElementsByClassName("locationShare")[0].style.display = "none";
+    document.getElementsByClassName("textToSpeech")[0].style.display = "none";
     document.getElementById("viewPost").style.display = "none";
     document.getElementById("viewVideoLarge").pause();
     document.getElementById("confirmationPopup").style.display = "none";
@@ -122,9 +127,11 @@ function post(){
         newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src=" + imgToPost + " onclick=" + "viewImg('" + imgToPost + "')" + "><br>";
     else if (typeOfPost == 0)
         newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><Video class='postedVideo' src=" + videoToPost + " onclick=" + "viewVideo('" + videoToPost + "')" + "><br>";
-    else
+    else if (typeOfPost == 2)
         newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src='resources/tecnico_location.png' onclick=" + "viewImg('resources/tecnico_location.png')" + "><br>";
-    
+    else
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><p class='postItemText darkmodeText'>" + textToPost + "<br>";
+
     lastPost.insertAdjacentElement("beforebegin", newPost);
     if (nightmodeOn == 1) {
         document.querySelectorAll(".darkmodeText").forEach(function(element) {
@@ -151,6 +158,30 @@ function openShareLocation() {
     typeOfPost = 2;
 }
 
+/*-----------------------------------------------------------------------------------
+Open Text to Speech Screen
+-----------------------------------------------------------------------------------*/
+function openTextToSpeech() {
+    document.getElementsByClassName("newPost")[0].style.display = "none";
+    document.getElementsByClassName("textToSpeech")[0].style.display = "block";
+    currentpage = "textToSpeech";
+    typeOfPost = 2;
+}
+
+/*-----------------------------------------------------------------------------------
+Open Voice Input Confirmation Screen
+-----------------------------------------------------------------------------------*/
+function openShowVoiceInput() {
+    var text = Math.round(Math.random() * 2);
+    document.getElementsByClassName("textToSpeech")[0].style.display = "none";
+    document.getElementsByClassName("showVoiceInput")[0].style.display = "block";
+    document.querySelectorAll(".predictedText").forEach(function(element) {
+        element.innerHTML = predictedText[text];
+        textToPost = predictedText[text];
+    });
+    currentpage = "showVoiceInput";
+    typeOfPost = 3;
+}
 
 /*-----------------------------------------------------------------------------------
 Disable/Enable photos
