@@ -47,27 +47,26 @@
     position: absolute; 
     z-index: 4; 
     padding-top: 0.5cm;
-    padding-right: 0.2cm; 
     padding-bottom: 0cm;
     border-radius: 0.45cm;
     width: 3cm; 
-    height: 3.5cm; 
+    height: 3.6cm; 
+    margin-top: -3pt;
     overflow: hidden;  
     background-color: rgba(0,0,0,0.9); 
 }
 
-#viewImgLarge {
-    margin-top: 10pt;
-    max-width: 2.8cm;
-    max-height: 2.8cm;
-    display: none;
-}
-
-#viewVideoLarge {
-    margin-top: 15pt;
-    width: 2.8cm;
-    display: none;
-    cursor: pointer;
+#viewImgLarge, #viewVideoLarge {
+    max-height: 90%;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .newPost, .locationShare, .textToSpeech, .showVoiceInput{
