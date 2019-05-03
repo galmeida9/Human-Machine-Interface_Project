@@ -145,6 +145,9 @@ function post(){
     if (typeOfPost != 2) backButton();
 
     console.log(currentpage);
+
+    el.scrollLeft = 0;
+    el.scrollTop = 0;
 }
 
 

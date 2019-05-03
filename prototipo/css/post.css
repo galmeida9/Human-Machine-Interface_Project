@@ -22,6 +22,7 @@
 
 .postItemText {
     font-size: 7pt;
+    margin-left: 3pt;
 }
 
 .postedImg, .postedVideo {
@@ -93,8 +94,14 @@
     height: 102pt;
 }
 
-.selectIMG, .selectVideo{
+.selectIMG{
     width: 1.2cm;
+    cursor: pointer;
+    display: none;
+}
+
+.selectVideo {
+    width: 104%;
     cursor: pointer;
     display: none;
 }
