@@ -192,6 +192,7 @@
                                 <th><video class="selectVideo" onclick="postConfirmation('resources/shareVideos/spain.mp4', 'video')" src="resources/shareVideos/spain.mp4"></th>
                             </tr>
                         </table>
+                        <br>
                     </div>
 
                 </div>
@@ -250,9 +251,10 @@
 
             <!--TEXT TO SPEECH-------------------------------------------------------------->
             <div class="textToSpeech">
+                <b><span class="closeMic" onclick="backButton()">&times;</span></b>
                 <img id="microphoneGIF" src="resources/microphone_animation.gif">
                 <p class="darkmodeText">Listening...</p>
-                <button class="btn darkmodeText" type="button" onclick="openShowVoiceInput()" style="width: 40pt; background: #dc0101; border: #fe3f3f; font-weight: bold; cursor: pointer;">STOP</button>
+                <button class="btn darkmodeText" type="button" onclick="openShowVoiceInput()" style="width: 40pt; background: #dc0101; border: #fe3f3f; font-weight: bold; cursor: pointer; position: absolute; margin-left: -20pt;">STOP</button>
             </div>
 
             <div class="showVoiceInput">

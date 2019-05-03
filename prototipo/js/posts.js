@@ -15,6 +15,7 @@ function disablePosts() {
     document.getElementsByClassName("newPost")[0].style.display = "none";
     document.getElementsByClassName("locationShare")[0].style.display = "none";
     document.getElementsByClassName("textToSpeech")[0].style.display = "none";
+    document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
     document.getElementById("viewPost").style.display = "none";
     document.getElementById("viewVideoLarge").pause();
     document.getElementById("confirmationPopup").style.display = "none";

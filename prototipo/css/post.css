@@ -170,11 +170,12 @@
     margin-top: 0pt;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
 
 .textToSpeech p {
     font-size: 9pt;
-    margin-top: -8pt;
+    margin-top: -4pt;
 }
 
 .predictedText{
@@ -186,4 +187,14 @@
     width: 0.7cm;
     cursor: pointer;
     margin-top: 14pt;
+}
+
+.closeMic{
+    margin-top: 0pt;
+    margin-left: 63pt;
+    font-size: 14pt;
+    color: #6f6e6e;
+    z-index: 6;
+    position: fixed;
+    cursor: pointer;
 }
