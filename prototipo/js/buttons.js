@@ -7,9 +7,9 @@ function backButton() {
     if (isOpen == 1) closeNav();
     else {
         if (currentpage == "news") {
-            document.getElementsByClassName("scrollable")[0].style.display = "none";
-            document.getElementsByClassName("newsscreen")[0].style.display = "none";
-            document.getElementsByClassName("mainscreen")[0].style.display = "block";
+            disableWrapper();
+            disableNews();
+            enableMainScreen();
             closeNav();
             currentpage = "home";
         }
@@ -33,9 +33,9 @@ function backButton() {
             el.scrollTop = 0;
         }
         else if (currentpage == "posts") {
-            document.getElementsByClassName("scrollable")[0].style.display = "none";
-            document.getElementsByClassName("postScreen")[0].style.display = "none";
-            document.getElementsByClassName("mainscreen")[0].style.display = "block";
+            disableWrapper();
+            disablePosts();
+            enableMainScreen();
             currentpage = "home";
             el.scrollLeft = 0;
             el.scrollTop = 0;
@@ -59,9 +59,9 @@ function backButton() {
             currentpage = "posts";
         }
         else if (currentpage == "settings") {
-            document.getElementsByClassName("settings")[0].style.display = "none";
-            document.getElementsByClassName("scrollable")[0].style.display = "none";
-            document.getElementsByClassName("mainscreen")[0].style.display = "block";
+            disableSettings();
+            disableWrapper();
+            enableMainScreen();
             currentpage = "home";
         }
         else if (currentpage == "selectPost") {
@@ -89,6 +89,12 @@ function backButton() {
             document.getElementsByClassName("textToSpeech")[0].style.display = "block";
             document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
             currentpage = "textToSpeech";
+        }
+        else if (currentpage == "chat") {
+            disableWrapper();
+            disableChat();
+            enableMainScreen();
+            currentpage = "home";
         }
     }
 }

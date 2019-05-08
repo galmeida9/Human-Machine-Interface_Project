@@ -26,6 +26,7 @@ function openNews() {
     disableMainScreen();
     enableNews();
     disablePosts();
+    disableChat();
     resetScroll();
     closeNav();
     currentpage = "news";
@@ -39,7 +40,8 @@ function openPosts(){
     disableNews();
     enablePosts();
     disableMainScreen();
-    disableSettings()
+    disableSettings();
+    disableChat();
     enableWrapper();
     resetScroll();
     closeNav();
@@ -53,12 +55,29 @@ Open Settings
 function openSettings(){
     disableNews();
     disablePosts();
+    disableChat();
     disableMainScreen();
     enableWrapper();
     enableSettings();
     resetScroll();
     closeNav();
     currentpage="settings";
+}
+
+
+/*-----------------------------------------------------------------------------------
+Open Chat
+-----------------------------------------------------------------------------------*/
+function openChat(){
+    disableNews();
+    disablePosts();
+    enableChat();
+    disableMainScreen();
+    enableWrapper();
+    disableSettings();
+    resetScroll();
+    closeNav();
+    currentpage="chat";
 }
 
 
@@ -72,10 +91,14 @@ function resetScroll() {
 
 
 /*-----------------------------------------------------------------------------------
-Disable main screen
+Disable/Enable main screen
 -----------------------------------------------------------------------------------*/
 function disableMainScreen() {
     document.getElementsByClassName("mainscreen")[0].style.display = "none";
+}
+
+function enableMainScreen() {
+    document.getElementsByClassName("mainscreen")[0].style.display = "block";
 }
 
 

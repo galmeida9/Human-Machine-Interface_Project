@@ -1,0 +1,37 @@
+.chatScreen{
+    display: none;
+    margin-top: 0.4cm;
+    height: 102pt;
+    margin-top: 11.4pt;
+}
+
+.recentChat{
+    display: none;
+}
+
+.recentChat hr{
+    width: 82.5pt; 
+    border: 0; 
+    height: 0.75pt; 
+    background: rgb(161, 161, 161);
+}
+
+.chatPerson h2{
+    margin-top: 1pt;   
+    margin-left: -6pt; 
+}
+
+.chatPerson p{
+    font-size: 7pt;
+    margin-top: -7pt;
+    margin-left: -5pt;
+}
+
+#addChat{
+    width: 0.4cm; 
+    margin-top: 1pt; 
+    cursor: pointer; 
+    float: right; 
+    margin-right: 6pt;
+}
+

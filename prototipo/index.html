@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="css/topbar.css">
 <link rel="stylesheet" type="text/css" href="css/body.css">
 <link rel="stylesheet" type="text/css" href="css/post.css">
+<link rel="stylesheet" type="text/css" href="css/chat.css">
 <link rel="stylesheet" type="text/css" href="css/settings.css">
 
 <style></style>
@@ -197,6 +198,35 @@
 
                 </div>
                 <!--------------------------------------------------------------------------->
+
+
+                <!--CHAT SCREEN-------------------------------------------------------------->
+                <div class="chatScreen">
+                    
+                    <!--RECENT CHATS--------------------------------------------------------->
+                    <div class="recentChat">
+                        <h4 class="darkmodeText" style="margin-left: -24pt">CHAT <img id="addChat" src="resources/plus.png" onclick=""></h4>
+                        <hr style="margin-top: -12%; margin-bottom: 0%">
+
+                        <button class="btn chatPerson" style="margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;" onclick="">
+                            <h2 style="font-weight: bold"><img class="user" src="resources/user.png" style="margin-top: -2pt"> Gabriel</h2>
+                            <p class="lastMessage">teste 123</p>
+                            <br>
+                        </button>
+                        <button class="btn chatPerson" style="margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;" onclick="">
+                            <h2 style="font-weight: bold"><img class="user" src="resources/user.png" style="margin-top: -2pt"> João</h2>
+                            <p class="lastMessage">teste ola adeus</p>
+                            <br>
+                        </button>
+                        <button class="btn chatPerson" style="margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;" onclick="">
+                            <h2 style="font-weight: bold"><img class="user" src="resources/user.png" style="margin-top: -2pt"> António</h2>
+                            <p class="lastMessage">teste adeus</p>
+                            <br>
+                        </button>
+                    </div>
+
+                </div>
+                <!--------------------------------------------------------------------------->
             
             </div>
 
@@ -300,7 +330,7 @@
         <div id="menu" class="sidebar">
             <div class="row">
                 <div class="column">
-                    <a href="#"></a><img src="resources/msg.png" style="margin-left: 0.13cm; width: 1.058cm; padding: 0pt; cursor: pointer;"></a>
+                    </a><img src="resources/msg.png" onclick="openChat()" style="margin-left: 0.13cm; width: 1.058cm; padding: 0pt; cursor: pointer;">
                     <p style="margin-top: 0px; margin-left: 0.25cm;">CHAT</p>
                 </div>
                 <div class="column">
@@ -330,6 +360,7 @@
 <script src="js/news.js"></script>
 <script src="js/posts.js"></script>
 <script src="js/nightmode.js"></script>
+<script src="js/chat.js"></script>
 <script>
 document.body.draggable = false;
 
