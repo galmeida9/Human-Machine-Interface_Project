@@ -118,6 +118,19 @@ function showNews(News) {
 /*-------------------------------------------------------------------------------------
 Filter news category
 --------------------------------------------------------------------------------------*/
+document.getElementById("filter").onclick = function() {
+    document.getElementById("filterpopup").style.display = "block";
+    currentpage = "newspopup";
+}
+
+document.getElementsByClassName("close")[0].onclick = function() {
+    document.getElementById("filterpopup").style.display = "none";
+    currentpage = "news";
+}
+
+/*-------------------------------------------------------------------------------------
+Filter news category
+--------------------------------------------------------------------------------------*/
 function showLocal() {
     var i;
     for (i = 0; i < newsCheck.length; i++) {

@@ -208,21 +208,28 @@
                         <h4 class="darkmodeText" style="margin-left: -24pt">CHAT <img id="addChat" src="resources/plus.png" onclick=""></h4>
                         <hr style="margin-top: -12%; margin-bottom: 0%">
 
-                        <button class="btn chatPerson" style="margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;" onclick="">
-                            <h2 style="font-weight: bold"><img class="user" src="resources/user.png" style="margin-top: -2pt"> Gabriel</h2>
-                            <p class="lastMessage">teste 123</p>
+                        <button class="btn chatPerson" style="margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;" onclick="chat('Gabriel')">
+                            <h2 style="font-weight: bold"><img class="user" src="resources/gabriel_user.png" style="margin-top: -2pt"> Gabriel</h2>
+                            <p class="lastMessage">Já viste os Avengers?</p>
                             <br>
                         </button>
-                        <button class="btn chatPerson" style="margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;" onclick="">
-                            <h2 style="font-weight: bold"><img class="user" src="resources/user.png" style="margin-top: -2pt"> João</h2>
-                            <p class="lastMessage">teste ola adeus</p>
+                        <button class="btn chatPerson" style="margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;" onclick="chat('João')">
+                            <h2 style="font-weight: bold"><img class="user" src="resources/joao_user.png" style="margin-top: -2pt"> João</h2>
+                            <p class="lastMessage">Então, tudo bem?</p>
                             <br>
                         </button>
-                        <button class="btn chatPerson" style="margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;" onclick="">
-                            <h2 style="font-weight: bold"><img class="user" src="resources/user.png" style="margin-top: -2pt"> António</h2>
-                            <p class="lastMessage">teste adeus</p>
+                        <button class="btn chatPerson" style="margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;" onclick="chat('Daniel')">
+                            <h2 style="font-weight: bold"><img class="user" src="resources/daniel_user.png" style="margin-top: -2pt"> Daniel</h2>
+                            <p class="lastMessage">Ok pode ser.</p>
                             <br>
                         </button>
+                    </div>
+
+
+                    <!--CHAT----------------------------------------------------------------->
+                    <div class="chat" style="padding-top: 3pt"></div>
+                    <div class="microphoneChat">
+                        <img src="resources/microphone_circle.png" style="width: 0.5cm; cursor: pointer;">
                     </div>
 
                 </div>
@@ -273,7 +280,7 @@
             <!--LOCATION SHARE-------------------------------------------------------------->
             <div class="locationShare">
                 <img id="locationShareIMG" src="resources/tecnico_location.png">
-                <p class="darkmodeText">Are you sure?</p>
+                <p class="darkmodeText">Confirm Post</p>
                 <p><img class="confirmationButtonsLocation" onclick="backButton()" src="resources/cancel.png" style="margin-left: 2pt"><img class="confirmationButtonsLocation" onclick="post()" src="resources/confirm.png" style="margin-left: 33pt"></p>
             </div>
             <!------------------------------------------------------------------------------>
@@ -304,10 +311,27 @@
             <!--POPUP CONFIRMATION---------------------------------------------------------->
             <div id="confirmationPopup">
                 <div id="confirmationPopupContent">
-                    <p>Are you sure?</p>
+                    <p>Confirm Post</p>
                     <p><img onclick="backButton()" src="resources/cancel.png" style="margin-left: -2pt"><img onclick="post()" src="resources/confirm.png" style="margin-left: 17pt"></p>
                 </div>
             </div>
+            <!------------------------------------------------------------------------------>
+
+
+            <!--PERSON POPUP TO CHOOSE WHO TO TEXT------------------------------------------>
+            <div id="personPopup" class="popup">
+                <div class="popupcontent darkmodeText darkmodeBackground">
+                    <span class="close">&times;</span>
+                    <b><p style="text-align: center; margin-top: -0.4cm; font-size: 8pt;">People</p></b>
+                    <p><a class="darkmodeText" onclick="addPerson('Bernardo')" style="cursor: pointer;">Bernardo</a></p>
+                    <p><a class="darkmodeText" onclick="addPerson('Daniel')" style="cursor: pointer;">Daniel</a></p>
+                    <p><a class="darkmodeText" onclick="addPerson('Diogo')" style="cursor: pointer;">Diogo</a></p>
+                    <p><a class="darkmodeText" onclick="addPerson('Gabriel')" style="cursor: pointer;">Gabriel</a></p>
+                    <p><a class="darkmodeText" onclick="addPerson('João')" style="cursor: pointer;">João</a></p>
+                </div>
+            </div>
+                <!------------------------------------------------------------------------------->
+
 
             <!--SETIINGS-------------------------------------------------------------------->
             <div class="settings" style="margin-left: 6%; margin-top: 20%">
@@ -356,7 +380,7 @@
 <script src="js/sidebar.js"></script>
 <script src="js/buttons.js"></script>
 <script src="js/TouchScroll.js"></script>
-<script src="js/newspopup.js"></script>
+<script src="js/popup.js"></script>
 <script src="js/news.js"></script>
 <script src="js/posts.js"></script>
 <script src="js/nightmode.js"></script>
@@ -365,30 +389,6 @@
 document.body.draggable = false;
 
 var currentpage = "home";
-
-window.onclick = function(event) {
-    var post = document.getElementById("viewPost");
-    var confirmation = document.getElementById("confirmationPopup");
-
-    if (event.target == filterpopup) {
-        filterpopup.style.display = "none";
-        currentpage = "news";
-    }
-
-    else if (event.target == post) {
-        post.style.display = "none";
-        document.getElementById("viewVideoLarge").pause();
-        document.querySelectorAll(".postedVideo").forEach(function(element) {
-            element.play();
-        });
-        currentpage = "posts";
-    }
-
-    else if (event.target == confirmation) {
-        confirmation.style.display = "none";
-        currentpage = "selectPost";
-    }
-}
 
 </script>
 

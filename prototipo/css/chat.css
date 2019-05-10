@@ -5,6 +5,13 @@
     margin-top: 11.4pt;
 }
 
+.chat{
+    display: none;
+    margin-top: 0.4cm;
+    height: 79pt;
+    margin-top: 11.4pt;
+}
+
 .recentChat{
     display: none;
 }
@@ -23,8 +30,9 @@
 
 .chatPerson p{
     font-size: 7pt;
-    margin-top: -7pt;
+    margin-top: -6pt;
     margin-left: -5pt;
+    width: 72pt;
 }
 
 #addChat{
@@ -33,5 +41,37 @@
     cursor: pointer; 
     float: right; 
     margin-right: 6pt;
+}   
+
+.messageSent, .messageReceived{
+    margin-top: 5pt;
 }
 
+.messageReceived img{
+    width: 0.5cm;
+    float: left;
+    margin-top: 5pt;
+    margin-left: 2pt;
+}
+
+.messageSent img{
+    width: 0.5cm;
+    float: right;
+    margin-top: 5pt;
+    margin-right: 2pt;
+}
+
+.messageReceived button, .messageSent button{
+    width: 62pt;
+}
+
+.microphoneChat{
+    display: "none";
+    position: fixed;
+    margin-top: 0pt;
+    margin-left: 1pt;
+    background-color: white;
+    padding-left: 35pt;
+    padding-right: 35pt;
+    padding-top: 3pt;
+}

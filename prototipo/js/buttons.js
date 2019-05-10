@@ -96,5 +96,17 @@ function backButton() {
             enableMainScreen();
             currentpage = "home";
         }
+        else if (currentpage == "peoplepopup") {
+            document.getElementById("personPopup").style.display = "none";
+            currentpage = "chat";
+        }
+        else if (currentpage == "personChat") {
+            document.getElementsByClassName("chat")[0].style.display = "none";
+            document.getElementsByClassName("microphoneChat")[0].style.display = "none";
+            document.getElementsByClassName("recentChat")[0].style.display = "block";
+            el.scrollLeft = 0;
+            el.scrollTop = 0;
+            currentpage = "chat";
+        }
     }
 }
