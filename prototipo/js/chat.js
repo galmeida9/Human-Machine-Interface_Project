@@ -149,14 +149,14 @@ function addPerson(person) {
     else {
         personInMemory += person;
 
-        if (receivedMessages[person]["number"] > sentMessages[person]["number"]) lastMessage = receivedMessages[person]["Messages"]["number"];
-        else lastMessage = sentMessages[person]["Messages"]["number"];
+        if (receivedMessages[person]["number"] > sentMessages[person]["number"]) lastMessage = receivedMessages[person]["Messages"][receivedMessages[person]["number"] - 1];
+        else lastMessage = sentMessages[person]["Messages"][sentMessages[person]["number"] - 1];
 
         if (lastMessage == null) lastMessage = "";
 
         var chatScreen = document.getElementsByClassName("recentChat")[0];
         var newChat = document.createElement("div");
-        newChat.innerHTML = "<button class='btn chatPerson' style='margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;' onclick=\42chat(\47" + person + "\47)\42><h2 style='font-weight: bold'><img class='user' src=" + receivedMessages[person]["src"] + " style='margin-top: -2pt'> " + person + "</h2><p class='lastMessage'>" + lastMessage + "</p><br><br><br></button>"
+        newChat.innerHTML = "<button class='btn chatPerson' style='margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;  overflow: hidden;' onclick=\42chat(\47" + person + "\47)\42><h2 style='font-weight: bold'><img class='user' src=" + receivedMessages[person]["src"] + " style='margin-top: -2pt'> " + person + "</h2><p class='lastMessage " + person + "'>" + lastMessage + "</p><br><br><br></button>"
         chatScreen.appendChild(newChat);
         chat(person);
     }
@@ -169,10 +169,14 @@ Send Message
 function addMessage() {
     var random =  Math.round(Math.random() * 13) + 2;
     var person = currentPerson;
+    var querry = "." + person;
 
     sentMessages[currentPerson]["Messages"].push(textToPost);
     sentMessages[currentPerson]["number"] += 1;
     document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
+    document.querySelectorAll(querry).forEach(function(element) {
+        element.innerHTML = sentMessages[currentPerson]["Messages"][sentMessages[currentPerson]["number"] - 1];
+    });
     chat(currentPerson);
     setTimeout(function(){reply(person);}, random*1000);
     console.log(random);
@@ -183,7 +187,11 @@ Receive Message
 -----------------------------------------------------------------------------------*/
 function reply(person) {
     var random =  Math.round(Math.random() * 11);
+    var querry = "." + person;
     receivedMessages[person]["Messages"].push(predictedTextChat[random]);
     receivedMessages[person]["number"] += 1;
+    document.querySelectorAll(querry).forEach(function(element) {
+        element.innerHTML = receivedMessages[person]["Messages"][receivedMessages[person]["number"] - 1];
+    });
     console.log(person + " sent a message");
 }
