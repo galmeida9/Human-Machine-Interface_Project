@@ -82,8 +82,15 @@ function backButton() {
         }
         else if (currentpage == "textToSpeech") {
             document.getElementsByClassName("textToSpeech")[0].style.display = "none";
-            document.getElementsByClassName("newPost")[0].style.display = "block";
-            currentpage = "newPost";
+            if (Mode == "post") {
+                document.getElementsByClassName("newPost")[0].style.display = "block";
+                currentpage = "newPost";
+            }
+            else {
+                document.getElementsByClassName("chat")[0].style.display = "block";
+                document.getElementsByClassName("microphoneChat")[0].style.display = "block";
+                currentpage = "personChat";
+            }
         }
         else if (currentpage == "showVoiceInput") {
             document.getElementsByClassName("textToSpeech")[0].style.display = "block";

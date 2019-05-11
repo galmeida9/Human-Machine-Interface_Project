@@ -1,10 +1,6 @@
 var imgToPost;
 var videoToPost;
 var typeOfPost = 0; /* {0:video, 1:image; 2:location; 3:voice input} */
-var predictedText=["Estou a adorar descobrir Lisboa e especialmente os pastéis de Belém.",
-                    "Não esperava gostar tanto de Bruxelas, surpreendeu-me imenso.",
-                    "Gostava de poder ficar mais tempo em Paris para passear mais."]
-var textToPost;
 
 
 /*-----------------------------------------------------------------------------------
@@ -162,30 +158,6 @@ function openShareLocation() {
     typeOfPost = 2;
 }
 
-/*-----------------------------------------------------------------------------------
-Open Text to Speech Screen
------------------------------------------------------------------------------------*/
-function openTextToSpeech() {
-    document.getElementsByClassName("newPost")[0].style.display = "none";
-    document.getElementsByClassName("textToSpeech")[0].style.display = "block";
-    currentpage = "textToSpeech";
-    typeOfPost = 2;
-}
-
-/*-----------------------------------------------------------------------------------
-Open Voice Input Confirmation Screen
------------------------------------------------------------------------------------*/
-function openShowVoiceInput() {
-    var text = Math.round(Math.random() * 2);
-    document.getElementsByClassName("textToSpeech")[0].style.display = "none";
-    document.getElementsByClassName("showVoiceInput")[0].style.display = "block";
-    document.querySelectorAll(".predictedText").forEach(function(element) {
-        element.innerHTML = predictedText[text];
-        textToPost = predictedText[text];
-    });
-    currentpage = "showVoiceInput";
-    typeOfPost = 3;
-}
 
 /*-----------------------------------------------------------------------------------
 Disable/Enable photos

@@ -1,27 +1,32 @@
 var receivedMessages = {"Gabriel": {
-                                    Messages: ["Olá", "tudo bem?", "Também"], 
-                                    number: 3,
+                                    Messages: ["Olá", "tudo bem?", "Também", "Foi brutal!!!"], 
+                                    number: 4,
                                     src: "resources/gabriel_user.png",
+                                    first: 1,
                                     },
                         "João": {
                                     Messages: ["Boas mano!", "Queres ir ao cinema?"],
                                     number: 2,
                                     src: "resources/joao_user.png",
+                                    first: 1,
                                 },
                         "Daniel": {
                                     Messages: ["Bora almoçar fora?"],
                                     number: 1,
                                     src: "resources/daniel_user.png",
+                                    first: 1,
                                 },
                         "Diogo": {
                                     Messages: [],
                                     number: 0,
                                     src: "resources/user.png",
+                                    first: 0,
                                 },
                         "Bernardo": {
                                     Messages: [],
                                     number: 0,
                                     src: "resources/bernardo_user.png",
+                                    first: 0,
                                 }
                         }
 
@@ -49,6 +54,7 @@ var sentMessages = {"Gabriel": {
 
 var displayedMessages = 0;
 var personInMemory = ["Gabriel", "João", "Daniel"];
+var currentPerson;
 
 /*-----------------------------------------------------------------------------------
 Disable/Enable Chat
@@ -82,6 +88,7 @@ Open Chat
 -----------------------------------------------------------------------------------*/
 function chat(person) {
     if (mouseMovement < 3 && mouseMovement > -3) {
+        currentPerson = person;
         el.scrollLeft = 0;
         el.scrollTop = 0;
         document.getElementsByClassName("recentChat")[0].style.display = "none";
@@ -100,7 +107,7 @@ function chat(person) {
         displayedMessages = 0;
 
         while (i<receivedMessages[person]["number"] || j<sentMessages[person]["number"]){
-            if (i < receivedMessages[person]["number"]) {
+            if ((i < receivedMessages[person]["number"] && j>0) || (receivedMessages[person]["first"] == 1 && j==0)) {
                 var newMessage = document.createElement("div");
                 newMessage.classList.add("messageReceived");
                 newMessage.innerHTML = "<div class='messageReceived'><span><img src=" + receivedMessages[person]["src"] + "><button class='btn'><p>" + receivedMessages[person]["Messages"][i] +"</p></button></span></div>";
@@ -119,10 +126,12 @@ function chat(person) {
             }
         }
 
-        var newMessage = document.createElement("div");
-        newMessage.innerHTML = "<br><br>";
-        messages.appendChild(newMessage);
-
+        if (displayedMessages!=0) {
+            var newMessage = document.createElement("div");
+            newMessage.innerHTML = "<br><br>";
+            messages.appendChild(newMessage);
+        }
+        el.scrollTop = 100000;
         currentpage="personChat";
     }
 }
@@ -138,6 +147,8 @@ function addPerson(person) {
     
     if (personInMemory.includes(person)) chat(person);
     else {
+        personInMemory += person;
+
         if (receivedMessages[person]["number"] > sentMessages[person]["number"]) lastMessage = receivedMessages[person]["Messages"]["number"];
         else lastMessage = sentMessages[person]["Messages"]["number"];
 
@@ -149,4 +160,30 @@ function addPerson(person) {
         chatScreen.appendChild(newChat);
         chat(person);
     }
+}
+
+
+/*-----------------------------------------------------------------------------------
+Send Message
+-----------------------------------------------------------------------------------*/
+function addMessage() {
+    var random =  Math.round(Math.random() * 13) + 2;
+    var person = currentPerson;
+
+    sentMessages[currentPerson]["Messages"].push(textToPost);
+    sentMessages[currentPerson]["number"] += 1;
+    document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
+    chat(currentPerson);
+    setTimeout(function(){reply(person);}, random*1000);
+    console.log(random);
+}
+
+/*-----------------------------------------------------------------------------------
+Receive Message
+-----------------------------------------------------------------------------------*/
+function reply(person) {
+    var random =  Math.round(Math.random() * 11);
+    receivedMessages[person]["Messages"].push(predictedTextChat[random]);
+    receivedMessages[person]["number"] += 1;
+    console.log(person + " sent a message");
 }

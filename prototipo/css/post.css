@@ -180,13 +180,16 @@
 
 .predictedText{
     font-size: 9pt;
+    margin: 0 auto;
+    width: 85pt;
+    margin-top: 10pt;
 }
 
 .confirmationButtons{
     position: absolute;
     width: 0.7cm;
     cursor: pointer;
-    margin-top: 14pt;
+    bottom: 5pt;
 }
 
 .closeMic{

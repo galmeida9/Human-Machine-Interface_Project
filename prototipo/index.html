@@ -229,7 +229,7 @@
                     <!--CHAT----------------------------------------------------------------->
                     <div class="chat" style="padding-top: 3pt"></div>
                     <div class="microphoneChat">
-                        <img src="resources/microphone_circle.png" style="width: 0.5cm; cursor: pointer;">
+                        <img src="resources/microphone_circle.png" onclick="openTextToSpeech('chat')" style="width: 0.5cm; cursor: pointer;">
                     </div>
 
                 </div>
@@ -266,7 +266,7 @@
                     </tr>
                     <tr>
                         <th><img id="selectLocation" src="resources/location.png" onclick="openShareLocation()"></th>
-                        <th><img id="selectMicrophone" src="resources/microphone.png" onclick="openTextToSpeech()"></th>
+                        <th><img id="selectMicrophone" src="resources/microphone.png" onclick="openTextToSpeech('post')"></th>
                     </tr>
                     <tr>
                         <th><p class="darkmodeText" style="margin-top: -10pt">Location</p></th>
@@ -286,7 +286,7 @@
             <!------------------------------------------------------------------------------>
 
 
-            <!--TEXT TO SPEECH-------------------------------------------------------------->
+            <!--TEXT TO SPEECH POST---------------------------------------------------------->
             <div class="textToSpeech">
                 <b><span class="closeMic" onclick="backButton()">&times;</span></b>
                 <img id="microphoneGIF" src="resources/microphone_animation.gif">
@@ -296,7 +296,7 @@
 
             <div class="showVoiceInput">
                 <p class="predictedText darkmodeText"></p>
-                <p><img class="confirmationButtons" onclick="backButton()" src="resources/cancel.png" style="margin-left: -36pt"><img class="confirmationButtons" onclick="post()" src="resources/confirm.png" style="margin-left: 16pt"></p>
+                <p><img class="confirmationButtons" onclick="backButton()" src="resources/cancel.png" style="margin-left: -36pt"><img class="confirmationButtons" onclick="voice()" src="resources/confirm.png" style="margin-left: 16pt"></p>
             </div>
             <!------------------------------------------------------------------------------>
 
@@ -330,7 +330,17 @@
                     <p><a class="darkmodeText" onclick="addPerson('João')" style="cursor: pointer;">João</a></p>
                 </div>
             </div>
-                <!------------------------------------------------------------------------------->
+            <!------------------------------------------------------------------------------->
+
+
+            <!--TEXT TO SPEECH POST---------------------------------------------------------->
+            <div class="textToSpeech">
+                <b><span class="closeMic" onclick="backButton()">&times;</span></b>
+                <img id="microphoneGIF" src="resources/microphone_animation.gif">
+                <p class="darkmodeText">Listening...</p>
+                <button class="btn darkmodeText" type="button" onclick="openShowVoiceInput()" style="width: 40pt; background: #dc0101; border: #fe3f3f; font-weight: bold; cursor: pointer; position: absolute; margin-left: -20pt;">STOP</button>
+            </div>
+            <!------------------------------------------------------------------------------->
 
 
             <!--SETIINGS-------------------------------------------------------------------->
@@ -385,6 +395,7 @@
 <script src="js/posts.js"></script>
 <script src="js/nightmode.js"></script>
 <script src="js/chat.js"></script>
+<script src="js/SpeechToText.js"></script>
 <script>
 document.body.draggable = false;
 
