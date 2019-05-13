@@ -99,3 +99,22 @@ body {
  .darkmodeBackground{
      background: white;
  }
+
+ /*Disable Selection on all classes*/
+ .news, .frame, .newsStory, .weatherScreen, .day, .chatScreen, .chat, .recentChat, .chatPerson, 
+ #addChat, .messageSent, .messageReceived, .microphoneChat, .notification, .button, .button1, 
+ .button2, .popup, .popupcontent, .close, .postScreen, .recentPosts, .postItem, .user, 
+ .postItemText, .postedImg, .postedVideo, #viewPost, #viewImgLarge, #viewVideoLarge, 
+ .newPost, .locationShare, .textToSpeech, .showVoiceInput, .selectPost, .selectIMG, 
+ .selectVideo, #confirmationPopup, #confirmationPopupContent, #locationShareIMG, 
+ .confirmationButtonsLocation, #microphoneGIF, .predictedText, .confirmationButtons, 
+ .closeMic, .settings, .sidebar, .column, .topbar, .battery, .darkmodeBackground, .darkmodeText,
+ .btn, .scrollable, #Date, .buttondiv, .mainscreen, .watch, .container{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+    -webkit-user-drag: none;
+}

@@ -17,15 +17,17 @@ function nightmode() {
         for (i = 0; i < numberOfCategories; i++) {
             document.getElementsByClassName("newsCheckmark")[i].src = "resources/check_white.png";
         }
-        document.querySelectorAll(".user").forEach(function(element) {
+        document.querySelectorAll(".userdarkmode").forEach(function(element) {
             element.src="resources/user_white.png";
         });
         document.getElementById("addPostImg").src="resources/plus_white.png";
+        document.getElementById("addChat").src="resources/plus_white.png";
         document.getElementById("selectImg").src="resources/image_white.png";
         document.getElementById("selectVideo").src="resources/video_white.png";
         document.getElementById("selectLocation").src="resources/location_white.png";
         document.getElementById("selectMicrophone").src="resources/microphone_white.png";
         document.getElementById("microphoneGIF").src="resources/microphone_animation_dark.gif";
+        document.getElementById("shareNews").src="resources/share_white.png"
         nightmodeOn = 1;
     }
 
@@ -40,16 +42,18 @@ function nightmode() {
         for (i = 0; i < numberOfCategories; i++) {
             document.getElementsByClassName("newsCheckmark")[i].src = "resources/check.png";
         }
-        document.querySelectorAll(".user").forEach(function(element) {
+        document.querySelectorAll(".userdarkmode").forEach(function(element) {
             element.src="resources/user.png";
         });
         document.getElementById("addPostImg").src="resources/plus.png";
+        document.getElementById("addChat").src="resources/plus.png";
         document.getElementById("selectImg").src="resources/image.png";
         document.getElementById("selectVideo").src="resources/video.png";
         document.getElementById("selectLocation").src="resources/location.png";
         document.getElementById("selectMicrophone").src="resources/microphone.png";
         document.getElementById("nightmodeIcon").src = "resources/night_mode_off.png";
         document.getElementById("microphoneGIF").src="resources/microphone_animation.gif";
+        document.getElementById("shareNews").src="resources/share.png"
         nightmodeOn = 0;
     }
 }

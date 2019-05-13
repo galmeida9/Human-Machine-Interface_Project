@@ -121,13 +121,13 @@ function post(){
     newPost.classList.add("postItem");
     
     if (typeOfPost == 1) 
-        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src=" + imgToPost + " onclick=" + "viewImg('" + imgToPost + "')" + "><br>";
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src=" + imgToPost + " onclick=" + "viewImg('" + imgToPost + "')" + "><br>";
     else if (typeOfPost == 0)
-        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><Video class='postedVideo' src=" + videoToPost + " onclick=" + "viewVideo('" + videoToPost + "')" + "><br>";
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><Video class='postedVideo' src=" + videoToPost + " onclick=" + "viewVideo('" + videoToPost + "')" + "><br>";
     else if (typeOfPost == 2)
-        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src='resources/tecnico_location.png' onclick=" + "viewImg('resources/tecnico_location.png')" + "><br>";
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src='resources/tecnico_location.png' onclick=" + "viewImg('resources/tecnico_location.png')" + "><br>";
     else
-        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user' src='resources/user.png'> <b>You</b> posted</p><p class='postItemText darkmodeText'>" + textToPost + "<br>";
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><p class='postItemText darkmodeText'>" + textToPost + "<br>";
 
     lastPost.insertAdjacentElement("beforebegin", newPost);
     if (nightmodeOn == 1) {
@@ -137,8 +137,8 @@ function post(){
         document.getElementsByClassName("user")[0].src="resources/user_white.png";
     }
     disablePhotos();
-    backButton();
-    backButton();
+    disableNews();
+    enablePosts();
     if (typeOfPost != 2) backButton();
 
     console.log(currentpage);

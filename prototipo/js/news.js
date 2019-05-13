@@ -34,6 +34,7 @@ var weatherIcons = ["resources/sunny.png", "resources/cloud.png", "resources/rai
 var weatherImg = ["weatherImg2", "weatherImg3", "weatherImg4", "weatherImg5", "weatherImg6", "weatherImg7"];
 var numberOfNews = 5;
 var numberOfCategories = 5;
+var currentNews;
 weather();
 
 
@@ -111,7 +112,18 @@ function showNews(News) {
         document.querySelectorAll(".newsPart").forEach(function(element) {
             element.innerHTML = newsStories[News][element.id];
         });
+        currentNews = News;
     }
+}
+
+
+/*-------------------------------------------------------------------------------------
+Post News
+--------------------------------------------------------------------------------------*/
+function postNews() {
+    typeOfPost = 3;
+    textToPost = "News Story: ".bold() + newsStories[currentNews]["title"];
+    post();
 }
 
 
