@@ -55,6 +55,7 @@ var sentMessages = {"Gabriel": {
 var displayedMessages = 0;
 var personInMemory = ["Gabriel", "João", "Daniel"];
 var currentPerson;
+var notificationPerson;
 
 /*-----------------------------------------------------------------------------------
 Disable/Enable Chat
@@ -87,10 +88,15 @@ document.getElementsByClassName("close")[1].onclick = function() {
 Open Chat
 -----------------------------------------------------------------------------------*/
 function chat(person) {
-    if (mouseMovement < 3 && mouseMovement > -3) {
+    if ((mouseMovement < 3 && mouseMovement > -3) || currentpage != "chat") {
         currentPerson = person;
         el.scrollLeft = 0;
         el.scrollTop = 0;
+        disableSettings();
+        disableNews();
+        disablePosts();
+        disableMainScreen();
+        enableChat();
         document.getElementsByClassName("recentChat")[0].style.display = "none";
         document.getElementsByClassName("chat")[0].style.display = "block";
         document.getElementsByClassName("microphoneChat")[0].style.display = "block";
@@ -193,5 +199,26 @@ function reply(person) {
     document.querySelectorAll(querry).forEach(function(element) {
         element.innerHTML = receivedMessages[person]["Messages"][receivedMessages[person]["number"] - 1];
     });
+    showNotification(person);
     console.log(person + " sent a message");
+}
+
+/*-----------------------------------------------------------------------------------
+Get Notification
+-----------------------------------------------------------------------------------*/
+function showNotification(person){
+    document.getElementsByClassName("notification")[0].style.display = "block";
+    document.getElementById("notificationIMG").src = receivedMessages[person]["src"];
+    document.getElementById("notificationTXT").innerHTML = receivedMessages[person]["Messages"][receivedMessages[person]["number"] - 1];
+    notificationPerson = person;
+    lastpage = currentpage;
+    currentpage = "notification";
+}
+
+/*-----------------------------------------------------------------------------------
+Open Notification
+-----------------------------------------------------------------------------------*/
+function openNotification(){
+    document.getElementsByClassName("notification")[0].style.display = "none";
+    chat(notificationPerson);
 }

@@ -333,12 +333,11 @@
             <!------------------------------------------------------------------------------->
 
 
-            <!--TEXT TO SPEECH POST---------------------------------------------------------->
-            <div class="textToSpeech">
-                <b><span class="closeMic" onclick="backButton()">&times;</span></b>
-                <img id="microphoneGIF" src="resources/microphone_animation.gif">
-                <p class="darkmodeText">Listening...</p>
-                <button class="btn darkmodeText" type="button" onclick="openShowVoiceInput()" style="width: 40pt; background: #dc0101; border: #fe3f3f; font-weight: bold; cursor: pointer; position: absolute; margin-left: -20pt;">STOP</button>
+            <!--CHAT NOTIFICATION------------------------------------------------------------>
+            <div class="notification" onclick="openNotification()">
+                <p style="margin-top: 12pt">New Message</p>
+                <img id="notificationIMG" style="width: 1.1cm; margin-top: -10pt;">
+                <p id="notificationTXT" style="margin-top: 0pt">
             </div>
             <!------------------------------------------------------------------------------->
 
@@ -349,6 +348,7 @@
                 <button class="btn">Change Wallpaper</button> 
                 <button class="btn">Help</button>                
             </div>
+            <!------------------------------------------------------------------------------>
         
         </div>
 
@@ -400,6 +400,7 @@
 document.body.draggable = false;
 
 var currentpage = "home";
+var lastpage;
 
 </script>
 

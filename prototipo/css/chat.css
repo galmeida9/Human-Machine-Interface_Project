@@ -76,3 +76,15 @@
     padding-right: 35pt;
     padding-top: 3pt;
 }
+
+.notification{
+    display: none;
+    margin-top: 0.4cm;
+    height: 114pt;
+    width: 85pt;
+    margin-top: -0.5pt;
+    z-index: 5;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8); 
+    color: white;
+}

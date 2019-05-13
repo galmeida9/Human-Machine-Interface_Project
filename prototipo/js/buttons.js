@@ -115,5 +115,9 @@ function backButton() {
             el.scrollTop = 0;
             currentpage = "chat";
         }
+        else if (currentpage == "notification") {
+            document.getElementsByClassName("notification")[0].style.display = "none";
+            currentpage = lastpage;
+        }
     }
 }
