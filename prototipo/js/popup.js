@@ -28,6 +28,7 @@ window.onclick = function(event) {
     }
     else if (event.target == sharePost) {
         sharePost.style.display = "none";
-        currentpage = "posts";
+        if (lastpage == "posts") currentpage = "posts";
+        else currentpage = "newsStories";
     }
 }

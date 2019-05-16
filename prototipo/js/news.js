@@ -127,6 +127,12 @@ function postNews() {
     post();
 }
 
+function sendNews() {
+    textToPost = "News Story: ".bold() + newsStories[currentNews]["title"];
+    lastpage = "newsStories";
+    selectPerson(3, textToPost);
+}
+
 
 /*-------------------------------------------------------------------------------------
 Filter news category

@@ -122,7 +122,8 @@ function backButton() {
         }
         else if (currentpage == "sharePost") {
             document.getElementById("personPopupPost").style.display = "none";
-            currentpage = "posts";
+            if (lastpage == "posts") currentpage = "posts";
+            else currentpage = "newsStories";
         }
         else if (currentpage == "selectAttachment") {
             document.getElementsByClassName("newPost")[0].style.display = "none";

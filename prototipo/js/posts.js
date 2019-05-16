@@ -41,6 +41,7 @@ function enablePosts() {
     });
     disablePhotos();
     disableVideos();
+    lastpage = "posts";
 }
 
 
@@ -225,7 +226,8 @@ function selectPerson(type, src) {
 
 document.getElementsByClassName("close")[1].onclick = function() {
     document.getElementById("personPopupPost").style.display = "none";
-    currentpage = "posts";
+    if (lastpage == "posts") currentpage = "posts";
+    else currentpage = "newsStories";
 }
 
 /*-----------------------------------------------------------------------------------
