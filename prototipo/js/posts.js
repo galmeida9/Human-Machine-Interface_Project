@@ -25,7 +25,10 @@ function disablePosts() {
 
 function enablePosts() {
     document.getElementsByClassName("postScreen")[0].style.display = "block";
-    document.getElementsByClassName("newPost")[0].style.display = "none"
+    document.getElementsByClassName("newPost")[0].style.display = "none";
+    document.getElementsByClassName("textToSpeech")[0].style.display = "none";
+    document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
+    document.getElementsByClassName("locationShare")[0].style.display = "none";
     document.getElementsByClassName("recentPosts")[0].style.display = "block";
     document.getElementById("viewPost").style.display = "none";
     document.getElementById("viewVideoLarge").pause();
@@ -123,7 +126,7 @@ function post(){
     if (typeOfPost == 1) 
         newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src=" + imgToPost + " onclick=" + "viewImg('" + imgToPost + "')" + "><img class='sharePost' src='resources/share.png' style='width: 0.5cm; cursor: pointer' onclick=\42selectPerson(1, \47" + imgToPost + "\47)\42><br>";
     else if (typeOfPost == 0)
-        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><Video class='postedVideo' src=" + videoToPost + " onclick=" + "viewVideo('" + videoToPost + "')" + "><img class='sharePost' src='resources/share.png' style='width: 0.5cm; cursor: pointer' onclick=\42selectPerson(0, \47" + videoToPost + "\47)\42><br>";
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><Video class='postedVideo' src=" + videoToPost + " onclick=" + "viewVideo('" + videoToPost + "')" + "></Video><img class='sharePost' src='resources/share.png' style='width: 0.5cm; cursor: pointer' onclick=\42selectPerson(0, \47" + videoToPost + "\47)\42><br>";
     else if (typeOfPost == 2)
         newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src='resources/tecnico_location.png' onclick=" + "viewImg('resources/tecnico_location.png')" + "><img class='sharePost' src='resources/share.png' style='width: 0.5cm; cursor: pointer' onclick=\42selectPerson(1, 'resources/tecnico_location.png')\42><br>";
     else
@@ -139,9 +142,6 @@ function post(){
     disablePhotos();
     disableNews();
     enablePosts();
-    if (typeOfPost != 2) backButton();
-    document.getElementsByClassName("textToSpeech")[0].style.display = "none";
-
     el.scrollLeft = 0;
     el.scrollTop = 0;
 }

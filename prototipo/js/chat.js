@@ -82,11 +82,7 @@ function chat(person) {
         currentPerson = person;
         el.scrollLeft = 0;
         el.scrollTop = 0;
-        disableSettings();
-        disableNews();
-        disablePosts();
-        disableMainScreen();
-        enableChat();
+        openChat();
         document.getElementsByClassName("recentChat")[0].style.display = "none";
         document.getElementsByClassName("chat")[0].style.display = "block";
         document.getElementsByClassName("microphoneChat")[0].style.display = "block";
