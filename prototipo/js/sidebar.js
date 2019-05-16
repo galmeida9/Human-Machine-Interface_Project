@@ -45,6 +45,7 @@ function openPosts(){
     enableWrapper();
     resetScroll();
     closeNav();
+    msgOrPost = "posts";
     currentpage="posts";
 }
 
@@ -77,6 +78,7 @@ function openChat(){
     disableSettings();
     resetScroll();
     closeNav();
+    msgOrPost = "msg";
     currentpage="chat";
 }
 

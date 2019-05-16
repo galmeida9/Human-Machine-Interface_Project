@@ -31,6 +31,7 @@ function nightmode() {
         document.getElementById("selectMicrophone").src="resources/microphone_white.png";
         document.getElementById("microphoneGIF").src="resources/microphone_animation_dark.gif";
         document.getElementById("shareNews").src="resources/share_white.png"
+        document.getElementById("emoji").src="resources/emoji_white.png"
         nightmodeOn = 1;
     }
 
@@ -60,6 +61,7 @@ function nightmode() {
         document.getElementById("nightmodeIcon").src = "resources/night_mode_off.png";
         document.getElementById("microphoneGIF").src="resources/microphone_animation.gif";
         document.getElementById("shareNews").src="resources/share.png"
+        document.getElementById("emoji").src="resources/emoji.png"
         nightmodeOn = 0;
     }
 }

@@ -150,15 +150,12 @@ Send Message
 function addMessage() {
     var random =  Math.round(Math.random() * 13) + 2;
     var person = currentPerson;
-    var querry = "." + person;
 
     allMessages[currentPerson]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><p>" + textToPost + "</p></button></span></div>");
     allMessages[currentPerson]["Number"] += 1;
     document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
-    document.querySelectorAll(querry).forEach(function(element) {
-        element.innerHTML = textToPost;
-    });
     lastMessage[currentPerson] = textToPost;
+    updateLastMessage(person, textToPost);
     chat(currentPerson);
     setTimeout(function(){reply(person);}, random*1000);
     console.log(random);
@@ -199,4 +196,27 @@ Open Notification
 function openNotification(){
     document.getElementsByClassName("notification")[0].style.display = "none";
     chat(notificationPerson);
+}
+
+/*-----------------------------------------------------------------------------------
+Chat Attachment
+-----------------------------------------------------------------------------------*/
+function chatAttachment() {
+    document.getElementsByClassName("chat")[0].style.display = "none";
+    document.getElementsByClassName("microphoneChat")[0].style.display = "none";
+    document.getElementsByClassName("newPost")[0].style.display = "block";
+    document.getElementById("selectMicrophone").style.display = "none";
+    document.getElementById("voiceToTxt").style.display = "none";
+    currentpage = "selectAttachment";
+}
+
+
+/*-----------------------------------------------------------------------------------
+Update last message displayed
+-----------------------------------------------------------------------------------*/
+function updateLastMessage(person, text) {
+    var querry = "." + person;
+    document.querySelectorAll(querry).forEach(function(element) {
+        element.innerHTML = text;
+    });
 }

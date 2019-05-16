@@ -236,7 +236,11 @@
                     <!--CHAT----------------------------------------------------------------->
                     <div class="chat" style="padding-top: 3pt"></div>
                     <div class="microphoneChat darkmodeBackground">
-                        <img src="resources/microphone_circle.png" onclick="openTextToSpeech('chat')" style="width: 0.5cm; cursor: pointer;">
+                        <span>
+                            <img src="resources/anexo.png" onclick="chatAttachment()" style="width: 0.5cm; cursor: pointer; margin-left: -29pt;">
+                            <img src="resources/microphone_circle.png" onclick="openTextToSpeech('chat')" style="width: 0.5cm; cursor: pointer; margin-left: 6pt;">
+                            <img id="emoji" src="resources/emoji.png" style="width: 0.5cm; cursor: pointer; margin-left: 6pt;">
+                        </span>
                     </div>
 
                 </div>
@@ -277,7 +281,7 @@
                     </tr>
                     <tr>
                         <th><p class="darkmodeText" style="margin-top: -10pt">Location</p></th>
-                        <th><p class="darkmodeText" style="margin-top: -10pt">Voice to Text</p></th>
+                        <th><p id="voiceToTxt" class="darkmodeText" style="margin-top: -10pt">Voice to Text</p></th>
                     </tr>
                 </table>
             </div>
@@ -287,7 +291,7 @@
             <!--LOCATION SHARE-------------------------------------------------------------->
             <div class="locationShare">
                 <img id="locationShareIMG" src="resources/tecnico_location.png">
-                <p class="darkmodeText">Confirm Post</p>
+                <p class="darkmodeText">Share?</p>
                 <p><img class="confirmationButtonsLocation" onclick="backButton()" src="resources/cancel.png" style="margin-left: 2pt"><img class="confirmationButtonsLocation" onclick="post()" src="resources/confirm.png" style="margin-left: 33pt"></p>
             </div>
             <!------------------------------------------------------------------------------>
@@ -334,7 +338,7 @@
             <!--POPUP CONFIRMATION---------------------------------------------------------->
             <div id="confirmationPopup">
                 <div id="confirmationPopupContent">
-                    <p>Confirm Post</p>
+                    <p>Share?</p>
                     <p><img onclick="backButton()" src="resources/cancel.png" style="margin-left: -2pt"><img onclick="post()" src="resources/confirm.png" style="margin-left: 17pt"></p>
                 </div>
             </div>
@@ -424,6 +428,7 @@ document.body.draggable = false;
 
 var currentpage = "home";
 var lastpage;
+var msgOrPost;
 
 </script>
 

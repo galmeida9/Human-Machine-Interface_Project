@@ -69,7 +69,8 @@ function backButton() {
             document.getElementsByClassName("selectPost")[0].style.display = "none";
             disablePhotos();
             disableVideos();
-            currentpage = "newPost";
+            if (msgOrPost == "msg") currentpage = "selectAttachment";
+            else currentpage = "newPost";
         }
         else if (currentpage == "confirmationPopup") {
             document.getElementById("confirmationPopup").style.display = "none";
@@ -122,6 +123,15 @@ function backButton() {
         else if (currentpage == "sharePost") {
             document.getElementById("personPopupPost").style.display = "none";
             currentpage = "posts";
+        }
+        else if (currentpage == "selectAttachment") {
+            document.getElementsByClassName("newPost")[0].style.display = "none";
+            document.getElementsByClassName("chat")[0].style.display = "block";
+            document.getElementsByClassName("microphoneChat")[0].style.display = "block";
+            document.getElementsByClassName("postScreen")[0].style.display = "none";
+            el.scrollLeft = 100000;
+            el.scrollTop = 100000;
+            currentpage = "personChat";
         }
     }
 }
