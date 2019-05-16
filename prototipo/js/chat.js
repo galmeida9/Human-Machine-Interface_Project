@@ -1,17 +1,17 @@
 var allMessages = {"Gabriel": {
                         Messages: ["<div class='messageReceived'><span><img src='resources/gabriel_user.png'><button class='btn'><p>Olá</p></button></span></div>",
-                                    "<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>Mekie</p></button></span></div>",
+                                    "<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><p>Mekie</p></button></span></div>",
                                     "<div class='messageReceived'><span><img src='resources/gabriel_user.png'><button class='btn'><p>tudo bem?</p></button></span></div>",
-                                    "<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>yh e ctg?</p></button></span></div>",
+                                    "<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><p>yh e ctg?</p></button></span></div>",
                                     "<div class='messageReceived'><span><img src='resources/gabriel_user.png'><button class='btn'><p>Também</p></button></span></div>",
-                                    "<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>Já viste os Avengers?</p></button></span></div>",
+                                    "<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><p>Já viste os Avengers?</p></button></span></div>",
                                     "<div class='messageReceived'><span><img src='resources/gabriel_user.png'><button class='btn'><p>Foi brutal!!!</p></button></span></div>"],
                         src: "resources/gabriel_user.png",
                         Number: 7,
                         },
                 "João" : {
                         Messages: ["<div class='messageReceived'><span><img src='resources/joao_user.png'><button class='btn'><p>Boas mano!</p></button></span></div>",
-                                    "<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>Então mano!</p></button></span></div>",
+                                    "<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><p>Então mano!</p></button></span></div>",
                                     "<div class='messageReceived'><span><img src='resources/joao_user.png'><button class='btn'><p>Queres ir ao cinema?</p></button></span></div>"],
                         src: "resources/joao_user.png",
                         Number: 3,
@@ -131,7 +131,6 @@ Add Person Chat
 function addPerson(person) {
     
     document.getElementById("personPopup").style.display = "none";
-    
     if (personInMemory.includes(person)) chat(person);
     else {
         personInMemory += person;
@@ -153,7 +152,7 @@ function addMessage() {
     var person = currentPerson;
     var querry = "." + person;
 
-    allMessages[currentPerson]["Messages"].push("<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>" + textToPost + "</p></button></span></div>");
+    allMessages[currentPerson]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><p>" + textToPost + "</p></button></span></div>");
     allMessages[currentPerson]["Number"] += 1;
     document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
     document.querySelectorAll(querry).forEach(function(element) {

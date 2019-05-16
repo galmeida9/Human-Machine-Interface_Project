@@ -217,21 +217,21 @@ function sharePost(person) {
     var random =  Math.round(Math.random() * 13) + 2;
     document.getElementById("personPopupPost").style.display="none";
     if (typeOfPost == 0) {
-        allMessages[person]["Messages"].push("<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><Video class='chatIMG chatVideo' src=" + imgToPost + " style='width:auto; margin-top:0pt;'></button></span></div>");
+        allMessages[person]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><Video class='chatIMG chatVideo' src=" + imgToPost + " style='width:auto; margin-top:0pt;'></button></span></div>");
         allMessages[person]["Number"] += 1;
         lastMessage[person] = "Video";
         addPerson(person);
     }
     else if (typeOfPost == 1) {
-        allMessages[person]["Messages"].push("<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><img class='chatIMG' src=" + imgToPost + " style='width:auto; margin-top:0pt;'></button></span></div>");
+        allMessages[person]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><img class='chatIMG' src=" + imgToPost + " style='width:auto; margin-top:0pt;'></button></span></div>");
         allMessages[person]["Number"] += 1;
         lastMessage[person] = "Image";
         addPerson(person);
     }
     else if (typeOfPost == 3) {
-        allMessages[person]["Messages"].push("<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>" + imgToPost + "</p></button></span></div>");
+        allMessages[person]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><p>" + imgToPost + "</p></button></span></div>");
         allMessages[person]["Number"] += 1;
-        lastMessage[person] = "Image";
+        lastMessage[person] = imgToPost;
         addPerson(person);
     }
     setTimeout(function(){reply(person);}, random*1000);

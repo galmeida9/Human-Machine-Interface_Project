@@ -17,6 +17,9 @@ function nightmode() {
         for (i = 0; i < numberOfCategories; i++) {
             document.getElementsByClassName("newsCheckmark")[i].src = "resources/check_white.png";
         }
+        document.querySelectorAll(".sharePost").forEach(function(element) {
+            element.src="resources/share_white.png";
+        });
         document.querySelectorAll(".userdarkmode").forEach(function(element) {
             element.src="resources/user_white.png";
         });
@@ -44,6 +47,9 @@ function nightmode() {
         }
         document.querySelectorAll(".userdarkmode").forEach(function(element) {
             element.src="resources/user.png";
+        });
+        document.querySelectorAll(".sharePost").forEach(function(element) {
+            element.src="resources/share.png";
         });
         document.getElementById("addPostImg").src="resources/plus.png";
         document.getElementById("addChat").src="resources/plus.png";
