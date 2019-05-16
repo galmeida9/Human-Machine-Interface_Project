@@ -2,6 +2,7 @@ window.onclick = function(event) {
     var post = document.getElementById("viewPost");
     var confirmation = document.getElementById("confirmationPopup");
     var chat = document.getElementById("personPopup");
+    var sharePost = document.getElementById("personPopupPost");
 
     if (event.target == filterpopup) {
         filterpopup.style.display = "none";
@@ -24,5 +25,9 @@ window.onclick = function(event) {
     else if (event.target == chat) {
         chat.style.display = "none";
         currentpage = "chat";
+    }
+    else if (event.target == sharePost) {
+        sharePost.style.display = "none";
+        currentpage = "posts";
     }
 }

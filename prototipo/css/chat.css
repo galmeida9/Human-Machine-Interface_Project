@@ -44,6 +44,18 @@
     margin-right: 6pt;
 }   
 
+.chatIMG {
+    max-height: 90%;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 .messageSent, .messageReceived{
     margin-top: 5pt;
 }
@@ -60,6 +72,11 @@
     float: right;
     margin-top: 5pt;
     margin-right: 2pt;
+}
+
+.messageSent button{
+    background-color: #afafaf;
+    border: 1px solid #919191;
 }
 
 .messageReceived button, .messageSent button{

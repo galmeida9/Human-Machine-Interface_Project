@@ -121,13 +121,13 @@ function post(){
     newPost.classList.add("postItem");
     
     if (typeOfPost == 1) 
-        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src=" + imgToPost + " onclick=" + "viewImg('" + imgToPost + "')" + "><br>";
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src=" + imgToPost + " onclick=" + "viewImg('" + imgToPost + "')" + "><img class='sharePost' src='resources/share.png' style='width: 0.5cm; cursor: pointer' onclick=\42selectPerson(1, \47" + imgToPost + "\47)\42><br>";
     else if (typeOfPost == 0)
-        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><Video class='postedVideo' src=" + videoToPost + " onclick=" + "viewVideo('" + videoToPost + "')" + "><br>";
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><Video class='postedVideo' src=" + videoToPost + " onclick=" + "viewVideo('" + videoToPost + "')" + "><img class='sharePost' src='resources/share.png' style='width: 0.5cm; cursor: pointer' onclick=\42selectPerson(0, \47" + videoToPost + "\47)\42><br>";
     else if (typeOfPost == 2)
-        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src='resources/tecnico_location.png' onclick=" + "viewImg('resources/tecnico_location.png')" + "><br>";
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><img class='postedImg' src='resources/tecnico_location.png' onclick=" + "viewImg('resources/tecnico_location.png')" + "><img class='sharePost' src='resources/share.png' style='width: 0.5cm; cursor: pointer' onclick=\42selectPerson(1, 'resources/tecnico_location.png')\42><br>";
     else
-        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><p class='postItemText darkmodeText'>" + textToPost + "<br>";
+        newPost.innerHTML = "<p class='postItemText darkmodeText'><img class='user userdarkmode' src='resources/user.png'> <b>You</b> posted</p><p class='postItemText darkmodeText'>" + textToPost + "<br><img class='sharePost' src='resources/share.png' style='width: 0.5cm; cursor: pointer' onclick=\42selectPerson(3, \47" + textToPost + "\47)\42>";
 
     lastPost.insertAdjacentElement("beforebegin", newPost);
     if (nightmodeOn == 1) {
@@ -140,8 +140,7 @@ function post(){
     disableNews();
     enablePosts();
     if (typeOfPost != 2) backButton();
-
-    console.log(currentpage);
+    document.getElementsByClassName("textToSpeech")[0].style.display = "none";
 
     el.scrollLeft = 0;
     el.scrollTop = 0;
@@ -192,4 +191,48 @@ function disableVideos() {
         element.pause();
         element.muted = false;
     });
+}
+
+/*-----------------------------------------------------------------------------------
+Select Person to share
+-----------------------------------------------------------------------------------*/
+function selectPerson(type, src) {
+    if ((mouseMovement < 3 && mouseMovement > -3)) {
+        document.getElementById("personPopupPost").style.display="block";
+        typeOfPost = type;
+        imgToPost = src;
+        currentpage = "sharePost";
+    }
+}
+
+document.getElementsByClassName("close")[1].onclick = function() {
+    document.getElementById("personPopupPost").style.display = "none";
+    currentpage = "posts";
+}
+
+/*-----------------------------------------------------------------------------------
+Share Post
+-----------------------------------------------------------------------------------*/
+function sharePost(person) {
+    var random =  Math.round(Math.random() * 13) + 2;
+    document.getElementById("personPopupPost").style.display="none";
+    if (typeOfPost == 0) {
+        allMessages[person]["Messages"].push("<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><Video class='chatIMG chatVideo' src=" + imgToPost + " style='width:auto; margin-top:0pt;'></button></span></div>");
+        allMessages[person]["Number"] += 1;
+        lastMessage[person] = "Video";
+        addPerson(person);
+    }
+    else if (typeOfPost == 1) {
+        allMessages[person]["Messages"].push("<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><img class='chatIMG' src=" + imgToPost + " style='width:auto; margin-top:0pt;'></button></span></div>");
+        allMessages[person]["Number"] += 1;
+        lastMessage[person] = "Image";
+        addPerson(person);
+    }
+    else if (typeOfPost == 3) {
+        allMessages[person]["Messages"].push("<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>" + imgToPost + "</p></button></span></div>");
+        allMessages[person]["Number"] += 1;
+        lastMessage[person] = "Image";
+        addPerson(person);
+    }
+    setTimeout(function(){reply(person);}, random*1000);
 }

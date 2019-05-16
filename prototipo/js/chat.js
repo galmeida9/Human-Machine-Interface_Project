@@ -1,56 +1,44 @@
-var receivedMessages = {"Gabriel": {
-                                    Messages: ["Olá", "tudo bem?", "Também", "Foi brutal!!!"], 
-                                    number: 4,
-                                    src: "resources/gabriel_user.png",
-                                    first: 1,
-                                    },
-                        "João": {
-                                    Messages: ["Boas mano!", "Queres ir ao cinema?"],
-                                    number: 2,
-                                    src: "resources/joao_user.png",
-                                    first: 1,
-                                },
-                        "Daniel": {
-                                    Messages: ["Bora almoçar fora?"],
-                                    number: 1,
-                                    src: "resources/daniel_user.png",
-                                    first: 1,
-                                },
-                        "Diogo": {
-                                    Messages: [],
-                                    number: 0,
-                                    src: "resources/user.png",
-                                    first: 0,
-                                },
-                        "Bernardo": {
-                                    Messages: [],
-                                    number: 0,
-                                    src: "resources/bernardo_user.png",
-                                    first: 0,
-                                }
+var allMessages = {"Gabriel": {
+                        Messages: ["<div class='messageReceived'><span><img src='resources/gabriel_user.png'><button class='btn'><p>Olá</p></button></span></div>",
+                                    "<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>Mekie</p></button></span></div>",
+                                    "<div class='messageReceived'><span><img src='resources/gabriel_user.png'><button class='btn'><p>tudo bem?</p></button></span></div>",
+                                    "<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>yh e ctg?</p></button></span></div>",
+                                    "<div class='messageReceived'><span><img src='resources/gabriel_user.png'><button class='btn'><p>Também</p></button></span></div>",
+                                    "<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>Já viste os Avengers?</p></button></span></div>",
+                                    "<div class='messageReceived'><span><img src='resources/gabriel_user.png'><button class='btn'><p>Foi brutal!!!</p></button></span></div>"],
+                        src: "resources/gabriel_user.png",
+                        Number: 7,
+                        },
+                "João" : {
+                        Messages: ["<div class='messageReceived'><span><img src='resources/joao_user.png'><button class='btn'><p>Boas mano!</p></button></span></div>",
+                                    "<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>Então mano!</p></button></span></div>",
+                                    "<div class='messageReceived'><span><img src='resources/joao_user.png'><button class='btn'><p>Queres ir ao cinema?</p></button></span></div>"],
+                        src: "resources/joao_user.png",
+                        Number: 3,
+                        },
+                "Daniel": {
+                        Messages: ["<div class='messageReceived'><span><img src='resources/daniel_user.png'><button class='btn'><p>Bora almoçar fora?</p></button></span></div>"],
+                        src: "resources/daniel_user.png",
+                        Number: 1,
+                        },
+                "Diogo": {
+                        Messages: [],
+                        src: "resources/user.png",
+                        Number: 0,
+                        },
+                "Bernardo": {
+                        Messages: [],
+                        src: "resources/bernardo_user.png",
+                        Number: 0,
                         }
+                };
 
-var sentMessages = {"Gabriel": {
-                                Messages: ["Mekie", "yh e ctg?", "Já viste os Avengers?"],
-                                number: 3,
-                                },
-                    "João": {
-                                Messages: ["Então mano!"],
-                                number: 1,
-                            },
-                    "Daniel": {
-                                Messages: [],
-                                number: 0,
-                            },
-                    "Diogo": {
-                                Messages: [],
-                                number: 0,
-                            },
-                    "Bernardo": {
-                                Messages: [],
-                                number: 0,
-                            }
-                    }
+var lastMessage = {"Gabriel": "Foi brutal!!!",
+                    "João" : "Queres ir ao cinema?",
+                    "Daniel": "Bora almoçar fora?",
+                    "Diogo": "",
+                    "Bernardo": ""
+                    };
 
 var displayedMessages = 0;
 var personInMemory = ["Gabriel", "João", "Daniel"];
@@ -63,6 +51,8 @@ Disable/Enable Chat
 function disableChat() {
     document.getElementsByClassName("chatScreen")[0].style.display = "none";
     document.getElementsByClassName("recentChat")[0].style.display = "none";
+    document.getElementsByClassName("textToSpeech")[0].style.display = "none";
+    document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
 }
 
 function enableChat() {
@@ -78,7 +68,7 @@ document.getElementById("addChat").onclick = function() {
     currentpage = "peoplepopup";
 }
 
-document.getElementsByClassName("close")[1].onclick = function() {
+document.getElementsByClassName("close")[2].onclick = function() {
     document.getElementById("personPopup").style.display = "none";
     currentpage = "chat";
 }
@@ -102,7 +92,7 @@ function chat(person) {
         document.getElementsByClassName("microphoneChat")[0].style.display = "block";
         
         var messages = document.getElementsByClassName("chat")[0];
-        var i=0, j=0, k = 1;
+        var i=0, k = 1;
 
         while (k <= displayedMessages) {
             messages.removeChild(messages.childNodes[0]);
@@ -111,32 +101,28 @@ function chat(person) {
         if(k!=1) messages.removeChild(messages.childNodes[0]);
 
         displayedMessages = 0;
-
-        while (i<receivedMessages[person]["number"] || j<sentMessages[person]["number"]){
-            if ((i < receivedMessages[person]["number"] && j>0) || (receivedMessages[person]["first"] == 1 && j==0)) {
+        while (i<allMessages[person]["Number"]){
                 var newMessage = document.createElement("div");
-                newMessage.classList.add("messageReceived");
-                newMessage.innerHTML = "<div class='messageReceived'><span><img src=" + receivedMessages[person]["src"] + "><button class='btn'><p>" + receivedMessages[person]["Messages"][i] +"</p></button></span></div>";
+                newMessage.innerHTML = allMessages[person]["Messages"][i];
                 messages.appendChild(newMessage);
                 i++;
                 displayedMessages++;
-            }
-            
-            if (j < sentMessages[person]["number"]) {
-                var newMessage = document.createElement("div");
-                newMessage.classList.add("messageSent");
-                newMessage.innerHTML = "<div class='messageReceived'><span><img src='resources/user.png'><button class='btn' style='background-color: #afafaf;border: 1px solid #919191;'><p>" + sentMessages[person]["Messages"][j] +"</p></button></span></div>";
-                messages.appendChild(newMessage);
-                j++;
-                displayedMessages++;
-            }
+        }
+        var newMessage = document.createElement("div");
+        newMessage.innerHTML = "<br><br>";
+        messages.appendChild(newMessage);
+
+        if (nightmodeOn == 1) {
+            document.querySelectorAll(".userdarkmode").forEach(function(element) {
+                element.src="resources/user_white.png";
+            });
         }
 
-        if (displayedMessages!=0) {
-            var newMessage = document.createElement("div");
-            newMessage.innerHTML = "<br><br>";
-            messages.appendChild(newMessage);
-        }
+        document.querySelectorAll(".chatVideo").forEach(function(element) {
+            element.play();
+            element.muted = true;
+        });
+
         el.scrollTop = 100000;
         currentpage="personChat";
     }
@@ -147,7 +133,6 @@ function chat(person) {
 Add Person Chat
 -----------------------------------------------------------------------------------*/
 function addPerson(person) {
-    var lastMessage;
     
     document.getElementById("personPopup").style.display = "none";
     
@@ -155,14 +140,9 @@ function addPerson(person) {
     else {
         personInMemory += person;
 
-        if (receivedMessages[person]["number"] > sentMessages[person]["number"]) lastMessage = receivedMessages[person]["Messages"][receivedMessages[person]["number"] - 1];
-        else lastMessage = sentMessages[person]["Messages"][sentMessages[person]["number"] - 1];
-
-        if (lastMessage == null) lastMessage = "";
-
         var chatScreen = document.getElementsByClassName("recentChat")[0];
         var newChat = document.createElement("div");
-        newChat.innerHTML = "<button class='btn chatPerson' style='margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;  overflow: hidden;' onclick=\42chat(\47" + person + "\47)\42><h2 style='font-weight: bold'><img class='user' src=" + receivedMessages[person]["src"] + " style='margin-top: -2pt'> " + person + "</h2><p class='lastMessage " + person + "'>" + lastMessage + "</p><br><br><br></button>"
+        newChat.innerHTML = "<button class='btn chatPerson' style='margin-top: 4pt; height: 27pt; cursor:pointer; text-align: left;  overflow: hidden;' onclick=\42chat(\47" + person + "\47)\42><h2 style='font-weight: bold'><img class='user' src=" + allMessages[person]["src"] + " style='margin-top: -2pt'> " + person + "</h2><p class='lastMessage " + person + "'>" + lastMessage[person] + "</p><br><br><br></button>"
         chatScreen.appendChild(newChat);
         chat(person);
     }
@@ -177,12 +157,13 @@ function addMessage() {
     var person = currentPerson;
     var querry = "." + person;
 
-    sentMessages[currentPerson]["Messages"].push(textToPost);
-    sentMessages[currentPerson]["number"] += 1;
+    allMessages[currentPerson]["Messages"].push("<div class='messageSent'><span><img src='resources/user.png'><button class='btn'><p>" + textToPost + "</p></button></span></div>");
+    allMessages[currentPerson]["Number"] += 1;
     document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
     document.querySelectorAll(querry).forEach(function(element) {
-        element.innerHTML = sentMessages[currentPerson]["Messages"][sentMessages[currentPerson]["number"] - 1];
+        element.innerHTML = textToPost;
     });
+    lastMessage[currentPerson] = textToPost;
     chat(currentPerson);
     setTimeout(function(){reply(person);}, random*1000);
     console.log(random);
@@ -194,11 +175,13 @@ Receive Message
 function reply(person) {
     var random =  Math.round(Math.random() * 11);
     var querry = "." + person;
-    receivedMessages[person]["Messages"].push(predictedTextChat[random]);
-    receivedMessages[person]["number"] += 1;
+
+    allMessages[person]["Messages"].push("<div class='messageReceived'><span><img src=" + allMessages[person]["src"] + "><button class='btn'><p>" + predictedTextChat[random] + "</p></button></span></div>");
+    allMessages[person]["Number"] += 1;
     document.querySelectorAll(querry).forEach(function(element) {
-        element.innerHTML = receivedMessages[person]["Messages"][receivedMessages[person]["number"] - 1];
+        element.innerHTML = predictedTextChat[random];
     });
+    lastMessage[person] = predictedTextChat[random];
     showNotification(person);
     console.log(person + " sent a message");
 }
@@ -208,8 +191,8 @@ Get Notification
 -----------------------------------------------------------------------------------*/
 function showNotification(person){
     document.getElementsByClassName("notification")[0].style.display = "block";
-    document.getElementById("notificationIMG").src = receivedMessages[person]["src"];
-    document.getElementById("notificationTXT").innerHTML = receivedMessages[person]["Messages"][receivedMessages[person]["number"] - 1];
+    document.getElementById("notificationIMG").src = allMessages[person]["src"];
+    document.getElementById("notificationTXT").innerHTML = lastMessage[person];
     notificationPerson = person;
     lastpage = currentpage;
     currentpage = "notification";

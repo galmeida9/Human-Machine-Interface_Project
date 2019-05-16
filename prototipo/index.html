@@ -134,6 +134,7 @@
                         <div class="postItem">
                             <p class="postItemText darkmodeText" style="font-weight: bold"><img class="user userdarkmode" src="resources/user.png"> Gabriel <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/alameda.jpg" onclick="viewImg('resources/alameda.jpg')">
+                            <img class="sharePost" src="resources/share.png" style="width: 0.5cm; cursor: pointer" onclick="selectPerson(0, 'resources/alameda.jpg')">
                             <br>
                         </div>
                         <div class="postItem">
@@ -141,26 +142,31 @@
                             <video class="postedVideo" onclick="viewVideo('resources/avengers.mp4')">
                                 <source src="resources/avengers.mp4" type="video/mp4">
                             </video>
+                            <img class="sharePost" src="resources/share.png" style="width: 0.5cm; cursor: pointer" onclick="selectPerson(0, 'resources/avengers.mp4')">
                             <br>
                         </div>
                         <div class="postItem">
                             <p class="postItemText darkmodeText" style="font-weight: bold"><img class="user userdarkmode" src="resources/user.png"> Andreia <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/paris.png" onclick="viewImg('resources/paris.png')">
+                            <img class="sharePost" src="resources/share.png" style="width: 0.5cm; cursor: pointer" onclick="selectPerson(1, 'resources/paris.png')">
                             <br>
                         </div>
                         <div class="postItem">
                             <p class="postItemText darkmodeText" style="font-weight: bold"><img class="user userdarkmode" src="resources/user.png"> António <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/Antwerpen.jpg" onclick="viewImg('resources/Antwerpen.jpg')">
+                            <img class="sharePost" src="resources/share.png" style="width: 0.5cm; cursor: pointer" onclick="selectPerson(1, 'resources/Antwerpen.jpg')">
                             <br>
                         </div>
                         <div class="postItem">
                             <p class="postItemText darkmodeText" style="font-weight: bold"><img class="user userdarkmode" src="resources/user.png"> Diogo <span style="font-weight: lighter">posted</span></p>
                             <p class="postItemText darkmodeText" style="font-size: 7pt">Estou a adorar a minha viagem a Inglaterra!! Se podesse vinha cá sempre!</p>
+                            <img class="sharePost" src="resources/share.png" style="width: 0.5cm; cursor: pointer" onclick="selectPerson(3, 'Estou a adorar a minha viagem a Inglaterra!! Se podesse vinha cá sempre!')">
                             <br>
                         </div>
                         <div class="postItem">
                             <p class="postItemText darkmodeText" style="font-weight: bold"><img class="user userdarkmode" src="resources/user.png"> João <span style="font-weight: lighter">posted</span></p>
                             <img class="postedImg" src="resources/ramen.jpg" onclick="viewImg('resources/ramen.jpg')">
+                            <img class="sharePost" src="resources/share.png" style="width: 0.5cm; cursor: pointer" onclick="selectPerson(1, 'resources/ramen.jpg')">
                             <br>
                         </div>
                     </div>
@@ -300,6 +306,22 @@
                 <p><img class="confirmationButtons" onclick="backButton()" src="resources/cancel.png" style="margin-left: -36pt"><img class="confirmationButtons" onclick="voice()" src="resources/confirm.png" style="margin-left: 16pt"></p>
             </div>
             <!------------------------------------------------------------------------------>
+
+
+            <!--PERSON POPUP TO CHOOSE WHO TO SHARE------------------------------------------>
+            <div id="personPopupPost" class="popup">
+                <div class="popupcontent darkmodeText darkmodeBackground">
+                    <span class="close">&times;</span>
+                    <b><p style="text-align: center; margin-top: -0.4cm; font-size: 8pt;">People</p></b>
+                    <p><a class="darkmodeText" onclick="sharePost('Bernardo')" style="cursor: pointer;">Bernardo</a></p>
+                    <p><a class="darkmodeText" onclick="sharePost('Daniel')" style="cursor: pointer;">Daniel</a></p>
+                    <p><a class="darkmodeText" onclick="sharePost('Diogo')" style="cursor: pointer;">Diogo</a></p>
+                    <p><a class="darkmodeText" onclick="sharePost('Gabriel')" style="cursor: pointer;">Gabriel</a></p>
+                    <p><a class="darkmodeText" onclick="sharePost('João')" style="cursor: pointer;">João</a></p>
+                </div>
+            </div>
+            <!------------------------------------------------------------------------------->
+
 
             <!--VIEW POST------------------------------------------------------------------->
             <div id="viewPost">

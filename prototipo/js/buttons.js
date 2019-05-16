@@ -119,5 +119,9 @@ function backButton() {
             document.getElementsByClassName("notification")[0].style.display = "none";
             currentpage = lastpage;
         }
+        else if (currentpage == "sharePost") {
+            document.getElementById("personPopupPost").style.display = "none";
+            currentpage = "posts";
+        }
     }
 }

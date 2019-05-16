@@ -191,3 +191,9 @@
     position: fixed;
     cursor: pointer;
 }
+
+.sharePost{
+    width: 0.5cm;
+    margin-top: 3pt;
+    margin-left: 30pt;
+}
