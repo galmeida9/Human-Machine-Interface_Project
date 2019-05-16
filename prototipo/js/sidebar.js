@@ -109,10 +109,12 @@ Disable/Enable settings
 -----------------------------------------------------------------------------------*/
 function disableSettings() {
     document.getElementsByClassName("settings")[0].style.display = "none";
+    document.getElementsByClassName("help")[0].style.display = "none";
 }
 
 function enableSettings(){
     document.getElementsByClassName("settings")[0].style.display = "block";
+    document.getElementsByClassName("help")[0].style.display = "none";
 }
 
 

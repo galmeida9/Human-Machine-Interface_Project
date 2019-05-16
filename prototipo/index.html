@@ -417,11 +417,20 @@
             <!--SETIINGS-------------------------------------------------------------------->
             <div class="settings" style="margin-left: 6%; margin-top: 20%">
                 <button class="btn" onclick="nightmode()">Nightmode <img src="resources/night_mode_off.png" id="nightmodeIcon" style="width: 0.33cm; vertical-align: -1.5pt; margin-left: 4px"></button> 
-                <button class="btn">Change Wallpaper</button> 
-                <button class="btn">Help</button>                
+                <button class="btn" onclick="openHelp()">Help</button>                
             </div>
             <!------------------------------------------------------------------------------>
         
+
+            <!--SETIINGS-------------------------------------------------------------------->
+            <div class="help" style="margin-left: 6%; margin-top: 20%">
+                <img id="backButtonHelp" src="resources/back_black.png" style="width: 1cm; float: left;">
+                <p class="darkmodeText" style="font-size: 7pt; margin-top: 4pt;">Goes back in any screen or situation.</p>    
+                <img id="menuButtonHelp" src="resources/menu_black.png" style="width: 0.8cm; float: left;">
+                <p class="darkmodeText" style="font-size: 7pt; margin-top: 11pt; margin-left: 29pt;">Returns to the home screen.</p>   
+            </div>
+            <!------------------------------------------------------------------------------>
+
         </div>
 
         <!--IGO SIDE BUTTONS----------------------------------------------------------------->
@@ -474,6 +483,12 @@ document.body.draggable = false;
 var currentpage = "home";
 var lastpage;
 var msgOrPost;
+
+function openHelp() {
+    document.getElementsByClassName("settings")[0].style.display = "none";
+    document.getElementsByClassName("help")[0].style.display = "block";
+    currentpage = "help";
+}
 
 </script>
 

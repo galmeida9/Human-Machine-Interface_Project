@@ -141,5 +141,10 @@ function backButton() {
             el.scrollTop = 100000;
             currentpage = "personChat";
         }
+        else if (currentpage == "help") {
+            document.getElementsByClassName("help")[0].style.display = "none";
+            document.getElementsByClassName("settings")[0].style.display = "block";
+            currentpage = "settings";
+        }
     }
 }

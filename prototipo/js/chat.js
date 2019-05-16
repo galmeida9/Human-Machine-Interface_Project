@@ -170,7 +170,8 @@ function reply(person) {
     var random =  Math.round(Math.random() * 11);
     var querry = "." + person;
 
-    allMessages[person]["Messages"].push("<div class='messageReceived'><span><img src=" + allMessages[person]["src"] + "><button class='btn'><p>" + predictedTextChat[random] + "</p></button></span></div>");
+    if (allMessages[person]["src"] == "resources/user.png") allMessages[person]["Messages"].push("<div class='messageReceived'><span><img class='userdarkmode' src=" + allMessages[person]["src"] + "><button class='btn'><p>" + predictedTextChat[random] + "</p></button></span></div>");
+    else allMessages[person]["Messages"].push("<div class='messageReceived'><span><img src=" + allMessages[person]["src"] + "><button class='btn'><p>" + predictedTextChat[random] + "</p></button></span></div>");
     allMessages[person]["Number"] += 1;
     document.querySelectorAll(querry).forEach(function(element) {
         element.innerHTML = predictedTextChat[random];
