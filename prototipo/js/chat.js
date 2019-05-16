@@ -54,6 +54,8 @@ function disableChat() {
     document.getElementsByClassName("textToSpeech")[0].style.display = "none";
     document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
     document.getElementsByClassName("selectEmoji")[0].style.display = "none";
+    document.getElementsByClassName("chat")[0].style.display = "none";
+    document.getElementsByClassName("microphoneChat")[0].style.display = "none";
 }
 
 function enableChat() {
