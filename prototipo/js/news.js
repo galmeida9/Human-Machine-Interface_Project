@@ -123,6 +123,7 @@ Post News
 function postNews() {
     typeOfPost = 3;
     textToPost = "News Story: ".bold() + newsStories[currentNews]["title"];
+    msgOrPost = "posts";
     post();
 }
 
