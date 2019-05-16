@@ -133,5 +133,13 @@ function backButton() {
             el.scrollTop = 100000;
             currentpage = "personChat";
         }
+        else if (currentpage == "emoji") {
+            document.getElementsByClassName("microphoneChat")[0].style.display = "block";
+            document.getElementsByClassName("chat")[0].style.display = "block";
+            document.getElementsByClassName("selectEmoji")[0].style.display = "none";
+            el.scrollLeft = 100000;
+            el.scrollTop = 100000;
+            currentpage = "personChat";
+        }
     }
 }

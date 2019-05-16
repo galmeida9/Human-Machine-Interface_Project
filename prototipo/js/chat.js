@@ -53,11 +53,13 @@ function disableChat() {
     document.getElementsByClassName("recentChat")[0].style.display = "none";
     document.getElementsByClassName("textToSpeech")[0].style.display = "none";
     document.getElementsByClassName("showVoiceInput")[0].style.display = "none";
+    document.getElementsByClassName("selectEmoji")[0].style.display = "none";
 }
 
 function enableChat() {
     document.getElementsByClassName("chatScreen")[0].style.display = "block";
     document.getElementsByClassName("recentChat")[0].style.display = "block";
+    document.getElementsByClassName("selectEmoji")[0].style.display = "none";
 }
 
 /*-----------------------------------------------------------------------------------
@@ -219,4 +221,28 @@ function updateLastMessage(person, text) {
     document.querySelectorAll(querry).forEach(function(element) {
         element.innerHTML = text;
     });
+}
+
+/*-----------------------------------------------------------------------------------
+Open Emojis Screen
+-----------------------------------------------------------------------------------*/
+function openEmojis() {
+    document.getElementsByClassName("chat")[0].style.display = "none";
+    document.getElementsByClassName("microphoneChat")[0].style.display = "none";
+    document.getElementsByClassName("selectEmoji")[0].style.display = "block";
+    el.scrollLeft = 0;
+    el.scrollTop = 0;
+    currentpage = "emoji";
+}
+
+
+/*-----------------------------------------------------------------------------------
+Send Emoji
+-----------------------------------------------------------------------------------*/
+function shareEmoji(emoji) {
+    if (mouseMovement < 3 && mouseMovement > -3) {
+        typeOfPost = 1;
+        contentToSend = emoji;
+        sharePost(currentPerson);
+    }
 }

@@ -105,3 +105,15 @@
     background-color: rgba(0,0,0,0.8); 
     color: white;
 }
+
+.emoji {
+    width: 1cm;
+    cursor: pointer;
+}
+
+.selectEmoji{
+    display: none;
+    margin-top: 0.4cm;
+    height: 102pt;
+    margin-top: -100pt;
+}
