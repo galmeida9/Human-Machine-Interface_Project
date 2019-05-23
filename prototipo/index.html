@@ -73,7 +73,7 @@
                     <div id="newsStory" class="newsStory">
                         <h5 id="title" class="newsPart darkmodeText"></h5>
                         <p id="text" class="newsPart darkmodeText"></p>
-                        <span><img id="shareNews" src="resources/post.png" onclick="postNews()" style="width: 0.7cm"><img id="shareNews" src="resources/msg.png" onclick="sendNews()" style="width: 0.7cm; margin-left: 28pt;"></span>
+                        <span><img id="shareNews" src="resources/post.png" onclick="showPopupShare('', 2);" style="width: 0.7cm"><img id="shareNews" src="resources/msg.png" onclick="sendNews()" style="width: 0.7cm; margin-left: 28pt;"></span>
                     </div>
 
                     <!--WEATHER SCREEN------------------------------------------------------>
@@ -362,11 +362,11 @@
                 <div class="popupcontent darkmodeText darkmodeBackground">
                     <span class="close">&times;</span>
                     <b><p style="text-align: center; margin-top: -0.4cm; font-size: 8pt;">People</p></b>
-                    <p><a class="darkmodeText" onclick="sharePost('Bernardo')" style="cursor: pointer;">Bernardo</a></p>
-                    <p><a class="darkmodeText" onclick="sharePost('Daniel')" style="cursor: pointer;">Daniel</a></p>
-                    <p><a class="darkmodeText" onclick="sharePost('Diogo')" style="cursor: pointer;">Diogo</a></p>
-                    <p><a class="darkmodeText" onclick="sharePost('Gabriel')" style="cursor: pointer;">Gabriel</a></p>
-                    <p><a class="darkmodeText" onclick="sharePost('João')" style="cursor: pointer;">João</a></p>
+                    <p><a class="darkmodeText" onclick="showPopupShare('Bernardo', 0)" style="cursor: pointer;">Bernardo</a></p>
+                    <p><a class="darkmodeText" onclick="showPopupShare('Daniel', 0)" style="cursor: pointer;">Daniel</a></p>
+                    <p><a class="darkmodeText" onclick="showPopupShare('Diogo', 0)" style="cursor: pointer;">Diogo</a></p>
+                    <p><a class="darkmodeText" onclick="showPopupShare('Gabriel', 0)" style="cursor: pointer;">Gabriel</a></p>
+                    <p><a class="darkmodeText" onclick="showPopupShare('João', 0)" style="cursor: pointer;">João</a></p>
                 </div>
             </div>
             <!------------------------------------------------------------------------------->
@@ -378,13 +378,23 @@
                 <video id="viewVideoLarge" onclick="this.paused?this.play():this.pause()">
             </div>
             <!------------------------------------------------------------------------------>
-        
-        
+
+
             <!--POPUP CONFIRMATION---------------------------------------------------------->
             <div id="confirmationPopup">
                 <div id="confirmationPopupContent">
                     <p>Share?</p>
                     <p><img onclick="backButton()" src="resources/cancel.png" style="margin-left: -2pt"><img onclick="post()" src="resources/confirm.png" style="margin-left: 17pt"></p>
+                </div>
+            </div>
+            <!------------------------------------------------------------------------------>
+
+
+            <!--POPUP CONFIRMATION---------------------------------------------------------->
+            <div id="confirmationPopupShare">
+                <div id="confirmationPopupContent">
+                    <p>Share?</p>
+                    <p><img onclick="cancelShare()" src="resources/cancel.png" style="margin-left: -2pt"><img onclick="confirmShare()" src="resources/confirm.png" style="margin-left: 17pt"></p>
                 </div>
             </div>
             <!------------------------------------------------------------------------------>
@@ -427,7 +437,7 @@
                 <img id="backButtonHelp" src="resources/back_black.png" style="width: 1cm; float: left;">
                 <p class="darkmodeText" style="font-size: 7pt; margin-top: 4pt;">Goes back in any screen or situation.</p>    
                 <img id="menuButtonHelp" src="resources/menu_black.png" style="width: 0.8cm; float: left;">
-                <p class="darkmodeText" style="font-size: 7pt; margin-top: 11pt; margin-left: 29pt;">Returns to the home screen.</p>   
+                <p class="darkmodeText" style="font-size: 7pt; margin-top: 11pt; margin-left: 29pt;">Opens the menu.</p>   
             </div>
             <!------------------------------------------------------------------------------>
 
@@ -482,6 +492,7 @@ document.body.draggable = false;
 
 var currentpage = "home";
 var lastpage;
+var lastpage2;
 var msgOrPost;
 
 function openHelp() {

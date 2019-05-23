@@ -156,6 +156,7 @@ function post(){
         enablePosts();
         el.scrollLeft = 0;
         el.scrollTop = 0;
+        currentpage = "posts";
     }
     else {
         if (typeOfPost == 0) {selectPerson(0, videoToPost); sharePost(currentPerson);}
@@ -221,6 +222,7 @@ function selectPerson(type, src) {
         typeOfPost = type;
         contentToSend = src;
         currentpage = "sharePost";
+        lastpage2 = currentpage;
     }
 }
 
@@ -234,28 +236,59 @@ document.getElementsByClassName("close")[1].onclick = function() {
 Share Post
 -----------------------------------------------------------------------------------*/
 function sharePost(person) {
-    var random =  Math.round(Math.random() * 13) + 2;
-    document.getElementById("personPopupPost").style.display="none";
-    if (typeOfPost == 0) {
-        allMessages[person]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><Video class='chatIMG chatVideo' src=" + contentToSend + " style='width:auto; margin-top:0pt;'></button></span></div>");
-        allMessages[person]["Number"] += 1;
-        lastMessage[person] = "Video";
-        updateLastMessage(person, "Video");
-        addPerson(person);
+    if (share == 0) {
+        document.getElementById("confirmationPopupShare").style.display = "none";
     }
-    else if (typeOfPost == 1) {
-        allMessages[person]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><img class='chatIMG' src=" + contentToSend + " style='width:auto; margin-top:0pt;'></button></span></div>");
-        allMessages[person]["Number"] += 1;
-        lastMessage[person] = "Image";
-        updateLastMessage(person, "Image");
-        addPerson(person);
+    else if (share == 1) {
+        document.getElementById("confirmationPopupShare").style.display = "none";
+        var random =  Math.round(Math.random() * 13) + 2;
+        document.getElementById("personPopupPost").style.display="none";
+        if (typeOfPost == 0) {
+            allMessages[person]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><Video class='chatIMG chatVideo' src=" + contentToSend + " style='width:auto; margin-top:0pt;'></button></span></div>");
+            allMessages[person]["Number"] += 1;
+            lastMessage[person] = "Video";
+            updateLastMessage(person, "Video");
+            addPerson(person);
+        }
+        else if (typeOfPost == 1) {
+            allMessages[person]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><img class='chatIMG' src=" + contentToSend + " style='width:auto; margin-top:0pt;'></button></span></div>");
+            allMessages[person]["Number"] += 1;
+            lastMessage[person] = "Image";
+            updateLastMessage(person, "Image");
+            addPerson(person);
+        }
+        else if (typeOfPost == 3) {
+            allMessages[person]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><p>" + contentToSend + "</p></button></span></div>");
+            allMessages[person]["Number"] += 1;
+            lastMessage[person] = contentToSend;
+            updateLastMessage(person, contentToSend);
+            addPerson(person);
+        }
+        setTimeout(function(){reply(person);}, random*1000);
     }
-    else if (typeOfPost == 3) {
-        allMessages[person]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><p>" + contentToSend + "</p></button></span></div>");
-        allMessages[person]["Number"] += 1;
-        lastMessage[person] = contentToSend;
-        updateLastMessage(person, contentToSend);
-        addPerson(person);
-    }
-    setTimeout(function(){reply(person);}, random*1000);
+}
+
+
+/*-----------------------------------------------------------------------------------
+Share Post To person Popup
+-----------------------------------------------------------------------------------*/
+function showPopupShare(person, mode) {
+    document.getElementById("confirmationPopupShare").style.display = "block";
+    currentPerson = person;
+    sharePersonMode = mode;
+    currentpage = "confirmationPopupShare";
+    if (mode == 2) lastpage2 = "newsStories";
+}
+
+function cancelShare() {
+    share = 0; 
+    currentpage = lastpage2;
+    if (sharePersonMode == 0) sharePost(currentPerson);
+    else postNews();
+}
+function confirmShare() {
+    share = 1; 
+    currentpage = lastpage2;
+    if (sharePersonMode == 0) sharePost(currentPerson);
+    else postNews();
 }

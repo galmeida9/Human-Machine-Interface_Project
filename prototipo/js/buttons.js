@@ -147,5 +147,8 @@ function backButton() {
             document.getElementsByClassName("settings")[0].style.display = "block";
             currentpage = "settings";
         }
+        else if (currentpage == "confirmationPopupShare") {
+            cancelShare();
+        }
     }
 }

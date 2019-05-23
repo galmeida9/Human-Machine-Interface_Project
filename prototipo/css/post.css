@@ -114,6 +114,24 @@
     background-color: rgba(0,0,0,0.4); 
 }
 
+#confirmationPopupShare{
+    display: none; 
+    position: absolute; 
+    z-index: 5; 
+    padding-top: 0.5cm;
+    padding-right: 0.2cm; 
+    padding-bottom: 0cm;
+    border-radius: 0.45cm;
+    left: 0;
+    top: 0;
+    width: 3cm; 
+    height: 3.5cm; 
+    margin-left: -0.1cm;
+    margin-top: 0cm;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.4); 
+}
+
 #confirmationPopupContent{
     background-color: #fefefe;
     padding: 15pt;

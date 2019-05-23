@@ -121,10 +121,13 @@ function showNews(News) {
 Post News
 --------------------------------------------------------------------------------------*/
 function postNews() {
-    typeOfPost = 3;
-    textToPost = "News Story: ".bold() + newsStories[currentNews]["title"];
-    msgOrPost = "posts";
-    post();
+    if (share == 1) {
+        typeOfPost = 3;
+        textToPost = "News Story: ".bold() + newsStories[currentNews]["title"];
+        msgOrPost = "posts";
+        post();
+    }
+    document.getElementById("confirmationPopupShare").style.display = "none";
 }
 
 function sendNews() {

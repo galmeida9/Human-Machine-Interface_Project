@@ -44,6 +44,8 @@ var displayedMessages = 0;
 var personInMemory = ["Gabriel", "João", "Daniel"];
 var currentPerson;
 var notificationPerson;
+var share = -1;
+var sharePersonMode = -1;
 
 /*-----------------------------------------------------------------------------------
 Disable/Enable Chat

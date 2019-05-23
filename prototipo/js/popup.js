@@ -3,6 +3,7 @@ window.onclick = function(event) {
     var confirmation = document.getElementById("confirmationPopup");
     var chat = document.getElementById("personPopup");
     var sharePost = document.getElementById("personPopupPost");
+    var shareperson = document.getElementById("confirmationPopupShare");
 
     if (event.target == filterpopup) {
         filterpopup.style.display = "none";
@@ -30,5 +31,9 @@ window.onclick = function(event) {
         sharePost.style.display = "none";
         if (lastpage == "posts") currentpage = "posts";
         else currentpage = "newsStories";
+    }
+    else if (event.target == shareperson) {
+        shareperson.style.display = "none";
+        currentpage = "sharePost";
     }
 }
