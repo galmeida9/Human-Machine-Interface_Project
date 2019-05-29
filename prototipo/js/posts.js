@@ -117,8 +117,8 @@ function postConfirmation(source, mode){
     if (mouseMovement < 3 && mouseMovement > -3) {
         document.getElementById("confirmationPopup").style.display = "block";
         currentpage = "confirmationPopup";
-        if (mode == "photo") { imgToPost = source; typeOfPost = 1; }
-        else { videoToPost = source; typeOfPost = 0;}
+        if (mode == "photo") { imgToPost = source; typeOfPost = 1; contentToSend = source;}
+        else { videoToPost = source; typeOfPost = 0; contentToSend = source;}
     }
 }
 
@@ -158,7 +158,11 @@ function post(){
         el.scrollTop = 0;
         currentpage = "posts";
     }
-    else {
+    else if (msgOrPost == "msg"){
+        share = 1;
+        sharePost(currentPerson);
+    }
+    else{
         if (typeOfPost == 0) {selectPerson(0, videoToPost); sharePost(currentPerson);}
         else if (typeOfPost == 1) {selectPerson(1, imgToPost); sharePost(currentPerson);}
         else {selectPerson(1, 'resources/tecnico_location.png'); sharePost(currentPerson);}
@@ -175,6 +179,7 @@ function openShareLocation() {
     document.getElementsByClassName("locationShare")[0].style.display = "block";
     currentpage = "locationShare";
     typeOfPost = 2;
+    contentToSend = "resources/tecnico_location.png";
 }
 
 
@@ -250,7 +255,7 @@ function sharePost(person) {
             updateLastMessage(person, "Video");
             addPerson(person);
         }
-        else if (typeOfPost == 1) {
+        else if (typeOfPost == 1 || typeOfPost == 2) {
             allMessages[person]["Messages"].push("<div class='messageSent'><span><img class='userdarkmode' src='resources/user.png'><button class='btn'><img class='chatIMG' src=" + contentToSend + " style='width:auto; margin-top:0pt;'></button></span></div>");
             allMessages[person]["Number"] += 1;
             lastMessage[person] = "Image";

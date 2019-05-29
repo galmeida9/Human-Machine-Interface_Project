@@ -84,6 +84,7 @@ document.getElementsByClassName("close")[2].onclick = function() {
 Open Chat
 -----------------------------------------------------------------------------------*/
 function chat(person) {
+    msgOrPost = "msg";
     if ((mouseMovement < 3 && mouseMovement > -3) || currentpage != "chat") {
         currentPerson = person;
         el.scrollLeft = 0;
@@ -248,6 +249,7 @@ function shareEmoji(emoji) {
     if (mouseMovement < 3 && mouseMovement > -3) {
         typeOfPost = 1;
         contentToSend = emoji;
+        share = 1;
         sharePost(currentPerson);
     }
 }
